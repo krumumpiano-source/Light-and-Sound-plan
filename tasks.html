@@ -2,46 +2,44 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>การติดตั้ง — คู่มือเสียงร้านนิยมสุข</title>
+  <title>ติดตั้ง & ปรับจูน — คู่มือเสียงร้านนิยมสุข</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="layout">
   <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2>ระบบเสียง</h2>
-      <div class="shop-name">ร้านนิยมสุข</div>
-    </div>
+    <div class="sidebar-header"><h2>ระบบเสียง</h2><div class="shop-name">ร้านนิยมสุข</div></div>
     <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
     <ul class="sidebar-cat">
       <li>
-        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
+        <div class="cat-title"><span class="cat-icon c-overview">👤</span> สำหรับเจ้าของร้าน</div>
         <ul class="sidebar-links">
-          <li><a href="overview.html">1. ภาพรวมระบบ</a></li>
-          <li><a href="overview.html#equipment">2. รายการอุปกรณ์</a></li>
+          <li><a href="overview.html">ระบบทำงานอย่างไร</a></li>
+          <li><a href="overview.html#equipment">อุปกรณ์ทั้งหมด</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
+        <div class="cat-title"><span class="cat-icon c-signal">🔌</span> เตรียมสาย &amp; เดินสาย</div>
         <ul class="sidebar-links">
-          <li><a href="signal.html">3. ผัง Signal Flow</a></li>
-          <li><a href="signal.html#cables">4. ตารางสายเคเบิล</a></li>
+          <li><a href="signal.html">สรุปสายที่ต้องเตรียม</a></li>
+          <li><a href="signal.html#cables">ตารางเดินสาย A–H</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> ตั้งค่าอุปกรณ์</div>
         <ul class="sidebar-links">
-          <li><a href="devices.html">5. กล่องสัญญาณ (Stage Box)</a></li>
-          <li><a href="devices.html#mixerchannel">6. ช่อง X Air 18</a></li>
-          <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
+          <li><a href="devices.html#ui12">ui12 (กลอง)</a></li>
+          <li><a href="devices.html#xair">X Air 18 (มิกเซอร์หลัก)</a></li>
+          <li><a href="devices.html#marani">Marani (ในอาคาร)</a></li>
+          <li><a href="devices.html#dbx">dbx 260 (นอกอาคาร)</a></li>
         </ul>
       </li>
       <li class="current">
-        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> ติดตั้ง &amp; ปรับจูน</div>
         <ul class="sidebar-links">
-          <li><a href="#tasks">8. แผนงาน / แบ่งทีม</a></li>
-          <li><a href="#notes">9. หมายเหตุสำคัญ</a></li>
+          <li><a href="#teams">แผนงาน / แบ่งทีม</a></li>
+          <li><a href="#tuning">ปรับจูน &amp; เปิด-ปิดระบบ</a></li>
         </ul>
       </li>
     </ul>
@@ -51,119 +49,205 @@
 
   <div class="page">
 
-    <div class="section" id="tasks">
-      <h2>🔧 8. แผนงานติดตั้ง / แบ่งทีม</h2>
-      <p>แบ่งทีมช่างออกเป็น 6 กลุ่มทำงานพร้อมกันเพื่อประหยัดเวลา ควรใช้วิทยุสื่อสาร</p>
+    <!-- ═══ แผนงาน / แบ่งทีม ═══ -->
+    <div class="section" id="teams">
+      <h2>🔧 แผนงาน / แบ่งทีม</h2>
+      <p>แบ่งทีมช่าง 2–4 คนทำงานขนาน — ลดเวลาติดตั้งให้เร็วที่สุด</p>
 
-      <div class="task-card zone-stage">
-        <div class="task-title">🎤 ทีม A — วางกล่องสัญญาณบนเวที (Stage Box)</div>
-        <ul>
-          <li>ติดตั้ง Stage Box 3 จุด (คีย์บอร์ด / ซ้าย / ขวา) บนเวที</li>
-          <li>เดินสาย Snake จากเวทีมาถึงจุดวางมิกเซอร์</li>
-          <li>ติดฉลากทุก Input ของ Stage Box ก่อนต่อสาย</li>
-          <li>ทดสอบ Continuity ทุกเส้นก่อนปิดท่อสาย</li>
-        </ul>
+      <div class="task-card">
+        <h3>ทีม A — เดินสายเวที + Stage Box (2 คน)</h3>
+        <p><strong>หน้าที่:</strong> ต่อสายจากไมค์/เครื่องดนตรี → Stage Box 3 จุด + Drum Multicore</p>
+        <ol>
+          <li>วาง Stage Box 3 จุดบนเวที: ฝั่งคีย์บอร์ด (KB), ฝั่งซ้าย (L), ฝั่งขวา (R)</li>
+          <li>วาง Drum Multicore Box ใกล้กลองชุด</li>
+          <li>ต่อ DI Box 2 ตัวสำหรับคีย์บอร์ด (Output L+R → DI Box → Stage Box KB)</li>
+          <li>เดินสาย XLR จากไมค์/เครื่องดนตรีแต่ละตัวเข้า Stage Box ตามตาราง <a href="signal.html#cables">กลุ่ม A–C</a></li>
+          <li>เดินสาย XLR 7 เส้นจากไมค์กลอง → Drum Multicore ตาม <a href="signal.html#cables">กลุ่ม D</a></li>
+          <li>ลาก Snake/Multicore จาก Stage Box 3 จุด → ตำแหน่ง X Air 18 (~15–20m ต่อเส้น)</li>
+          <li>ลาก Snake จาก Drum Multicore → ตำแหน่ง ui12 (~15m)</li>
+        </ol>
+        <div class="note-box">
+          <strong>สายที่ต้องเตรียม:</strong> XLR ~15 เส้น (A1,B1,C1,D1) + Snake 4 เส้น (A2,B2,C2,D2) + TRS/TS 2 เส้น (A1-KB for DI) + DI Box 2 ตัว
+        </div>
       </div>
 
-      <div class="task-card zone-drum">
-        <div class="task-title">🥁 ทีม B — ติดตั้งมัลติคอร์กลองและ SoundCraft ui12</div>
-        <ul>
-          <li>ติดตั้ง Drum Multicore จากชุดกลองไปวาง ui12</li>
-          <li>ติดตั้งไมค์กลอง 6 ตัวตามตำแหน่งที่กำหนด</li>
-          <li>ต่อสายจาก ui12 Main Out ไปช่อง X Air 18</li>
-          <li>ตั้งค่า Gain ใน ui12 เบื้องต้น ก่อน Soundcheck</li>
-        </ul>
+      <div class="task-card">
+        <h3>ทีม B — ต่อ ui12 + X Air 18 + เชื่อมระบบ (1–2 คน)</h3>
+        <p><strong>หน้าที่:</strong> ตั้ง Mixer ทั้ง 2 ตัว เชื่อมเข้าด้วยกัน</p>
+        <ol>
+          <li>วาง <strong>SoundCraft ui12</strong> ใกล้ Drum Multicore</li>
+          <li>เสียบ Snake จาก Multicore เข้า ui12 Ch1–7</li>
+          <li>เสียบ <strong>4 สาย</strong> จาก ui12 → X Air 18 ตาม <a href="signal.html#cables">กลุ่ม E</a>:
+            <ul>
+              <li>E1: Aux 1 (Kick) → X Air Ch1 — สาย TRS→XLR</li>
+              <li>E2: Aux 2 (Snare) → X Air Ch2 — สาย TRS→XLR</li>
+              <li>E3: Main L (Tom+OH) → X Air Ch3 — ⚠️ สาย XLR Male-to-Male</li>
+              <li>E4: Main R (Tom+OH) → X Air Ch4 — ⚠️ สาย XLR Male-to-Male</li>
+            </ul>
+          </li>
+          <li>เสียบ Snake จาก Stage Box 3 จุดเข้า X Air 18 ช่องที่กำหนด</li>
+          <li>เปิด +48V สำหรับ ไมค์ Overhead (Ch6-7 บน ui12) — <strong>ห้าม</strong>เปิด +48V สำหรับ Dynamic Mic</li>
+          <li>ตั้ง WiFi ของ X Air 18 → ต่อ Tablet/มือถือเข้าแอป X Air Edit</li>
+        </ol>
+        <div class="note-box">
+          <strong>สายที่ต้องเตรียม:</strong> TRS→XLR 2 เส้น (E1-E2) + XLR Male-to-Male 2 เส้น (E3-E4)
+        </div>
       </div>
 
-      <div class="task-card zone-mixer">
-        <div class="task-title">🎛 ทีม C — ติดตั้งมิกเซอร์หลัก X Air 18 และ Marani</div>
-        <ul>
-          <li>ต่อสายจาก Stage Snake เข้า X Air 18 ช่อง 1–18</li>
-          <li>ต่อ X Air 18 Main + Aux Out ไป Marani DPA260p+</li>
-          <li>ตั้งค่า IP ของ X Air 18 และทดสอบ App บน Tablet/Phone</li>
-          <li>ตรวจสอบ Marani Output 1–6 ให้ถูกโซน</li>
-        </ul>
+      <div class="task-card">
+        <h3>ทีม C — แขวนลำโพงในอาคาร + Marani (1–2 คน)</h3>
+        <p><strong>หน้าที่:</strong> ติดตั้งลำโพง FOH ในอาคาร + เชื่อม Marani</p>
+        <ol>
+          <li>แขวน/ตั้ง <strong>Yamaha DXR ×4 ใบ</strong>: ซ้าย 2 ใบ (ใบแรก+Link) + ขวา 2 ใบ (ใบแรก+Link)</li>
+          <li>ตั้ง <strong>Sub MA18 ×2 ใบ</strong>: ซ้าย 1 + ขวา 1 (วางพื้นใกล้เวที)</li>
+          <li>วาง <strong>Marani DPA260p+</strong> ใกล้ X Air 18</li>
+          <li>สาย F1–F2: X Air Main L+R → Marani Input (XLR ×2 เส้น ~3m)</li>
+          <li>สาย F3: Marani Out 1 → DXR ซ้ายใบแรก (Speakon ~10m)</li>
+          <li>สาย F3-Link: DXR ซ้ายใบแรก Link Out → DXR ซ้ายใบสอง (XLR ~1–2m)</li>
+          <li>สาย F4: Marani Out 2 → DXR ขวาใบแรก (Speakon ~10m)</li>
+          <li>สาย F4-Link: DXR ขวาใบแรก Link Out → DXR ขวาใบสอง (XLR ~1–2m)</li>
+          <li>สาย F5: Marani Out 3 → Sub MA18 ซ้าย (Speakon ~8m)</li>
+          <li>สาย F6: Marani Out 4 → Sub MA18 ขวา (Speakon ~8m)</li>
+        </ol>
+        <div class="note-box">
+          <strong>สายที่ต้องเตรียม:</strong> XLR 4 เส้น (F1-F2, F3-Link, F4-Link) + Speakon 4 เส้น (F3-F6)
+        </div>
       </div>
 
-      <div class="task-card zone-speaker">
-        <div class="task-title">🔊 ทีม D — ติดตั้งลำโพงหลักและสายลำโพง</div>
-        <ul>
-          <li>ติดตั้งลำโพงหลักเวที L+R (ขาตั้ง หรือ Fly)</li>
-          <li>ติดตั้งลำโพงกลางห้อง L+R</li>
-          <li>ต่อสาย Speakon จาก Marani Out 1–4 ไปลำโพง</li>
-          <li>ตรวจขั้วลำโพงก่อนเปิดเครื่อง (+/−)</li>
-        </ul>
+      <div class="task-card">
+        <h3>ทีม D — ลำโพงนอกอาคาร + dbx 260 (1–2 คน)</h3>
+        <p><strong>หน้าที่:</strong> ติดตั้งลำโพงนอกอาคาร + เชื่อม dbx DriveRack 260</p>
+        <ol>
+          <li>ตั้ง <strong>Wharfedale Pro Titan 12 ×2 ใบ</strong> ที่ตำแหน่งนอกอาคาร โซน Titan</li>
+          <li>ตั้ง <strong>ลำโพง VL ×3 ใบ</strong> ที่ตำแหน่งนอกอาคาร โซน VL</li>
+          <li>วาง <strong>dbx DriveRack 260</strong> ใกล้ X Air 18</li>
+          <li>สาย G1: X Air Aux 6 → dbx 260 Input 1 (TRS→XLR ~5m)</li>
+          <li>สาย G2: dbx Out 1 → Titan 12 ×2 ใบ (XLR ~10m — แยกเส้นหรือ Y-split)</li>
+          <li>สาย G3: dbx Out 2 → VL ×3 ใบ (XLR ~15m)</li>
+        </ol>
+        <div class="note-box">
+          <strong>สายที่ต้องเตรียม:</strong> TRS→XLR 1 เส้น (G1) + XLR 2–4 เส้น (G2-G3)
+        </div>
       </div>
 
-      <div class="task-card zone-monitor">
-        <div class="task-title">👂 ทีม E — ติดตั้งมอนิเตอร์เวที</div>
-        <ul>
-          <li>วางมอนิเตอร์เวที 2 ตัวหันหาศิลปิน</li>
-          <li>ต่อสาย Speakon จาก Marani Out 5–6</li>
-          <li>ทดสอบเสียงมอนิเตอร์แยกจาก FOH ได้</li>
-        </ul>
-      </div>
-
-      <div class="task-card zone-power">
-        <div class="task-title">⚡ ทีม F — ระบบไฟฟ้าและ Power Management</div>
-        <ul>
-          <li>จัดตู้ไฟ และ Power Strip ให้เพียงพอสำหรับอุปกรณ์ทั้งหมด</li>
-          <li>ต่อ UPS สำหรับมิกเซอร์และ Marani</li>
-          <li>ลำดับการเปิดเครื่อง: Mixer → DSP → Amp → ลำโพง</li>
-          <li>ลำดับการปิดเครื่อง: ลำโพง → Amp → DSP → Mixer</li>
-        </ul>
+      <div class="task-card">
+        <h3>ทีม E — Stage Monitor (ทำหลังทีม B เสร็จ)</h3>
+        <p><strong>หน้าที่:</strong> เดินสาย Monitor 5 จุดบนเวที</p>
+        <ol>
+          <li>วางมอนิเตอร์ 5 จุด: คีย์บอร์ด / เบส / นักร้อง / กีตาร์ / กลอง</li>
+          <li>สาย H1: X Air Aux 1 → มอนิเตอร์คีย์บอร์ด (TRS→XLR ~10m)</li>
+          <li>สาย H2: X Air Aux 2 → มอนิเตอร์เบส (TRS→XLR ~10m)</li>
+          <li>สาย H3: X Air Aux 3 → มอนิเตอร์ Vocal (TRS→XLR ~8m)</li>
+          <li>สาย H4: X Air Aux 4 → มอนิเตอร์กีตาร์ (TRS→XLR ~10m)</li>
+          <li>สาย H5: X Air Aux 5 → มอนิเตอร์กลอง (TRS→XLR ~5m หรือ In-Ear)</li>
+        </ol>
+        <div class="note-box">
+          <strong>สายที่ต้องเตรียม:</strong> TRS→XLR 5 เส้น (H1–H5)
+        </div>
       </div>
     </div>
 
-    <div class="section" id="notes">
-      <h2>⚠️ 9. หมายเหตุสำคัญ</h2>
+    <!-- ═══ ปรับจูน & เปิด-ปิดระบบ ═══ -->
+    <div class="section" id="tuning">
+      <h2>🎚 ปรับจูน & เปิด-ปิดระบบ</h2>
+
+      <h3>📱 ลำดับเปิดระบบ (Power On)</h3>
+      <div class="note-box" style="background:#e8f5e9; border-left-color:#2e7d32;">
+        <ol style="margin:0;">
+          <li><strong>เปิด ui12</strong> ก่อน (Mixer กลอง) — รอ WiFi พร้อม</li>
+          <li><strong>เปิด X Air 18</strong> (Mixer หลัก) — รอ WiFi พร้อม</li>
+          <li><strong>เปิด Marani DPA260p+</strong> (แอมป์ในอาคาร)</li>
+          <li><strong>เปิด dbx DriveRack 260</strong> (โปรเซสเซอร์นอก)</li>
+          <li>เปิดแอมป์ลำโพงนอกอาคาร (ถ้า Passive)</li>
+          <li><strong>เปิด DXR + Sub MA18</strong> (ลำโพง Active ในอาคาร — เปิดทีหลังสุด)</li>
+          <li>เปิด Stage Monitor</li>
+        </ol>
+        <p style="margin:8px 0 0;"><strong>หลักการ:</strong> เปิดจาก Source → Mixer → Processor → แอมป์/ลำโพง (เรียงจากต้นทางไปปลายทาง)</p>
+      </div>
+
+      <h3>🔴 ลำดับปิดระบบ (Power Off) — กลับกัน</h3>
+      <div class="note-box" style="background:#fce4ec; border-left-color:#c62828;">
+        <ol style="margin:0;">
+          <li>ปิด Stage Monitor</li>
+          <li>ปิดลำโพง DXR + Sub MA18 (ปิดก่อน)</li>
+          <li>ปิดแอมป์ลำโพงนอก / ปิด dbx 260</li>
+          <li>ปิด Marani</li>
+          <li>ปิด X Air 18</li>
+          <li>ปิด ui12</li>
+        </ol>
+        <p style="margin:8px 0 0;"><strong>หลักการ:</strong> ปิดจากปลายทาง → กลับมาต้นทาง (ลำโพงปิดก่อน ป้องกันเสียง Pop)</p>
+      </div>
+
+      <h3>🎛 ปรับจูน Marani DPA260p+ (ในอาคาร)</h3>
+      <div class="task-card">
+        <ol>
+          <li><strong>Crossover:</strong> ตั้ง ~80 Hz — ต่ำกว่า 80 Hz ส่ง Sub MA18 / สูงกว่า 80 Hz ส่ง DXR</li>
+          <li><strong>EQ:</strong> ปรับตามห้อง — ถ้าเสียงก้อง ลด Mid 400-800Hz / ถ้าทุ้มเกิน ลด 100-200Hz</li>
+          <li><strong>Limiter:</strong> เปิดทุก Output — ป้องกันลำโพงพัง ตั้ง Threshold ตาม Spec ลำโพง</li>
+          <li><strong>Output Level:</strong> ปรับให้ซ้าย-ขวาเท่ากัน (ใช้ SPL Meter หรือฟังจากตรงกลางห้อง)</li>
+        </ol>
+      </div>
+
+      <h3>🎛 ปรับจูน dbx DriveRack 260 (นอกอาคาร)</h3>
+      <div class="task-card">
+        <ol>
+          <li><strong>Input Gain:</strong> ตั้งให้สอดคล้องกับ Level ที่ส่งมาจาก Aux 6 ของ X Air 18 (เช็ค Level Meter)</li>
+          <li><strong>Out 1 (Titan 12):</strong> Full range — EQ ปรับตามสภาพแวดล้อม ตั้ง Limiter</li>
+          <li><strong>Out 2 (VL):</strong> Full range หรือ High-pass ถ้า VL ขนาดเล็ก ตั้ง Limiter</li>
+          <li><strong>Delay:</strong> ตั้ง Delay ถ้าลำโพงนอกมองเห็นเวทีได้ (ให้เสียงตรงกับในร้าน)</li>
+        </ol>
+      </div>
+
+      <h3>🎛 ปรับจูน X Air 18 (มิกเซอร์หลัก)</h3>
+      <div class="task-card">
+        <ol>
+          <li><strong>Gain Structure:</strong> ตั้ง Gain แต่ละ Ch ให้ Level เฉลี่ยอยู่ที่ -18 ถึง -12 dBFS (ขีดเขียว)</li>
+          <li><strong>Phantom +48V:</strong> เปิดเฉพาะ Ch ที่ใช้ Condenser Mic — <strong>ห้ามเปิดกับ Dynamic Mic</strong></li>
+          <li><strong>Main Mix:</strong> ปรับ Level ทุก Ch ให้ได้มิกซ์ที่ต้องการ Main L+R → ส่ง FOH ในร้าน</li>
+          <li><strong>Aux 6 (นอกอาคาร):</strong> ปรับ Send Level แต่ละ Ch ตามความต้องการ — สามารถลดเหลือ 0 เพื่อปิดเสียงนอก</li>
+          <li><strong>Aux 1–5 (Monitor):</strong> ปรับ Mix ให้แต่ละนักดนตรีได้ยินเสียงที่ต้องการ
+            <ul>
+              <li>Aux 1 (KB): เน้นคีย์บอร์ด + Vocal</li>
+              <li>Aux 2 (เบส): เน้นเบส + Kick + Vocal</li>
+              <li>Aux 3 (ร้อง): เน้นร้อง + เครื่องดนตรีทุกอย่างเบาๆ</li>
+              <li>Aux 4 (กีตาร์): เน้นกีตาร์ + Vocal</li>
+              <li>Aux 5 (กลอง): เน้น Vocal + เบส (กลองได้ยินของตัวเองอยู่แล้ว)</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <h3>🥁 ปรับจูน ui12 (กลอง Pre-mix)</h3>
+      <div class="task-card">
+        <ol>
+          <li><strong>Aux 1 Send:</strong> ส่งเฉพาะ <strong>Kick (Ch1)</strong> → X Air Ch1 — ห้ามส่ง Ch อื่น</li>
+          <li><strong>Aux 2 Send:</strong> ส่งเฉพาะ <strong>Snare (Ch2)</strong> → X Air Ch2 — ห้ามส่ง Ch อื่น</li>
+          <li><strong>Main L+R:</strong> ส่ง Tom 1-3 + OH L+R → X Air Ch3-4 (Stereo)</li>
+          <li><strong>Phantom +48V:</strong> เปิดเฉพาะ Ch6 (OH L) และ Ch7 (OH R) — ไมค์ Condenser</li>
+          <li><strong>EQ:</strong> Kick ตัด ~300Hz เพิ่ม ~60Hz / Snare เพิ่ม ~200Hz + ~5kHz / Tom ตัด ~400Hz</li>
+          <li><strong>Gate:</strong> ถ้ามี เปิด Gate บน Kick/Snare/Tom — ลด Bleed จากเสียงอื่น</li>
+        </ol>
+      </div>
+
+      <h3>📋 เช็คลิสต์ก่อนเริ่มงาน</h3>
       <div class="note-box">
-        <strong>ลำดับเปิด-ปิดระบบ (สำคัญมาก)</strong>
-        <ul>
-          <li>เปิด: มิกเซอร์ → Processor/DSP → Power Amp → ลำโพง</li>
-          <li>ปิด: ลดวอลุ่มก่อน → ปิดลำโพง → ปิด Amp → ปิด DSP → ปิดมิกเซอร์</li>
-          <li>ห้ามเปิด/ปิดอุปกรณ์เรียงผิดลำดับ — จะทำให้ลำโพงพังได้</li>
-        </ul>
-      </div>
-      <div class="note-box" style="margin-top:12px;">
-        <strong>ก่อน Soundcheck</strong>
-        <ul>
-          <li>ลดวอลุ่มทุกช่องใน X Air 18 ลงหมดก่อนเปิดระบบ</li>
-          <li>ตรวจ Phantom Power (+48V) เฉพาะช่องที่ใช้ Condenser Mic เท่านั้น</li>
-          <li>ทดสอบสัญญาณทีละช่อง ไม่เปิดพร้อมกันทุกช่อง</li>
-          <li>ตรวจ Marani Limiter ห้ามปิด Limiter ขณะใช้งาน</li>
-        </ul>
-      </div>
-      <div class="note-box" style="margin-top:12px;">
-        <strong>การดูแลรักษา</strong>
-        <ul>
-          <li>ม้วนสายให้เป็นระเบียบหลังใช้งาน ใช้ที่รัดสาย</li>
-          <li>ทำความสะอาดหัวปลั๊กและ Connector ด้วย Contact Cleaner</li>
-          <li>บันทึก Scene ใน X Air 18 ทุกครั้งหลัง Soundcheck สำเร็จ</li>
-          <li>สำรอง Config ของ Marani ไว้ใน USB</li>
+        <ul style="margin:0;">
+          <li>✅ ทุกสายต่อแน่น ไม่หลวม — ดึงทดสอบทีละเส้น</li>
+          <li>✅ Channel Assignments ตรงกับตารางเดินสาย — ลองพูดไมค์ทีละตัว</li>
+          <li>✅ Phantom +48V เปิดเฉพาะ Condenser (OH L/R) — ห้ามเปิดกับ Dynamic</li>
+          <li>✅ ไม่มี Feedback — ถ้ามี ลด Gain แล้วเช็คมอนิเตอร์ที่หันเข้าไมค์</li>
+          <li>✅ ปิดเสียงนอกอาคาร (Aux 6 = 0) ก่อน Soundcheck — เปิดทีหลังเมื่อพร้อม</li>
+          <li>✅ ลำโพง DXR Link Out ต่อถูกทิศ — ใบแรกต่อ Marani ใบที่สองต่อ Link</li>
         </ul>
       </div>
     </div>
 
   </div>
 </div>
-
 <script>
-const sidebar = document.getElementById('sidebar');
-const toggle  = document.getElementById('sidebarToggle');
-const overlay = document.getElementById('sidebarOverlay');
-toggle.addEventListener('click',()=>{ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
-overlay.addEventListener('click',()=>{ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
-
-const sections = document.querySelectorAll('.section');
-const catItems = document.querySelectorAll('.sidebar-cat > li.current .sidebar-links a');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
-  catItems.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
-  });
-});
+const sidebar=document.getElementById('sidebar'),toggle=document.getElementById('sidebarToggle'),overlay=document.getElementById('sidebarOverlay');
+toggle.addEventListener('click',()=>{sidebar.classList.toggle('open');overlay.classList.toggle('show');});
+overlay.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});
 </script>
 </body>
 </html>

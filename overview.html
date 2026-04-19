@@ -2,47 +2,44 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>ภาพรวมระบบ — คู่มือเสียงร้านนิยมสุข</title>
+  <title>สำหรับเจ้าของร้าน — คู่มือเสียงร้านนิยมสุข</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="layout">
   <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2>ระบบเสียง</h2>
-      <div class="shop-name">ร้านนิยมสุข</div>
-    </div>
+    <div class="sidebar-header"><h2>ระบบเสียง</h2><div class="shop-name">ร้านนิยมสุข</div></div>
     <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
     <ul class="sidebar-cat">
       <li class="current">
-        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
+        <div class="cat-title"><span class="cat-icon c-overview">👤</span> สำหรับเจ้าของร้าน</div>
         <ul class="sidebar-links">
-          <li><a href="#overview">1. ภาพรวมระบบ</a></li>
-          <li><a href="#equipment">2. รายการอุปกรณ์</a></li>
+          <li><a href="#overview">ระบบทำงานอย่างไร</a></li>
+          <li><a href="#equipment">อุปกรณ์ทั้งหมด</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
+        <div class="cat-title"><span class="cat-icon c-signal">🔌</span> เตรียมสาย &amp; เดินสาย</div>
         <ul class="sidebar-links">
-          <li><a href="signal.html">3. ผัง Signal Flow</a></li>
-          <li><a href="signal.html#cables">4. ตารางสายเคเบิล</a></li>
+          <li><a href="signal.html">สรุปสายที่ต้องเตรียม</a></li>
+          <li><a href="signal.html#cables">ตารางเดินสาย A–H</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> ตั้งค่าอุปกรณ์</div>
         <ul class="sidebar-links">
-          <li><a href="devices.html#ui12">5. SoundCraft ui12 (กลอง)</a></li>
-          <li><a href="devices.html#xair">6. Behringer X Air 18</a></li>
-          <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
-          <li><a href="devices.html#dbx">8. dbx DriveRack 260 (นอก)</a></li>
+          <li><a href="devices.html#ui12">ui12 (กลอง)</a></li>
+          <li><a href="devices.html#xair">X Air 18 (มิกเซอร์หลัก)</a></li>
+          <li><a href="devices.html#marani">Marani (ในอาคาร)</a></li>
+          <li><a href="devices.html#dbx">dbx 260 (นอกอาคาร)</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> ติดตั้ง &amp; ปรับจูน</div>
         <ul class="sidebar-links">
-          <li><a href="tasks.html">9. แผนงาน / แบ่งทีม</a></li>
-          <li><a href="tasks.html#notes">10. หมายเหตุสำคัญ</a></li>
+          <li><a href="tasks.html">แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#tuning">ปรับจูน &amp; เปิด-ปิดระบบ</a></li>
         </ul>
       </li>
     </ul>
@@ -52,108 +49,142 @@
 
   <div class="page">
 
+    <!-- ═══ ระบบทำงานอย่างไร ═══ -->
     <div class="section" id="overview">
-      <h2>📋 1. ภาพรวมระบบเสียง</h2>
-      <p>ระบบเสียงร้านนิยมสุขออกแบบเป็น <strong>2 Pre-mixer + 1 Processor/Amp + 1 DSP นอกอาคาร</strong> แยกโซนในอาคารและนอกอาคารอิสระจากกัน</p>
+      <h2>📋 ระบบเสียงทำงานอย่างไร</h2>
+      <p>ระบบเสียงร้านนิยมสุขส่งเสียงจากเวทีออก <strong>2 โซนแยกกัน</strong> — ในอาคารและนอกอาคาร — ควบคุมจากจุดเดียวผ่านมิกเซอร์หลัก X Air 18 ที่สั่งงานด้วยแอปบนมือถือ/แท็บเล็ต</p>
 
-      <h3>ผัง Signal Flow หลัก</h3>
+      <!-- ═══ ภาพรวม 3 ชั้น ═══ -->
+      <h3>🔊 เสียงวิ่งผ่าน 3 ขั้นตอน</h3>
       <div class="flow-diagram">
+        <p style="text-align:center; margin:0 0 12px; font-weight:600; color:#1565c0;">ขั้นที่ 1 — เสียงจากเวที</p>
         <div class="flow-row">
-          <div class="flow-box flow-input">ไมค์กลอง 7 ตัว<br><small>Kick/Snare/Tom1-3/OH L/OH R</small></div>
+          <div class="flow-box flow-input">🥁 ไมค์กลอง 7 ตัว<br><small>Kick / Snare / Tom×3 / ฉาบ L+R</small></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-box flow-device">Drum Multicore<br><small>12ch Snake</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-box flow-device">SoundCraft ui12<br><small>Pre-mixer กลอง</small></div>
-          <div class="flow-arrow">→ 4 เส้น →</div>
-          <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>มิกเซอร์หลัก</small></div>
+          <div class="flow-box flow-device">ui12<br><small>มิกเซอร์เล็กรวมเสียงกลอง</small></div>
         </div>
-        <div class="flow-row" style="margin-top:10px;">
-          <div class="flow-box flow-input">เครื่องดนตรี + Vocal<br><small>Bass/Guitar/KB/Vocal ×6/Sound/Metro/DJ</small></div>
+        <div class="flow-row" style="margin-top:8px;">
+          <div class="flow-box flow-input">🎸 เครื่องดนตรี + 🎤 ไมค์ร้อง<br><small>เบส/กีตาร์/คีย์บอร์ด/ร้อง×6/DJ</small></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-box flow-device">Stage Box (3 จุด)<br><small>KB / ซ้าย / ขวา</small></div>
-          <div class="flow-arrow">→ Snake →</div>
-          <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>มิกเซอร์หลัก</small></div>
+          <div class="flow-box flow-device">Stage Box 3 จุด<br><small>กล่องรับสัญญาณบนเวที</small></div>
         </div>
-        <div class="flow-row" style="margin-top:14px;">
-          <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Main Out L+R</small></div>
+        <p style="text-align:center; margin:16px 0 12px; font-weight:600; color:#1565c0;">ขั้นที่ 2 — รวมเสียงที่มิกเซอร์หลัก</p>
+        <div class="flow-row">
+          <div class="flow-box flow-device">ui12<br><small>4 เส้นจากกลอง</small></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-box flow-device">Marani DPA260p+<br><small>DSP + Power Amp (ในอาคาร)</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-box flow-output">Yamaha DXR ×4<br>+ MA18 Sub ×2<br><small>ลำโพงในอาคาร</small></div>
+          <div class="flow-box flow-device" style="background:#c8e6c9; border:2px solid #2e7d32; font-size:1.05em;">🎛 <strong>X Air 18</strong><br><small>มิกเซอร์หลัก — ควบคุมทุกอย่าง<br>ผ่านแอปมือถือ 📱</small></div>
+          <div class="flow-arrow">←</div>
+          <div class="flow-box flow-device">Stage Box<br><small>14 เส้นจากเวที</small></div>
         </div>
-        <div class="flow-row" style="margin-top:10px;">
-          <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Aux 6 (นอกอาคาร)</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-box flow-device">dbx DriveRack 260<br><small>DSP นอกอาคาร</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-box flow-output">Wharfedale Titan 12 ×2<br>+ ลำโพง VL ×3<br><small>โซนนอกอาคาร</small></div>
-        </div>
-        <div class="flow-row" style="margin-top:10px;">
-          <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Aux 1–5 (Monitor)</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-box flow-output">Stage Monitor ×5<br><small>KB / Bass / Vocal / Guitar / Drum</small></div>
+        <p style="text-align:center; margin:16px 0 12px; font-weight:600; color:#1565c0;">ขั้นที่ 3 — ส่งเสียงออกลำโพง (2 โซน + Monitor)</p>
+        <div class="flow-row" style="flex-wrap: wrap; gap:16px; justify-content: center;">
+          <div style="text-align:center;">
+            <div style="background:#e3f2fd; border:2px solid #1565c0; border-radius:10px; padding:12px 16px; display:inline-block;">
+              <strong style="color:#1565c0;">🏠 โซนในอาคาร</strong><br>
+              <small>X Air 18 Main L+R → <strong>Marani</strong></small><br>
+              <small>→ Yamaha DXR ×4 ใบ (เสียงหลัก)</small><br>
+              <small>→ Sub MA18 ×2 ใบ (เสียงเบส)</small>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <div style="background:#fff3e0; border:2px solid #e65100; border-radius:10px; padding:12px 16px; display:inline-block;">
+              <strong style="color:#e65100;">📡 โซนนอกอาคาร</strong><br>
+              <small>X Air 18 Aux 6 → <strong>dbx 260</strong></small><br>
+              <small>→ Wharfedale Titan 12 ×2 ใบ</small><br>
+              <small>→ ลำโพง VL ×3 ใบ</small>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <div style="background:#f3e5f5; border:2px solid #6a1b9a; border-radius:10px; padding:12px 16px; display:inline-block;">
+              <strong style="color:#6a1b9a;">🎧 Monitor บนเวที</strong><br>
+              <small>X Air 18 Aux 1–5</small><br>
+              <small>→ มอนิเตอร์ 5 จุด</small><br>
+              <small>(KB/เบส/ร้อง/กีตาร์/กลอง)</small>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="legend" style="margin-top:16px;">
-        <div class="legend-item"><span class="cable-xlr">XLR</span> Balanced mic/line</div>
-        <div class="legend-item"><span class="cable-snake">Snake</span> มัลติคอร์ Stage</div>
-        <div class="legend-item"><span class="cable-speaker">Speaker</span> สายลำโพง</div>
-        <div class="legend-item"><span class="cable-trs">TRS</span> Balanced 1/4"</div>
+      <!-- ═══ อธิบาย 2 โซน ═══ -->
+      <h3>🏠 โซนในอาคาร — ทำงานอย่างไร</h3>
+      <div class="note-box" style="background:#e3f2fd; border-left-color:#1565c0;">
+        <p style="margin:0 0 8px;"><strong>เป้าหมาย:</strong> ส่งเสียงเต็มคุณภาพให้ลูกค้าในร้าน</p>
+        <ul style="margin:0;">
+          <li>เสียง Main Mix จากมิกเซอร์ X Air 18 → เข้า <strong>Marani DPA260p+</strong> (ตัวประมวลผล+ขยายเสียง)</li>
+          <li>Marani แยกเสียงออก 4 ทาง: ลำโพง <strong>Yamaha DXR</strong> ซ้าย 2 ใบ + ขวา 2 ใบ (เสียงกลาง-แหลม) + ซับวูฟเฟอร์ <strong>MA18</strong> ซ้าย-ขวา (เสียงเบส)</li>
+          <li>Marani ตัดแยกความถี่ให้อัตโนมัติ — เสียงสูงไป DXR / เสียงต่ำไป Sub</li>
+        </ul>
+      </div>
+
+      <h3>📡 โซนนอกอาคาร — ทำงานอย่างไร</h3>
+      <div class="note-box" style="background:#fff3e0; border-left-color:#e65100;">
+        <p style="margin:0 0 8px;"><strong>เป้าหมาย:</strong> ส่งเสียงออกนอกร้าน (ลานจอดรถ/หน้าร้าน) แยกเปิด-ปิดได้อิสระ</p>
+        <ul style="margin:0;">
+          <li>เสียงแยกออกจาก <strong>Aux 6</strong> ของ X Air 18 (เสียงเดียวกับในร้าน แต่ปรับดัง-เบาแยกได้)</li>
+          <li>เข้า <strong>dbx DriveRack 260</strong> (ตัวประมวลผลสำหรับนอก) แยก 2 โซน: <strong>Wharfedale Titan 12</strong> (2 ใบ) + <strong>ลำโพง VL</strong> (3 ใบ)</li>
+          <li>ปิดเสียงนอกอาคารได้ทันที โดยลด Aux 6 ลงเป็น 0 — ไม่กระทบเสียงในร้าน</li>
+        </ul>
+      </div>
+
+      <h3>🎧 Monitor บนเวที — ทำงานอย่างไร</h3>
+      <div class="note-box" style="background:#f3e5f5; border-left-color:#6a1b9a;">
+        <p style="margin:0 0 8px;"><strong>เป้าหมาย:</strong> นักดนตรีแต่ละคนได้ยินเสียงตัวเองและเพื่อนร่วมวง</p>
+        <ul style="margin:0;">
+          <li>X Air 18 Aux 1–5 ส่งเสียงกลับให้นักดนตรี 5 ตำแหน่ง: คีย์บอร์ด / เบส / นักร้อง / กีตาร์ / กลอง</li>
+          <li>แต่ละคนปรับ Mix ว่าต้องการฟังเสียงอะไรดัง-เบาเท่าไหร่ ผ่านแอป</li>
+          <li>เสียง Monitor <strong>ไม่กระทบ</strong>เสียงที่ลูกค้าได้ยิน — แยกกันอิสระ</li>
+        </ul>
       </div>
     </div>
 
+    <!-- ═══ อุปกรณ์ทั้งหมด ═══ -->
     <div class="section" id="equipment">
-      <h2>📦 2. รายการอุปกรณ์</h2>
+      <h2>📦 อุปกรณ์ทั้งหมด</h2>
+      <p>รายการอุปกรณ์ที่ใช้ในระบบ จัดกลุ่มตามหน้าที่</p>
+
       <table>
-        <thead>
-          <tr><th>#</th><th>อุปกรณ์</th><th>รุ่น / ยี่ห้อ</th><th>จำนวน</th><th>หน้าที่</th></tr>
-        </thead>
+        <thead><tr><th>#</th><th>อุปกรณ์</th><th>รุ่น</th><th>จำนวน</th><th>หน้าที่ (อธิบายง่าย)</th></tr></thead>
         <tbody>
-          <tr style="background:#e8f5e9;"><td colspan="5" style="font-weight:700;color:#2e7d32;padding:6px 10px;">🎛 มิกเซอร์ / Processor</td></tr>
-          <tr><td>1</td><td>มิกเซอร์ดิจิทัล</td><td>Behringer X Air 18</td><td>1</td><td>มิกเซอร์หลัก 18ch + 6 Aux — ควบคุมทุก Input/Output ผ่าน App</td></tr>
-          <tr><td>2</td><td>Pre-mixer กลอง</td><td>SoundCraft ui12</td><td>1</td><td>รับไมค์กลอง 7 ตัว ส่งออก 4 Bus (Aux1=Kick, Aux2=Snare, Main L+R=Tom+OH)</td></tr>
-          <tr><td>3</td><td>DSP + Power Amp (ในอาคาร)</td><td>Marani DPA260p+</td><td>1</td><td>รับ Main L+R จาก X Air 18 — ขับลำโพงในอาคาร 4 ทาง (Out 1–4)</td></tr>
-          <tr><td>4</td><td>DSP นอกอาคาร</td><td>dbx DriveRack 260</td><td>1</td><td>รับ Aux 6 จาก X Air 18 — แยกโซนนอกอาคาร 2 ทาง</td></tr>
-          <tr style="background:#fff3e0;"><td colspan="5" style="font-weight:700;color:#e65100;padding:6px 10px;">📦 Stage Box / Multicore</td></tr>
-          <tr><td>5</td><td>กล่องสัญญาณเวที (คีย์บอร์ด)</td><td>Stage Box 8in/4out</td><td>1</td><td>รับ Input บริเวณคีย์บอร์ด (Bass, KB L+R ผ่าน DI Box, Vocal KB)</td></tr>
-          <tr><td>5b</td><td>DI Box (คีย์บอร์ด)</td><td>Passive/Active DI Box</td><td>2 ตัว (L + R)</td><td>แปลงสัญญาณ Output คีย์บอร์ด (TRS/TS) → XLR Balanced ก่อนเข้า Stage Box</td></tr>
-          <tr><td>6</td><td>กล่องสัญญาณเวที (ซ้าย)</td><td>Stage Box 8in/4out</td><td>1</td><td>รับ Input ด้านซ้ายเวที (Guitar, Vocal, Playback)</td></tr>
-          <tr><td>7</td><td>กล่องสัญญาณเวที (ขวา)</td><td>Stage Box 8in/4out</td><td>1</td><td>รับ Input ด้านขวาเวที (DJ, Vocal, อื่น ๆ)</td></tr>
-          <tr><td>8</td><td>มัลติคอร์กลอง</td><td>12-ch Drum Multicore</td><td>1</td><td>ส่งสัญญาณไมค์กลอง 7 ตัวจากเวทีไป ui12</td></tr>
-          <tr style="background:#e3f2fd;"><td colspan="5" style="font-weight:700;color:#1565c0;padding:6px 10px;">🔊 ลำโพงในอาคาร</td></tr>
-          <tr><td>9</td><td>ลำโพงหลัก FOH</td><td>Yamaha DXR (Active)</td><td>4 ใบ (ซ้าย 2 + ขวา 2, Link กัน)</td><td>กระจายเสียงหลักในอาคาร — ขับโดย Marani Out 1+2</td></tr>
-          <tr><td>10</td><td>Subwoofer ในอาคาร</td><td>MA18 Sub</td><td>2 ใบ (ซ้าย 1 + ขวา 1)</td><td>เพิ่มความถี่ต่ำในอาคาร — ขับโดย Marani Out 3+4</td></tr>
-          <tr><td>11</td><td>Stage Monitor</td><td>ลำโพงมอนิเตอร์ (ระบุรุ่น)</td><td>5 ตัว</td><td>Monitor: KB / Bass / Vocal / Guitar / Drum — จาก X Air 18 Aux 1–5</td></tr>
-          <tr style="background:#fce4ec;"><td colspan="5" style="font-weight:700;color:#880e4f;padding:6px 10px;">📡 ลำโพงนอกอาคาร</td></tr>
-          <tr><td>12</td><td>ลำโพง PA นอกอาคาร</td><td>Wharfedale Pro Titan 12 (Active)</td><td>2 ใบ</td><td>โซนนอกอาคาร — จาก dbx Out 1</td></tr>
-          <tr><td>13</td><td>ลำโพง VL นอกอาคาร</td><td>ลำโพง VL (ระบุรุ่น)</td><td>3 ใบ</td><td>โซนนอกอาคาร (รวมกัน) — จาก dbx Out 2</td></tr>
-          <tr style="background:#f1f8e9;"><td colspan="5" style="font-weight:700;color:#33691e;padding:6px 10px;">🎤 ไมโครโฟน</td></tr>
-          <tr><td>14</td><td>ไมค์กลอง Dynamic</td><td>Dynamic Mic (Kick/Snare/Tom ×3)</td><td>5 ตัว</td><td>Kick(Ch1), Snare(Ch2), Tom1(Ch3), Tom2(Ch4), Tom3(Ch5) → ui12</td></tr>
-          <tr><td>15</td><td>ไมค์ Overhead</td><td>Condenser Cardioid</td><td>2 ตัว</td><td>OH L(Ch6), OH R(Ch7) จ่อใต้ฉาบ → ui12</td></tr>
-          <tr><td>16</td><td>ไมค์ Vocal</td><td>Dynamic/Condenser Vocal</td><td>6 ตัว</td><td>Vocal 1-2, Vocal Guitar/Bass/KB/Drum → X Air 18 Ch9–14</td></tr>
+          <tr style="background:#e8f5e9;"><td colspan="5" style="font-weight:700;color:#2e7d32;">🎛 กลุ่มมิกเซอร์ / ตัวประมวลผลเสียง</td></tr>
+          <tr><td>1</td><td>มิกเซอร์หลัก</td><td>Behringer X Air 18</td><td>1</td><td>ศูนย์กลางควบคุมเสียงทั้งหมด รับ 18 ช่อง สั่งงานผ่านแอป</td></tr>
+          <tr><td>2</td><td>มิกเซอร์กลอง</td><td>SoundCraft ui12</td><td>1</td><td>รวมไมค์กลอง 7 ตัวเป็น 4 สาย ก่อนส่งเข้ามิกเซอร์หลัก</td></tr>
+          <tr><td>3</td><td>ตัวประมวลผล+แอมป์ (ในอาคาร)</td><td>Marani DPA260p+</td><td>1</td><td>ขยายเสียงและแยกความถี่ส่งตรงไปลำโพงในอาคาร 4 ทาง</td></tr>
+          <tr><td>4</td><td>ตัวประมวลผล (นอกอาคาร)</td><td>dbx DriveRack 260</td><td>1</td><td>แยกเสียงนอกอาคาร 2 โซน (Wharfedale + VL)</td></tr>
+          <tr style="background:#fff3e0;"><td colspan="5" style="font-weight:700;color:#e65100;">📦 กล่องรับสัญญาณบนเวที</td></tr>
+          <tr><td>5</td><td>Stage Box (คีย์บอร์ด)</td><td>8in/4out</td><td>1</td><td>รับ: เบส, คีย์บอร์ด L+R (ผ่าน DI Box), ไมค์ร้องมือ KB</td></tr>
+          <tr><td>6</td><td>Stage Box (ซ้าย)</td><td>8in/4out</td><td>1</td><td>รับ: กีตาร์, ไมค์ร้อง Vocal 1–2, ไมค์ร้องมือกีตาร์, Playback</td></tr>
+          <tr><td>7</td><td>Stage Box (ขวา)</td><td>8in/4out</td><td>1</td><td>รับ: DJ, ไมค์ร้องมือเบส, ไมค์ร้องมือกลอง, Metronome</td></tr>
+          <tr><td>8</td><td>Drum Multicore</td><td>12-ch Snake</td><td>1</td><td>ท่อรวมสาย 12 เส้น ส่งไมค์กลอง 7 ตัวจากเวทีไป ui12</td></tr>
+          <tr><td>9</td><td>DI Box (คีย์บอร์ด)</td><td>Passive/Active DI</td><td>2</td><td>แปลงสัญญาณ Output คีย์บอร์ด (TRS) → XLR Balanced ก่อนเข้า Stage Box</td></tr>
+          <tr style="background:#e3f2fd;"><td colspan="5" style="font-weight:700;color:#1565c0;">🔊 ลำโพงในอาคาร</td></tr>
+          <tr><td>10</td><td>ลำโพงหลัก FOH</td><td>Yamaha DXR (Active)</td><td>4 ใบ</td><td>ซ้าย 2 ใบ + ขวา 2 ใบ (พ่วงกัน) — เสียงกลาง-แหลม</td></tr>
+          <tr><td>11</td><td>ซับวูฟเฟอร์</td><td>MA18 Sub</td><td>2 ใบ</td><td>ซ้าย 1 + ขวา 1 — เสียงเบสให้สัมผัสได้</td></tr>
+          <tr><td>12</td><td>Stage Monitor</td><td>ลำโพงมอนิเตอร์</td><td>5 ตัว</td><td>ส่งเสียงกลับให้: คีย์บอร์ด / เบส / นักร้อง / กีตาร์ / กลอง</td></tr>
+          <tr style="background:#fce4ec;"><td colspan="5" style="font-weight:700;color:#880e4f;">📡 ลำโพงนอกอาคาร</td></tr>
+          <tr><td>13</td><td>ลำโพง PA</td><td>Wharfedale Pro Titan 12</td><td>2 ใบ</td><td>Active Speaker (มีแอมป์ในตัว) สำหรับนอกอาคาร</td></tr>
+          <tr><td>14</td><td>ลำโพง VL</td><td>ลำโพง VL</td><td>3 ใบ</td><td>ลำโพงนอกอาคาร โซน VL (รวมกัน 3 ใบ)</td></tr>
+          <tr style="background:#f1f8e9;"><td colspan="5" style="font-weight:700;color:#33691e;">🎤 ไมโครโฟน</td></tr>
+          <tr><td>15</td><td>ไมค์กลอง Dynamic</td><td>Dynamic (Kick/Snare/Tom×3)</td><td>5 ตัว</td><td>จ่อที่หนังกลอง — Kick/Snare/Tom1/Tom2/Tom3</td></tr>
+          <tr><td>16</td><td>ไมค์ Overhead</td><td>Condenser Cardioid</td><td>2 ตัว</td><td>จ่อใต้ฉาบซ้าย+ขวา — รับเสียงฉาบ/เครื่องทองเหลือง</td></tr>
+          <tr><td>17</td><td>ไมค์ Vocal</td><td>Dynamic/Condenser</td><td>6 ตัว</td><td>นักร้อง 2 + ร้องมือกีตาร์ + ร้องมือเบส + ร้องมือ KB + ร้องมือกลอง</td></tr>
         </tbody>
       </table>
     </div>
 
   </div>
 </div>
-
 <script>
 const sidebar = document.getElementById('sidebar');
 const toggle  = document.getElementById('sidebarToggle');
 const overlay = document.getElementById('sidebarOverlay');
 toggle.addEventListener('click',()=>{ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
 overlay.addEventListener('click',()=>{ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
-
 const sections = document.querySelectorAll('.section');
 const catItems = document.querySelectorAll('.sidebar-cat > li.current .sidebar-links a');
 window.addEventListener('scroll', () => {
   let cur = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
-  catItems.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
-  });
+  catItems.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
 });
 </script>
 </body>

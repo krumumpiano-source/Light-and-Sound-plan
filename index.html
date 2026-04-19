@@ -9,39 +9,37 @@
 <body>
 <div class="layout">
   <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2>ระบบเสียง</h2>
-      <div class="shop-name">ร้านนิยมสุข</div>
-    </div>
+    <div class="sidebar-header"><h2>ระบบเสียง</h2><div class="shop-name">ร้านนิยมสุข</div></div>
     <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
     <ul class="sidebar-cat">
       <li>
-        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
+        <div class="cat-title"><span class="cat-icon c-overview">👤</span> สำหรับเจ้าของร้าน</div>
         <ul class="sidebar-links">
-          <li><a href="overview.html">1. ภาพรวมระบบ</a></li>
-          <li><a href="overview.html#equipment">2. รายการอุปกรณ์</a></li>
+          <li><a href="overview.html">ระบบทำงานอย่างไร</a></li>
+          <li><a href="overview.html#equipment">อุปกรณ์ทั้งหมด</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
+        <div class="cat-title"><span class="cat-icon c-signal">🔌</span> เตรียมสาย &amp; เดินสาย</div>
         <ul class="sidebar-links">
-          <li><a href="signal.html">3. ผัง Signal Flow</a></li>
-          <li><a href="signal.html#cables">4. ตารางสายเคเบิล</a></li>
+          <li><a href="signal.html">สรุปสายที่ต้องเตรียม</a></li>
+          <li><a href="signal.html#cables">ตารางเดินสาย A–H</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> ตั้งค่าอุปกรณ์</div>
         <ul class="sidebar-links">
-          <li><a href="devices.html">5. กล่องสัญญาณ (Stage Box)</a></li>
-          <li><a href="devices.html#mixerchannel">6. ช่อง X Air 18</a></li>
-          <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
+          <li><a href="devices.html#ui12">ui12 (กลอง)</a></li>
+          <li><a href="devices.html#xair">X Air 18 (มิกเซอร์หลัก)</a></li>
+          <li><a href="devices.html#marani">Marani (ในอาคาร)</a></li>
+          <li><a href="devices.html#dbx">dbx 260 (นอกอาคาร)</a></li>
         </ul>
       </li>
       <li>
-        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> ติดตั้ง &amp; ปรับจูน</div>
         <ul class="sidebar-links">
-          <li><a href="tasks.html">8. แผนงาน / แบ่งทีม</a></li>
-          <li><a href="tasks.html#notes">9. หมายเหตุสำคัญ</a></li>
+          <li><a href="tasks.html">แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#tuning">ปรับจูน &amp; เปิด-ปิดระบบ</a></li>
         </ul>
       </li>
     </ul>
@@ -51,55 +49,71 @@
   <div class="page">
     <div class="hero">
       <h1>🔊 คู่มือติดตั้งระบบเสียง</h1>
-      <p>ร้านนิยมสุข — เอกสารสำหรับเจ้าของร้านทำความเข้าใจภาพรวม และทีมช่างใช้แบ่งงานติดตั้งจริง</p>
+      <p>ร้านนิยมสุข — เอกสารสำหรับเจ้าของร้านดูภาพรวม และทีมช่าง 2–4 คนใช้ติดตั้ง + ปรับจูนจริง</p>
     </div>
-    <p style="color:#555; margin-bottom:8px;">เลือกหมวดหมู่ที่ต้องการดู:</p>
+
+    <div class="note-box" style="margin-bottom:24px; background:#e3f2fd; border-left-color:#1565c0;">
+      <strong>🔑 สรุประบบ 1 บรรทัด:</strong><br>
+      เสียงจากเวที → มิกเซอร์ X Air 18 → แยก <strong>2 โซน</strong>: ลำโพง<strong>ในอาคาร</strong> (Marani → Yamaha DXR + Sub MA18) / ลำโพง<strong>นอกอาคาร</strong> (dbx 260 → Wharfedale Titan 12 + VL)
+    </div>
+
+    <p style="color:#555; margin-bottom:8px;">เลือกหมวดหมู่ตามคนที่จะอ่าน:</p>
     <div class="card-grid">
       <a href="overview.html" class="cat-card">
-        <div class="card-icon">📋</div>
-        <h3>ภาพรวมระบบ</h3>
-        <p>เข้าใจว่าระบบทำงานอย่างไร อุปกรณ์มีอะไรบ้าง</p>
+        <div class="card-icon">👤</div>
+        <h3>สำหรับเจ้าของร้าน</h3>
+        <p>เข้าใจว่าระบบเสียงคืออะไร ทำงานอย่างไร มีอุปกรณ์อะไรบ้าง</p>
         <ul>
-          <li>ภาพรวม — เสียงวิ่งจากไหนไปไหน</li>
-          <li>รายการอุปกรณ์ทั้งหมด 9 รายการ</li>
+          <li>ระบบ 2 โซน ในอาคาร / นอกอาคาร</li>
+          <li>ไมค์กลอง 7 ตัว → มิกเซอร์ → ลำโพง</li>
+          <li>อุปกรณ์ทั้งหมด 16+ รายการ</li>
         </ul>
         <span class="goto">เปิดดู →</span>
       </a>
       <a href="signal.html" class="cat-card c-signal">
         <div class="card-icon">🔌</div>
-        <h3>เส้นทางสัญญาณ</h3>
-        <p>สายต่อจากไหนไปไหน หัวแจ๊คด้านไหนเป็นแบบไหน</p>
+        <h3>เตรียมสาย &amp; เดินสาย</h3>
+        <p>สรุปว่าต้องซื้อสายอะไรบ้าง กี่เส้น ยาวเท่าไหร่ หัวแบบไหน</p>
         <ul>
-          <li>ผัง Signal Flow ทุกชั้น</li>
-          <li>ตารางสายเคเบิลครบทุกเส้น (A–F)</li>
+          <li>✅ รายการสายต้องซื้อ (Shopping List)</li>
+          <li>ตารางเดินสาย 8 กลุ่ม (A–H)</li>
+          <li>ระบุหัว XLR ผู้/เมีย ทุกเส้น</li>
         </ul>
         <span class="goto">เปิดดู →</span>
       </a>
       <a href="devices.html" class="cat-card c-devices">
         <div class="card-icon">🎛</div>
-        <h3>อุปกรณ์หลัก</h3>
-        <p>รายละเอียดการต่อสายเข้าอุปกรณ์แต่ละตัว</p>
+        <h3>ตั้งค่าอุปกรณ์</h3>
+        <p>วิธีต่อสายเข้าอุปกรณ์แต่ละตัว ช่องไหนทำอะไร</p>
         <ul>
-          <li>Stage Box 3 จุด + มัลติคอร์กลอง</li>
-          <li>ช่อง X Air 18 ทั้ง 18 ช่อง</li>
-          <li>Marani DPA260p+ 6 เอาต์พุต</li>
+          <li>ui12 — ไมค์กลอง 7 ตัว → 4 Bus</li>
+          <li>X Air 18 — 18 ช่อง + 6 Aux Monitor</li>
+          <li>Marani ในอาคาร / dbx 260 นอกอาคาร</li>
         </ul>
         <span class="goto">เปิดดู →</span>
       </a>
       <a href="tasks.html" class="cat-card c-install">
         <div class="card-icon">🔧</div>
-        <h3>การติดตั้ง</h3>
-        <p>แบ่งงานให้ทีมช่างแต่ละกลุ่มทำพร้อมกัน</p>
+        <h3>ติดตั้ง &amp; ปรับจูน</h3>
+        <p>แบ่งทีม 2–4 คน ติดตั้งพร้อมกัน + วิธีปรับจูนระบบ</p>
         <ul>
-          <li>แผนงาน 6 กลุ่ม — ทำคู่ขนานได้</li>
-          <li>หมายเหตุสำคัญและลำดับเปิด-ปิด</li>
+          <li>แผนงาน 5 ทีม — ทำคู่ขนานได้</li>
+          <li>วิธีปรับ EQ / Crossover / Level</li>
+          <li>ลำดับเปิด-ปิดระบบ (สำคัญมาก)</li>
         </ul>
         <span class="goto">เปิดดู →</span>
       </a>
     </div>
+
     <div class="note-box" style="margin-top:28px;">
-      <strong>สรุประบบ:</strong> ไมค์กลอง → SoundCraft ui12 → X Air 18 (มิกเซอร์หลัก) → Marani DPA260p+ → ลำโพงแต่ละโซน<br>
-      กล่องสัญญาณบนเวที 3 จุด (คีย์บอร์ด / ฝั่งซ้าย / ฝั่งขวา) ต่อสเนคไปมิกเซอร์ — ไมค์กลองใช้มัลติคอร์แยกต่างหาก
+      <strong>⚡ 5 สิ่งที่ต้องรู้ก่อนเริ่ม:</strong>
+      <ol style="margin:8px 0 0; padding-left:20px;">
+        <li><strong>กลองใช้มิกเซอร์แยก:</strong> ไมค์กลอง 7 ตัว → ui12 → ส่ง 4 เส้นเข้ามิกเซอร์หลัก (แยก Kick / Snare / Tom+ฉาบ)</li>
+        <li><strong>คีย์บอร์ดผ่าน DI Box:</strong> Output คีย์บอร์ด L+R ต่อเข้า DI Box 2 ตัว ก่อนส่งเข้า Stage Box</li>
+        <li><strong>ในอาคาร vs นอกอาคาร:</strong> เสียงหลักออก Main L+R → Marani (ในอาคาร) / Aux 6 → dbx 260 (นอกอาคาร) แยกอิสระ</li>
+        <li><strong>Monitor 5 จุด:</strong> มือคีย์บอร์ด, มือเบส, นักร้อง, มือกีตาร์, มือกลอง — แต่ละคนปรับ Mix ฟังได้เอง</li>
+        <li><strong>เปิด-ปิดถูกลำดับ:</strong> เปิด: มิกเซอร์ก่อน → แอมป์ทีหลัง / ปิด: แอมป์ก่อน → มิกเซอร์ทีหลัง</li>
+      </ol>
     </div>
   </div>
 </div>
