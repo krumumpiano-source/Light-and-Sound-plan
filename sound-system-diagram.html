@@ -14,15 +14,35 @@
     }
     * { box-sizing: border-box; }
     body { font-family: 'Sarabun', 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #212121; margin: 0; line-height: 1.6; }
-    .page { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .layout { display: flex; min-height: 100vh; }
+
+    /* Sidebar */
+    .sidebar { width: 270px; min-width: 270px; background: #fff; border-right: 1px solid #ddd; padding: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; box-shadow: 2px 0 8px rgba(0,0,0,0.05); z-index: 100; }
+    .sidebar-header { background: var(--blue); color: #fff; padding: 18px 20px 14px; text-align: center; }
+    .sidebar-header h2 { margin: 0; font-size: 1.1em; font-weight: 700; }
+    .sidebar-header .shop-name { font-size: 0.85em; opacity: 0.85; margin-top: 2px; }
+    .sidebar-cat { padding: 0; margin: 0; list-style: none; }
+    .sidebar-cat > li { border-bottom: 1px solid #eee; }
+    .cat-title { display: flex; align-items: center; gap: 8px; padding: 12px 18px 8px; font-weight: 700; font-size: 0.85em; color: #888; text-transform: uppercase; letter-spacing: 0.5px; cursor: default; }
+    .cat-title .cat-icon { width: 20px; height: 20px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75em; color: #fff; flex-shrink: 0; }
+    .cat-title .cat-icon.overview { background: var(--blue); }
+    .cat-title .cat-icon.equipment { background: var(--gray); }
+    .cat-title .cat-icon.signal { background: var(--green); }
+    .cat-title .cat-icon.mixer { background: var(--purple); }
+    .cat-title .cat-icon.install { background: var(--orange); }
+    .cat-title .cat-icon.info { background: #f9a825; }
+    .sidebar-links { list-style: none; padding: 0 0 8px; margin: 0; }
+    .sidebar-links li a { display: block; padding: 6px 18px 6px 46px; color: #444; text-decoration: none; font-size: 0.92em; border-left: 3px solid transparent; transition: all 0.15s; }
+    .sidebar-links li a:hover { background: var(--blue-light); color: var(--blue); border-left-color: var(--blue); }
+    .sidebar-links li a.active { background: var(--blue-light); color: var(--blue); border-left-color: var(--blue); font-weight: 600; }
+    .sidebar-links li a .num { display: inline-block; width: 18px; font-weight: 600; color: #999; margin-right: 4px; font-size: 0.88em; }
+
+    /* Mobile sidebar toggle */
+    .sidebar-toggle { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 200; width: 50px; height: 50px; border-radius: 50%; background: var(--blue); color: #fff; border: none; font-size: 1.5em; cursor: pointer; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+
+    .page { flex: 1; max-width: 900px; margin: 0 auto; padding: 24px 32px; min-width: 0; }
     h1 { text-align: center; color: var(--blue); margin: 0 0 4px; font-size: 1.8em; }
     .subtitle { text-align: center; color: #666; margin-bottom: 32px; font-size: 1.05em; }
-    .toc { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px 28px; margin-bottom: 32px; }
-    .toc h2 { margin: 0 0 10px; font-size: 1.15em; color: var(--blue); }
-    .toc ol { margin: 0; padding-left: 22px; }
-    .toc li { margin-bottom: 4px; }
-    .toc a { color: var(--blue); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
     .section { background: #fff; border-radius: 10px; padding: 24px 28px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
     .section h2 { margin: 0 0 16px; font-size: 1.4em; padding-bottom: 8px; border-bottom: 3px solid var(--blue); color: var(--blue); }
     .section h3 { margin: 20px 0 10px; font-size: 1.15em; color: #333; }
@@ -111,12 +131,19 @@
 
     @media print {
       body { background: #fff; font-size: 11pt; }
+      .layout { display: block; }
+      .sidebar { display: none; }
+      .sidebar-toggle { display: none; }
       .page { max-width: 100%; padding: 0; }
       .section { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
-      .toc { page-break-after: always; }
     }
-    @media (max-width: 700px) {
-      .page { padding: 10px; }
+    @media (max-width: 960px) {
+      .sidebar { position: fixed; left: -280px; top: 0; height: 100vh; transition: left 0.3s; box-shadow: 4px 0 20px rgba(0,0,0,0.15); }
+      .sidebar.open { left: 0; }
+      .sidebar-toggle { display: flex; align-items: center; justify-content: center; }
+      .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+      .sidebar-overlay.show { display: block; }
+      .page { padding: 16px; }
       .flow-row { flex-direction: column; }
       .flow-arrow { transform: rotate(90deg); min-width: auto; padding: 4px; }
       .stagebox-grid { grid-template-columns: 1fr; }
@@ -124,26 +151,64 @@
   </style>
 </head>
 <body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>ระบบเสียง</h2>
+      <div class="shop-name">ร้านนิยมสุข</div>
+    </div>
+    <ul class="sidebar-cat">
+      <!-- หมวด: ภาพรวม -->
+      <li>
+        <div class="cat-title"><span class="cat-icon overview">📋</span> ภาพรวม</div>
+        <ul class="sidebar-links">
+          <li><a href="#overview"><span class="num">1</span> ภาพรวมระบบ</a></li>
+          <li><a href="#equipment"><span class="num">2</span> รายการอุปกรณ์</a></li>
+        </ul>
+      </li>
+      <!-- หมวด: เส้นทางสัญญาณ -->
+      <li>
+        <div class="cat-title"><span class="cat-icon signal">🔊</span> เส้นทางสัญญาณ</div>
+        <ul class="sidebar-links">
+          <li><a href="#flow"><span class="num">3</span> ผัง Signal Flow</a></li>
+          <li><a href="#cables"><span class="num">4</span> ตารางสายเคเบิล</a></li>
+        </ul>
+      </li>
+      <!-- หมวด: อุปกรณ์หลัก -->
+      <li>
+        <div class="cat-title"><span class="cat-icon equipment">🎛</span> อุปกรณ์หลัก</div>
+        <ul class="sidebar-links">
+          <li><a href="#stagebox"><span class="num">5</span> กล่องสัญญาณ (Stage Box)</a></li>
+          <li><a href="#mixerchannel"><span class="num">6</span> ช่อง X Air 18</a></li>
+          <li><a href="#marani"><span class="num">7</span> Marani DPA260p+</a></li>
+        </ul>
+      </li>
+      <!-- หมวด: การติดตั้ง -->
+      <li>
+        <div class="cat-title"><span class="cat-icon install">🔧</span> การติดตั้ง</div>
+        <ul class="sidebar-links">
+          <li><a href="#tasks"><span class="num">8</span> แผนงาน / แบ่งทีม</a></li>
+        </ul>
+      </li>
+      <!-- หมวด: อื่นๆ -->
+      <li>
+        <div class="cat-title"><span class="cat-icon info">💡</span> อื่นๆ</div>
+        <ul class="sidebar-links">
+          <li><a href="#notes"><span class="num">9</span> หมายเหตุสำคัญ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="sidebar-toggle" id="sidebarToggle" title="เมนู">☰</button>
+
 <div class="page">
 
   <h1>คู่มือติดตั้งระบบเสียง — ร้านนิยมสุข</h1>
   <p class="subtitle">เอกสารนี้ใช้สำหรับเจ้าของร้านทำความเข้าใจภาพรวม และทีมช่างใช้แบ่งงานติดตั้งจริง</p>
-
-  <!-- สารบัญ -->
-  <div class="toc" id="toc">
-    <h2>สารบัญ</h2>
-    <ol>
-      <li><a href="#overview">ภาพรวมระบบ — เสียงวิ่งจากไหนไปไหน</a></li>
-      <li><a href="#equipment">รายการอุปกรณ์ทั้งหมด</a></li>
-      <li><a href="#flow">ผังเส้นทางสัญญาณ (Signal Flow)</a></li>
-      <li><a href="#cables">ตารางสายเคเบิลทั้งหมด — สายอะไร หัวอะไร ต่อจากไหนไปไหน</a></li>
-      <li><a href="#stagebox">ผังกล่องสัญญาณบนเวที (Stage Box) — 3 จุด + มัลติคอร์กลอง</a></li>
-      <li><a href="#mixerchannel">ช่องมิกเซอร์ X Air 18 — แต่ละช่องรับอะไร</a></li>
-      <li><a href="#marani">Marani DPA260p+ — 6 เอาต์พุตไปลำโพงไหน</a></li>
-      <li><a href="#tasks">แผนงานติดตั้ง — แบ่งทีมจัดการ</a></li>
-      <li><a href="#notes">หมายเหตุสำคัญ</a></li>
-    </ol>
-  </div>
 
   <!-- =========================================== -->
   <!-- 1. ภาพรวม -->
@@ -713,5 +778,45 @@
   </div>
 
 </div>
+</div>
+
+<script>
+// Sidebar toggle (mobile)
+const sidebar = document.getElementById('sidebar');
+const toggle = document.getElementById('sidebarToggle');
+const overlay = document.getElementById('sidebarOverlay');
+toggle.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('show');
+});
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('show');
+});
+
+// Active link highlight on scroll
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.sidebar-links a');
+function updateActive() {
+  let current = '';
+  const scrollY = window.scrollY + 80;
+  sections.forEach(sec => {
+    if (sec.offsetTop <= scrollY) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+window.addEventListener('scroll', updateActive, { passive: true });
+updateActive();
+
+// Smooth scroll + close mobile sidebar
+navLinks.forEach(a => {
+  a.addEventListener('click', (e) => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  });
+});
+</script>
 </body>
 </html>
