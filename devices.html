@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>อุปกรณ์หลัก — คู่มือเสียงร้านนิยมสุข</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎛</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>ระบบเสียง</h2>
+      <div class="shop-name">ร้านนิยมสุข</div>
+    </div>
+    <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
+    <ul class="sidebar-cat">
+      <li>
+        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
+        <ul class="sidebar-links">
+          <li><a href="overview.html">1. ภาพรวมระบบ</a></li>
+          <li><a href="overview.html#equipment">2. รายการอุปกรณ์</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
+        <ul class="sidebar-links">
+          <li><a href="signal.html">3. ผัง Signal Flow</a></li>
+          <li><a href="signal.html#cables">4. ตารางสายเคเบิล</a></li>
+        </ul>
+      </li>
+      <li class="current">
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
+        <ul class="sidebar-links">
+          <li><a href="#stagebox">5. กล่องสัญญาณ (Stage Box)</a></li>
+          <li><a href="#mixerchannel">6. ช่อง X Air 18</a></li>
+          <li><a href="#marani">7. Marani DPA260p+</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
+        <ul class="sidebar-links">
+          <li><a href="tasks.html">8. แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#notes">9. หมายเหตุสำคัญ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+
+  <div class="page">
+
+    <div class="section" id="stagebox">
+      <h2>📦 5. กล่องสัญญาณบนเวที (Stage Box)</h2>
+      <p>วางกล่องสัญญาณ 3 จุดบนเวที รับสัญญาณแล้วส่งผ่าน Stage Snake มาที่มิกเซอร์</p>
+
+      <div class="stagebox-grid">
+        <div class="stagebox-card sb-kb">
+          <div class="sb-title">🎹 Stage Box คีย์บอร์ด</div>
+          <div class="sb-location">ตำแหน่ง: บริเวณคีย์บอร์ด กลางเวที</div>
+          <table>
+            <thead><tr><th>Input</th><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>หัวสาย</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>X Air Ch1</td><td>คีย์บอร์ด L</td><td>XLR / TRS</td></tr>
+              <tr><td>2</td><td>X Air Ch2</td><td>คีย์บอร์ด R</td><td>XLR / TRS</td></tr>
+              <tr><td>3</td><td>X Air Ch3</td><td>ไมค์ร้อง (หน้า)</td><td>XLR</td></tr>
+              <tr><td>4</td><td>X Air Ch4</td><td>ไมค์ร้อง (กลาง)</td><td>XLR</td></tr>
+              <tr><td>5–8</td><td>X Air Ch5–8</td><td>สำรอง</td><td>XLR</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="stagebox-card sb-left">
+          <div class="sb-title">⬅ Stage Box ฝั่งซ้าย</div>
+          <div class="sb-location">ตำแหน่ง: ขอบซ้ายเวที</div>
+          <table>
+            <thead><tr><th>Input</th><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>หัวสาย</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>X Air Ch9</td><td>กีตาร์ไฟฟ้า L (DI)</td><td>XLR / TRS</td></tr>
+              <tr><td>2</td><td>X Air Ch10</td><td>เบส (DI)</td><td>XLR / TRS</td></tr>
+              <tr><td>3</td><td>X Air Ch11</td><td>ไมค์ตู้แอมป์</td><td>XLR</td></tr>
+              <tr><td>4</td><td>X Air Ch12</td><td>สำรอง</td><td>XLR</td></tr>
+              <tr><td>5–8</td><td>X Air Ch13–16</td><td>สำรอง</td><td>XLR</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="stagebox-card sb-right">
+          <div class="sb-title">➡ Stage Box ฝั่งขวา</div>
+          <div class="sb-location">ตำแหน่ง: ขอบขวาเวที</div>
+          <table>
+            <thead><tr><th>Input</th><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>หัวสาย</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>X Air Ch17</td><td>กีตาร์โปร่ง / อื่นๆ</td><td>XLR / TRS</td></tr>
+              <tr><td>2</td><td>X Air Ch18</td><td>ไมค์พิธีกร</td><td>XLR</td></tr>
+              <tr><td>3–4</td><td>สำรอง</td><td>—</td><td>XLR</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="stagebox-card sb-drum">
+          <div class="sb-title">🥁 มัลติคอร์กลอง (Drum Multicore)</div>
+          <div class="sb-location">ตำแหน่ง: ชุดกลองบนเวที → ไป SoundCraft ui12</div>
+          <table>
+            <thead><tr><th>ไมค์</th><th>ช่อง</th><th>ตำแหน่งติดตั้ง</th><th>หัวสาย</th></tr></thead>
+            <tbody>
+              <tr><td>Kick</td><td>ui12 Ch1</td><td>ด้านในกลองเบส</td><td>XLR</td></tr>
+              <tr><td>Snare Top</td><td>ui12 Ch2</td><td>ขอบบน Snare</td><td>XLR</td></tr>
+              <tr><td>Hi-Hat</td><td>ui12 Ch3</td><td>เหนือ HH ~5cm</td><td>XLR</td></tr>
+              <tr><td>Tom 1</td><td>ui12 Ch4</td><td>ขอบ Tom ตัวแรก</td><td>XLR</td></tr>
+              <tr><td>Tom 2</td><td>ui12 Ch5</td><td>ขอบ Tom ตัวสอง</td><td>XLR</td></tr>
+              <tr><td>OH Stereo</td><td>ui12 Ch6–7</td><td>แขวนเหนือชุดกลอง</td><td>XLR ×2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="mixerchannel">
+      <h2>🎛 6. การจัดช่อง Behringer X Air 18</h2>
+
+      <h3>Input Channels (Ch 1–18)</h3>
+      <table>
+        <thead>
+          <tr><th>Ch</th><th>แหล่งสัญญาณ</th><th>ที่มา</th><th>ประเภท</th><th>แกน</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>คีย์บอร์ด L</td><td>Stage Box KB</td><td><span class="badge-line">Line</span></td><td>L</td></tr>
+          <tr><td>2</td><td>คีย์บอร์ด R</td><td>Stage Box KB</td><td><span class="badge-line">Line</span></td><td>R</td></tr>
+          <tr><td>3</td><td>ไมค์ร้อง (หน้า)</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>C</td></tr>
+          <tr><td>4</td><td>ไมค์ร้อง (กลาง)</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>C</td></tr>
+          <tr><td>5–8</td><td>สำรอง (KB Box)</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>—</td></tr>
+          <tr><td>9</td><td>กีตาร์ไฟฟ้า L</td><td>Stage Box L</td><td><span class="badge-di">DI</span></td><td>L</td></tr>
+          <tr><td>10</td><td>เบส</td><td>Stage Box L</td><td><span class="badge-di">DI</span></td><td>C</td></tr>
+          <tr><td>11</td><td>ไมค์แอมป์กีตาร์</td><td>Stage Box L</td><td><span class="badge-mic">Mic</span></td><td>L/R</td></tr>
+          <tr><td>12–16</td><td>สำรอง (L Box)</td><td>Stage Box L</td><td><span class="badge-mic">Mic</span></td><td>—</td></tr>
+          <tr><td>17</td><td>กีตาร์โปร่ง / เครื่องดนตรีอื่น</td><td>Stage Box R</td><td><span class="badge-mic">Mic</span></td><td>R</td></tr>
+          <tr><td>18</td><td>ไมค์พิธีกร</td><td>Stage Box R</td><td><span class="badge-mic">Mic</span></td><td>C</td></tr>
+          <tr><td>17–18*</td><td>กลองสเตอริโอ (จาก ui12)</td><td>SoundCraft ui12 Main</td><td><span class="badge-line">Line</span></td><td>L+R</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Aux / Bus Outputs</h3>
+      <table>
+        <thead><tr><th>Bus</th><th>ไปที่</th><th>เนื้อหาสัญญาณ</th></tr></thead>
+        <tbody>
+          <tr><td>Main L+R</td><td>Marani In 1–2</td><td>FOH Mix เต็มระบบ</td></tr>
+          <tr><td>Aux 1</td><td>Marani In 3</td><td>Zone กลางห้อง</td></tr>
+          <tr><td>Aux 2</td><td>Marani In 4</td><td>Zone หน้าร้าน</td></tr>
+          <tr><td>Aux 3</td><td>Marani In 5</td><td>Stage Monitor Mix</td></tr>
+          <tr><td>Aux 4</td><td>สำรอง</td><td>—</td></tr>
+          <tr><td>Aux 5–6</td><td>สำรอง</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section" id="marani">
+      <h2>🔋 7. Marani DPA260p+ — Output Mapping</h2>
+      <p>Marani DPA260p+ เป็น DSP Processor + Power Amplifier ในตัวเดียว 6 ช่องเอาต์พุต</p>
+      <table>
+        <thead>
+          <tr><th>Output</th><th>โซนลำโพง</th><th>Input จาก X Air 18</th><th>หมายเหตุ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Out 1</td><td>เวที L (Main Stage L)</td><td>Main L</td><td>ลำโพงหลักฝั่งซ้าย</td></tr>
+          <tr><td>Out 2</td><td>เวที R (Main Stage R)</td><td>Main R</td><td>ลำโพงหลักฝั่งขวา</td></tr>
+          <tr><td>Out 3</td><td>กลางห้อง L</td><td>Aux 1</td><td>ลำโพงกระจายเสียงกลาง</td></tr>
+          <tr><td>Out 4</td><td>กลางห้อง R</td><td>Aux 1 (สเตอริโอ)</td><td>ลำโพงกระจายเสียงกลาง</td></tr>
+          <tr><td>Out 5</td><td>มอนิเตอร์เวที L</td><td>Aux 3</td><td>ลำโพงหันกลับหาศิลปิน</td></tr>
+          <tr><td>Out 6</td><td>มอนิเตอร์เวที R</td><td>Aux 3 (สเตอริโอ)</td><td>ลำโพงหันกลับหาศิลปิน</td></tr>
+        </tbody>
+      </table>
+      <div class="note-box" style="margin-top:16px;">
+        <strong>หมายเหตุ Marani:</strong> ตั้งค่า DSP ก่อนใช้งาน — EQ, Limiter, Delay แต่ละโซนผ่าน PC Software หรือหน้าจอตัวเครื่อง ห้ามเปิดวอลุ่มเต็มก่อน Soundcheck
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+const toggle  = document.getElementById('sidebarToggle');
+const overlay = document.getElementById('sidebarOverlay');
+toggle.addEventListener('click',()=>{ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+overlay.addEventListener('click',()=>{ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+
+const sections = document.querySelectorAll('.section');
+const catItems = document.querySelectorAll('.sidebar-cat > li.current .sidebar-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  catItems.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+</script>
+</body>
+</html>

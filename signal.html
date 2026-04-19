@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เส้นทางสัญญาณ — คู่มือเสียงร้านนิยมสุข</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔌</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>ระบบเสียง</h2>
+      <div class="shop-name">ร้านนิยมสุข</div>
+    </div>
+    <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
+    <ul class="sidebar-cat">
+      <li>
+        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
+        <ul class="sidebar-links">
+          <li><a href="overview.html">1. ภาพรวมระบบ</a></li>
+          <li><a href="overview.html#equipment">2. รายการอุปกรณ์</a></li>
+        </ul>
+      </li>
+      <li class="current">
+        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
+        <ul class="sidebar-links">
+          <li><a href="#flow">3. ผัง Signal Flow</a></li>
+          <li><a href="#cables">4. ตารางสายเคเบิล</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
+        <ul class="sidebar-links">
+          <li><a href="devices.html">5. กล่องสัญญาณ (Stage Box)</a></li>
+          <li><a href="devices.html#mixerchannel">6. ช่อง X Air 18</a></li>
+          <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
+        <ul class="sidebar-links">
+          <li><a href="tasks.html">8. แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#notes">9. หมายเหตุสำคัญ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+
+  <div class="page">
+
+    <div class="section" id="flow">
+      <h2>🔊 3. ผัง Signal Flow</h2>
+      <p>เสียงวิ่งจากแหล่งกำเนิดไปลำโพงผ่าน 4 ชั้น — ไมค์/เครื่องดนตรี → Stage Box → มิกเซอร์ → แอมป์/ลำโพง</p>
+
+      <h3>ชั้น 1 — แหล่งกำเนิดเสียง (Sources)</h3>
+      <div class="flow-row">
+        <div class="flow-box flow-input">ไมโครโฟน<br><small>บนเวที</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-input">เครื่องดนตรี DI<br><small>คีย์บอร์ด / เบส</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-input">ไมค์กลอง<br><small>6 ตัว</small></div>
+      </div>
+
+      <h3 style="margin-top:18px;">ชั้น 2 — กล่องสัญญาณบนเวที (Stage Boxes)</h3>
+      <div class="flow-row">
+        <div class="flow-box flow-device">Stage Box คีย์บอร์ด<br><small>8in Ch1–8</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Stage Box ซ้าย<br><small>8in Ch9–16</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Stage Box ขวา<br><small>4in Ch17–20</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Drum Multicore<br><small>12ch → ui12</small></div>
+      </div>
+
+      <h3 style="margin-top:18px;">ชั้น 3 — มิกเซอร์ (Mixing)</h3>
+      <div class="flow-row">
+        <div class="flow-box flow-device">SoundCraft ui12<br><small>รับกลอง → Stereo Bus</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device" style="background:#c8e6c9;">Behringer X Air 18<br><small>มิกเซอร์หลัก ควบคุมทุก Zone</small></div>
+      </div>
+
+      <h3 style="margin-top:18px;">ชั้น 4 — เอาต์พุต (Output)</h3>
+      <div class="flow-row">
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Main L+R / Aux 1–6</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Marani DPA260p+<br><small>DSP + Power Amp</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-output">ลำโพง 6 โซน<br><small>Out 1–6</small></div>
+      </div>
+    </div>
+
+    <div class="section" id="cables">
+      <h2>🔌 4. ตารางสายเคเบิล</h2>
+
+      <h3>กลุ่ม A — Stage Box คีย์บอร์ด → X Air 18</h3>
+      <table>
+        <thead><tr><th>รหัส</th><th>จาก</th><th>ไป</th><th>สายชนิด</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>ความยาว</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Stage Box KB</td><td>Snake ห้อง</td><td><span class="cable-snake">Snake</span></td><td>XLR Female</td><td>XLR Male</td><td>~20m</td></tr>
+          <tr><td>A2</td><td>Snake ห้อง</td><td>X Air 18 Ch1–8</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female (Input)</td><td>~2m×8</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม B — Stage Box ซ้าย → X Air 18</h3>
+      <table>
+        <thead><tr><th>รหัส</th><th>จาก</th><th>ไป</th><th>สายชนิด</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>ความยาว</th></tr></thead>
+        <tbody>
+          <tr><td>B1</td><td>Stage Box L</td><td>Snake ห้อง</td><td><span class="cable-snake">Snake</span></td><td>XLR Female</td><td>XLR Male</td><td>~20m</td></tr>
+          <tr><td>B2</td><td>Snake ห้อง</td><td>X Air 18 Ch9–16</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female (Input)</td><td>~2m×8</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม C — Stage Box ขวา → X Air 18</h3>
+      <table>
+        <thead><tr><th>รหัส</th><th>จาก</th><th>ไป</th><th>สายชนิด</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>ความยาว</th></tr></thead>
+        <tbody>
+          <tr><td>C1</td><td>Stage Box R</td><td>Snake ห้อง</td><td><span class="cable-snake">Snake</span></td><td>XLR Female</td><td>XLR Male</td><td>~15m</td></tr>
+          <tr><td>C2</td><td>Snake ห้อง</td><td>X Air 18 Ch17–18</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female (Input)</td><td>~2m×2</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม D — Drum Multicore → SoundCraft ui12</h3>
+      <table>
+        <thead><tr><th>รหัส</th><th>จาก</th><th>ไป</th><th>สายชนิด</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>ความยาว</th></tr></thead>
+        <tbody>
+          <tr><td>D1</td><td>ชุดกลอง (เวที)</td><td>Drum Multicore</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male (ไมค์)</td><td>XLR Female (Box)</td><td>~3m×6</td></tr>
+          <tr><td>D2</td><td>Drum Multicore</td><td>SoundCraft ui12 Ch1–6</td><td><span class="cable-snake">Snake</span></td><td>XLR Male</td><td>XLR Female (Input)</td><td>~15m</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม E — SoundCraft ui12 → X Air 18</h3>
+      <table>
+        <thead><tr><th>รหัส</th><th>จาก</th><th>ไป</th><th>สายชนิด</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>ความยาว</th></tr></thead>
+        <tbody>
+          <tr><td>E1</td><td>ui12 Main L</td><td>X Air 18 Ch Input (L)</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female</td><td>~3m</td></tr>
+          <tr><td>E2</td><td>ui12 Main R</td><td>X Air 18 Ch Input (R)</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female</td><td>~3m</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม F — X Air 18 → Marani → ลำโพง</h3>
+      <table>
+        <thead><tr><th>รหัส</th><th>จาก</th><th>ไป</th><th>สายชนิด</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>ความยาว</th></tr></thead>
+        <tbody>
+          <tr><td>F1</td><td>X Air 18 Main L</td><td>Marani Input L</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female</td><td>~3m</td></tr>
+          <tr><td>F2</td><td>X Air 18 Main R</td><td>Marani Input R</td><td><span class="cable-xlr">XLR</span></td><td>XLR Male</td><td>XLR Female</td><td>~3m</td></tr>
+          <tr><td>F3</td><td>X Air 18 Aux 1</td><td>Marani Input Ch3</td><td><span class="cable-trs">TRS</span></td><td>TRS 1/4"</td><td>XLR Female</td><td>~3m</td></tr>
+          <tr><td>F4</td><td>X Air 18 Aux 2</td><td>Marani Input Ch4</td><td><span class="cable-trs">TRS</span></td><td>TRS 1/4"</td><td>XLR Female</td><td>~3m</td></tr>
+          <tr><td>F5</td><td>X Air 18 Aux 3</td><td>Marani Input Ch5 (Monitor)</td><td><span class="cable-trs">TRS</span></td><td>TRS 1/4"</td><td>XLR Female</td><td>~5m</td></tr>
+          <tr><td>F6</td><td>Marani Out 1–2</td><td>ลำโพงเวที L+R</td><td><span class="cable-speaker">Speaker</span></td><td>Speakon</td><td>Speakon</td><td>~10m×2</td></tr>
+          <tr><td>F7</td><td>Marani Out 3–4</td><td>ลำโพงกลางห้อง L+R</td><td><span class="cable-speaker">Speaker</span></td><td>Speakon</td><td>Speakon</td><td>~15m×2</td></tr>
+          <tr><td>F8</td><td>Marani Out 5–6</td><td>มอนิเตอร์เวที</td><td><span class="cable-speaker">Speaker</span></td><td>Speakon</td><td>Speakon</td><td>~8m×2</td></tr>
+        </tbody>
+      </table>
+
+      <div class="legend" style="margin-top:16px;">
+        <div class="legend-item"><span class="cable-xlr">XLR</span> Balanced mic/line</div>
+        <div class="legend-item"><span class="cable-snake">Snake</span> มัลติคอร์ Stage</div>
+        <div class="legend-item"><span class="cable-speaker">Speaker</span> สายลำโพง</div>
+        <div class="legend-item"><span class="cable-trs">TRS</span> Balanced 1/4"</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+const toggle  = document.getElementById('sidebarToggle');
+const overlay = document.getElementById('sidebarOverlay');
+toggle.addEventListener('click',()=>{ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+overlay.addEventListener('click',()=>{ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+
+const sections = document.querySelectorAll('.section');
+const catItems = document.querySelectorAll('.sidebar-cat > li.current .sidebar-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  catItems.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+</script>
+</body>
+</html>

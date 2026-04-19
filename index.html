@@ -4,820 +4,111 @@
   <meta charset="UTF-8">
   <title>คู่มือติดตั้งระบบเสียง — ร้านนิยมสุข</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔊</text></svg>">
-  <style>
-    :root {
-      --blue: #1565c0; --blue-light: #e3f2fd; --blue-border: #90caf9;
-      --green: #2e7d32; --green-light: #e8f5e9; --green-border: #a5d6a7;
-      --orange: #e65100; --orange-light: #fff3e0; --orange-border: #ffcc80;
-      --purple: #6a1b9a; --purple-light: #f3e5f5; --purple-border: #ce93d8;
-      --red: #c62828; --red-light: #ffebee; --red-border: #ef9a9a;
-      --gray: #546e7a; --gray-light: #eceff1; --gray-border: #b0bec5;
-    }
-    * { box-sizing: border-box; }
-    body { font-family: 'Sarabun', 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #212121; margin: 0; line-height: 1.6; }
-    .layout { display: flex; min-height: 100vh; }
-
-    /* Sidebar */
-    .sidebar { width: 270px; min-width: 270px; background: #fff; border-right: 1px solid #ddd; padding: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; box-shadow: 2px 0 8px rgba(0,0,0,0.05); z-index: 100; }
-    .sidebar-header { background: var(--blue); color: #fff; padding: 18px 20px 14px; text-align: center; }
-    .sidebar-header h2 { margin: 0; font-size: 1.1em; font-weight: 700; }
-    .sidebar-header .shop-name { font-size: 0.85em; opacity: 0.85; margin-top: 2px; }
-    .sidebar-cat { padding: 0; margin: 0; list-style: none; }
-    .sidebar-cat > li { border-bottom: 1px solid #eee; }
-    .cat-title { display: flex; align-items: center; gap: 8px; padding: 12px 18px 8px; font-weight: 700; font-size: 0.85em; color: #888; text-transform: uppercase; letter-spacing: 0.5px; cursor: default; }
-    .cat-title .cat-icon { width: 20px; height: 20px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75em; color: #fff; flex-shrink: 0; }
-    .cat-title .cat-icon.overview { background: var(--blue); }
-    .cat-title .cat-icon.equipment { background: var(--gray); }
-    .cat-title .cat-icon.signal { background: var(--green); }
-    .cat-title .cat-icon.mixer { background: var(--purple); }
-    .cat-title .cat-icon.install { background: var(--orange); }
-    .cat-title .cat-icon.info { background: #f9a825; }
-    .sidebar-links { list-style: none; padding: 0 0 8px; margin: 0; }
-    .sidebar-links li a { display: block; padding: 6px 18px 6px 46px; color: #444; text-decoration: none; font-size: 0.92em; border-left: 3px solid transparent; transition: all 0.15s; }
-    .sidebar-links li a:hover { background: var(--blue-light); color: var(--blue); border-left-color: var(--blue); }
-    .sidebar-links li a.active { background: var(--blue-light); color: var(--blue); border-left-color: var(--blue); font-weight: 600; }
-    .sidebar-links li a .num { display: inline-block; width: 18px; font-weight: 600; color: #999; margin-right: 4px; font-size: 0.88em; }
-
-    /* Mobile sidebar toggle */
-    .sidebar-toggle { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 200; width: 50px; height: 50px; border-radius: 50%; background: var(--blue); color: #fff; border: none; font-size: 1.5em; cursor: pointer; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
-
-    .page { flex: 1; max-width: 900px; margin: 0 auto; padding: 24px 32px; min-width: 0; }
-    h1 { text-align: center; color: var(--blue); margin: 0 0 4px; font-size: 1.8em; }
-    .subtitle { text-align: center; color: #666; margin-bottom: 32px; font-size: 1.05em; }
-    .section { background: #fff; border-radius: 10px; padding: 24px 28px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-    .section h2 { margin: 0 0 16px; font-size: 1.4em; padding-bottom: 8px; border-bottom: 3px solid var(--blue); color: var(--blue); }
-    .section h3 { margin: 20px 0 10px; font-size: 1.15em; color: #333; }
-
-    /* Legend */
-    .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
-    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.9em; }
-    .legend-color { width: 18px; height: 18px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.15); }
-
-    /* Equipment table */
-    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.95em; }
-    th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
-    th { background: var(--blue-light); color: var(--blue); font-weight: 600; white-space: nowrap; }
-    tr:nth-child(even) { background: #fafafa; }
-
-    /* Flow diagram */
-    .flow { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 20px 0; }
-    .flow-row { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
-    .flow-box { background: #fff; border: 2px solid var(--blue-border); border-radius: 10px; padding: 12px 16px; text-align: center; min-width: 140px; position: relative; }
-    .flow-box.mixer { border-color: var(--blue); background: var(--blue-light); }
-    .flow-box.processor { border-color: var(--purple); background: var(--purple-light); }
-    .flow-box.speaker-active { border-color: var(--green); background: var(--green-light); }
-    .flow-box.speaker-passive { border-color: var(--orange); background: var(--orange-light); }
-    .flow-box.amp { border-color: var(--red); background: var(--red-light); }
-    .flow-box.stagebox { border-color: var(--gray); background: var(--gray-light); }
-    .flow-box .name { font-weight: 700; font-size: 1em; }
-    .flow-box .detail { font-size: 0.82em; color: #555; margin-top: 2px; }
-    .flow-arrow { display: flex; flex-direction: column; align-items: center; padding: 0 8px; color: #888; font-size: 0.78em; min-width: 80px; }
-    .flow-arrow .arrow-line { font-size: 1.6em; line-height: 1; }
-    .flow-arrow .arrow-label { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 1px 6px; font-size: 0.85em; white-space: nowrap; }
-    .flow-arrow-down { display: flex; flex-direction: column; align-items: center; padding: 4px 0; color: #888; font-size: 0.78em; }
-    .flow-arrow-down .arrow-line { font-size: 1.6em; line-height: 1; }
-    .flow-spread { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 0; }
-
-    /* Cable table color coding */
-    .cable-xlr { background: var(--blue-light); }
-    .cable-snake { background: var(--orange-light); }
-    .cable-speaker { background: var(--green-light); }
-    .cable-wire { background: var(--purple-light); }
-    .cable-trs { background: #fff8e1; }
-    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.82em; font-weight: 600; }
-    .badge-xlr { background: var(--blue); color: #fff; }
-    .badge-trs { background: #f9a825; color: #fff; }
-    .badge-snake { background: var(--orange); color: #fff; }
-    .badge-speakon { background: var(--green); color: #fff; }
-    .badge-wire { background: var(--purple); color: #fff; }
-    .badge-active { background: var(--green); color: #fff; }
-    .badge-passive { background: var(--orange); color: #fff; }
-
-    /* Stage box cards */
-    .stagebox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 14px; }
-    .stagebox-card { border: 2px solid var(--gray-border); border-radius: 10px; padding: 16px; background: #fff; }
-    .stagebox-card h4 { margin: 0 0 6px; color: var(--blue); font-size: 1.1em; }
-    .stagebox-card .desc { color: #666; font-size: 0.9em; margin-bottom: 10px; }
-    .port-section { margin-top: 10px; }
-    .port-section h5 { margin: 0 0 4px; font-size: 0.95em; }
-    .port-section h5.input-title { color: var(--green); }
-    .port-section h5.output-title { color: var(--orange); }
-    .port-table { width: 100%; margin-bottom: 8px; }
-    .port-table td { padding: 3px 6px; font-size: 0.9em; border: 1px solid #e0e0e0; }
-    .port-table td:first-child { white-space: nowrap; font-weight: 600; width: 30px; }
-
-    /* Work breakdown */
-    .task-card { border-left: 5px solid var(--blue); background: #fff; padding: 14px 18px; margin-bottom: 14px; border-radius: 0 8px 8px 0; }
-    .task-card h4 { margin: 0 0 6px; color: var(--blue); }
-    .task-card .team { font-size: 0.88em; color: #888; margin-bottom: 6px; }
-    .task-card ul { margin: 0; padding-left: 20px; }
-    .task-card li { margin-bottom: 3px; }
-    .task-card.zone-drum { border-color: var(--red); }
-    .task-card.zone-drum h4 { color: var(--red); }
-    .task-card.zone-stage { border-color: var(--green); }
-    .task-card.zone-stage h4 { color: var(--green); }
-    .task-card.zone-mixer { border-color: var(--blue); }
-    .task-card.zone-speaker { border-color: var(--orange); }
-    .task-card.zone-speaker h4 { color: var(--orange); }
-    .task-card.zone-power { border-color: var(--purple); }
-    .task-card.zone-power h4 { color: var(--purple); }
-
-    .note-box { background: #fffde7; border-left: 5px solid #f9a825; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-top: 18px; }
-    .note-box ul { margin: 0; padding-left: 20px; }
-
-    .connector-diagram { font-family: 'Courier New', monospace; background: #263238; color: #e0e0e0; padding: 16px; border-radius: 8px; font-size: 0.88em; overflow-x: auto; white-space: pre; line-height: 1.5; margin: 12px 0; }
-    .connector-diagram .highlight { color: #4fc3f7; }
-    .connector-diagram .signal { color: #81c784; }
-    .connector-diagram .device { color: #ffb74d; }
-
-    @media print {
-      body { background: #fff; font-size: 11pt; }
-      .layout { display: block; }
-      .sidebar { display: none; }
-      .sidebar-toggle { display: none; }
-      .page { max-width: 100%; padding: 0; }
-      .section { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
-    }
-    @media (max-width: 960px) {
-      .sidebar { position: fixed; left: -280px; top: 0; height: 100vh; transition: left 0.3s; box-shadow: 4px 0 20px rgba(0,0,0,0.15); }
-      .sidebar.open { left: 0; }
-      .sidebar-toggle { display: flex; align-items: center; justify-content: center; }
-      .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
-      .sidebar-overlay.show { display: block; }
-      .page { padding: 16px; }
-      .flow-row { flex-direction: column; }
-      .flow-arrow { transform: rotate(90deg); min-width: auto; padding: 4px; }
-      .stagebox-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="layout">
-
-  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <h2>ระบบเสียง</h2>
       <div class="shop-name">ร้านนิยมสุข</div>
     </div>
+    <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
     <ul class="sidebar-cat">
-      <!-- หมวด: ภาพรวม -->
       <li>
-        <div class="cat-title"><span class="cat-icon overview">📋</span> ภาพรวม</div>
+        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
         <ul class="sidebar-links">
-          <li><a href="#overview"><span class="num">1</span> ภาพรวมระบบ</a></li>
-          <li><a href="#equipment"><span class="num">2</span> รายการอุปกรณ์</a></li>
+          <li><a href="overview.html">1. ภาพรวมระบบ</a></li>
+          <li><a href="overview.html#equipment">2. รายการอุปกรณ์</a></li>
         </ul>
       </li>
-      <!-- หมวด: เส้นทางสัญญาณ -->
       <li>
-        <div class="cat-title"><span class="cat-icon signal">🔊</span> เส้นทางสัญญาณ</div>
+        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
         <ul class="sidebar-links">
-          <li><a href="#flow"><span class="num">3</span> ผัง Signal Flow</a></li>
-          <li><a href="#cables"><span class="num">4</span> ตารางสายเคเบิล</a></li>
+          <li><a href="signal.html">3. ผัง Signal Flow</a></li>
+          <li><a href="signal.html#cables">4. ตารางสายเคเบิล</a></li>
         </ul>
       </li>
-      <!-- หมวด: อุปกรณ์หลัก -->
       <li>
-        <div class="cat-title"><span class="cat-icon equipment">🎛</span> อุปกรณ์หลัก</div>
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
         <ul class="sidebar-links">
-          <li><a href="#stagebox"><span class="num">5</span> กล่องสัญญาณ (Stage Box)</a></li>
-          <li><a href="#mixerchannel"><span class="num">6</span> ช่อง X Air 18</a></li>
-          <li><a href="#marani"><span class="num">7</span> Marani DPA260p+</a></li>
+          <li><a href="devices.html">5. กล่องสัญญาณ (Stage Box)</a></li>
+          <li><a href="devices.html#mixerchannel">6. ช่อง X Air 18</a></li>
+          <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
         </ul>
       </li>
-      <!-- หมวด: การติดตั้ง -->
       <li>
-        <div class="cat-title"><span class="cat-icon install">🔧</span> การติดตั้ง</div>
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
         <ul class="sidebar-links">
-          <li><a href="#tasks"><span class="num">8</span> แผนงาน / แบ่งทีม</a></li>
-        </ul>
-      </li>
-      <!-- หมวด: อื่นๆ -->
-      <li>
-        <div class="cat-title"><span class="cat-icon info">💡</span> อื่นๆ</div>
-        <ul class="sidebar-links">
-          <li><a href="#notes"><span class="num">9</span> หมายเหตุสำคัญ</a></li>
+          <li><a href="tasks.html">8. แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#notes">9. หมายเหตุสำคัญ</a></li>
         </ul>
       </li>
     </ul>
   </nav>
-
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <button class="sidebar-toggle" id="sidebarToggle" title="เมนู">☰</button>
-
-<div class="page">
-
-  <h1>คู่มือติดตั้งระบบเสียง — ร้านนิยมสุข</h1>
-  <p class="subtitle">เอกสารนี้ใช้สำหรับเจ้าของร้านทำความเข้าใจภาพรวม และทีมช่างใช้แบ่งงานติดตั้งจริง</p>
-
-  <!-- =========================================== -->
-  <!-- 1. ภาพรวม -->
-  <!-- =========================================== -->
-  <div class="section" id="overview">
-    <h2>1. ภาพรวมระบบ — เสียงวิ่งจากไหนไปไหน</h2>
-    <p>ร้านมี <strong>2 โซนลำโพง</strong> (ในร้าน + นอกร้าน) โดยเสียงทุกอย่างรวมเข้า <strong>มิกเซอร์หลัก 1 ตัว</strong> แล้วกระจายผ่าน <strong>โปรเซสเซอร์</strong> ไปยังลำโพงแต่ละจุด</p>
-
-    <div class="connector-diagram"><span class="signal">เวทีกลอง</span> ──มัลติคอร์──▶ <span class="device">SoundCraft ui12</span> (ซับมิกเซอร์กลอง)
-                                       │
-                                  4 เส้น XLR
-                                       ▼
-<span class="signal">3 กล่องสัญญาณบนเวที</span> ──สเนค──▶ <span class="device">Behringer X Air 18</span> (มิกเซอร์หลัก)
-                                       │
-                                  Main L/R  XLR
-                                       ▼
-                              <span class="device">Marani DPA260p+</span> (โปรเซสเซอร์)
-                         ┌──────┬──────┼──────┬──────┐
-                       Out1-2  Out3  Out4   Out5   Out6
-                         │       │     │      │      │
-                         ▼       ▼     ▼      ▼      ▼
-                     <span class="highlight">DXR12×4</span>  <span class="highlight">Amp</span>   <span class="highlight">Amp</span>  <span class="highlight">MA118×2</span> <span class="highlight">Amp</span>
-                     ในร้าน    Ch1   Ch2   ซับวูฟ   Ch3
-                     (แอคทีฟ)   │     │   (แอคทีฟ)   │
-                              ▼     ▼              ▼
-                          <span class="highlight">Titan12</span> <span class="highlight">Titan12</span>      <span class="highlight">MT-65B×3</span>
-                           ซ้าย   ขวา         นอกร้าน
-                         นอกร้าน  นอกร้าน     (พ่วง 3 ตัว)</div>
-
-    <div class="legend">
-      <div class="legend-item"><div class="legend-color" style="background:var(--blue)"></div> สายสัญญาณ XLR (บาลานซ์)</div>
-      <div class="legend-item"><div class="legend-color" style="background:#f9a825"></div> สาย TRS 1/4"</div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--orange)"></div> มัลติคอร์/สเนค</div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--green)"></div> สายลำโพง Speakon</div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--purple)"></div> สายลำโพง (สายเปล่า/ขั้วต่อ)</div>
+  <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+  <div class="page">
+    <div class="hero">
+      <h1>🔊 คู่มือติดตั้งระบบเสียง</h1>
+      <p>ร้านนิยมสุข — เอกสารสำหรับเจ้าของร้านทำความเข้าใจภาพรวม และทีมช่างใช้แบ่งงานติดตั้งจริง</p>
+    </div>
+    <p style="color:#555; margin-bottom:8px;">เลือกหมวดหมู่ที่ต้องการดู:</p>
+    <div class="card-grid">
+      <a href="overview.html" class="cat-card">
+        <div class="card-icon">📋</div>
+        <h3>ภาพรวมระบบ</h3>
+        <p>เข้าใจว่าระบบทำงานอย่างไร อุปกรณ์มีอะไรบ้าง</p>
+        <ul>
+          <li>ภาพรวม — เสียงวิ่งจากไหนไปไหน</li>
+          <li>รายการอุปกรณ์ทั้งหมด 9 รายการ</li>
+        </ul>
+        <span class="goto">เปิดดู →</span>
+      </a>
+      <a href="signal.html" class="cat-card c-signal">
+        <div class="card-icon">🔌</div>
+        <h3>เส้นทางสัญญาณ</h3>
+        <p>สายต่อจากไหนไปไหน หัวแจ๊คด้านไหนเป็นแบบไหน</p>
+        <ul>
+          <li>ผัง Signal Flow ทุกชั้น</li>
+          <li>ตารางสายเคเบิลครบทุกเส้น (A–F)</li>
+        </ul>
+        <span class="goto">เปิดดู →</span>
+      </a>
+      <a href="devices.html" class="cat-card c-devices">
+        <div class="card-icon">🎛</div>
+        <h3>อุปกรณ์หลัก</h3>
+        <p>รายละเอียดการต่อสายเข้าอุปกรณ์แต่ละตัว</p>
+        <ul>
+          <li>Stage Box 3 จุด + มัลติคอร์กลอง</li>
+          <li>ช่อง X Air 18 ทั้ง 18 ช่อง</li>
+          <li>Marani DPA260p+ 6 เอาต์พุต</li>
+        </ul>
+        <span class="goto">เปิดดู →</span>
+      </a>
+      <a href="tasks.html" class="cat-card c-install">
+        <div class="card-icon">🔧</div>
+        <h3>การติดตั้ง</h3>
+        <p>แบ่งงานให้ทีมช่างแต่ละกลุ่มทำพร้อมกัน</p>
+        <ul>
+          <li>แผนงาน 6 กลุ่ม — ทำคู่ขนานได้</li>
+          <li>หมายเหตุสำคัญและลำดับเปิด-ปิด</li>
+        </ul>
+        <span class="goto">เปิดดู →</span>
+      </a>
+    </div>
+    <div class="note-box" style="margin-top:28px;">
+      <strong>สรุประบบ:</strong> ไมค์กลอง → SoundCraft ui12 → X Air 18 (มิกเซอร์หลัก) → Marani DPA260p+ → ลำโพงแต่ละโซน<br>
+      กล่องสัญญาณบนเวที 3 จุด (คีย์บอร์ด / ฝั่งซ้าย / ฝั่งขวา) ต่อสเนคไปมิกเซอร์ — ไมค์กลองใช้มัลติคอร์แยกต่างหาก
     </div>
   </div>
-
-  <!-- =========================================== -->
-  <!-- 2. รายการอุปกรณ์ -->
-  <!-- =========================================== -->
-  <div class="section" id="equipment">
-    <h2>2. รายการอุปกรณ์ทั้งหมด</h2>
-    <table>
-      <thead>
-        <tr><th>#</th><th>อุปกรณ์</th><th>จำนวน</th><th>ประเภท</th><th>หน้าที่</th><th>ติดตั้งที่</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>SoundCraft ui12</td><td>1</td><td>Digital Mixer</td><td>ซับมิกเซอร์กลอง — รวมไมค์กลอง 7 ตัว ส่งออก 4 เส้น</td><td>ข้างเวที (ใกล้กลอง)</td></tr>
-        <tr><td>2</td><td>Behringer X Air 18</td><td>1</td><td>Digital Mixer</td><td>มิกเซอร์หลัก — รับสัญญาณทุกอย่าง ส่ง Main L/R + Aux มอนิเตอร์</td><td>โต๊ะควบคุมเสียง</td></tr>
-        <tr><td>3</td><td>Marani DPA260p+</td><td>1</td><td>Speaker Processor</td><td>แยกสัญญาณ 2 อินพุต → 6 เอาต์พุต ปรับ EQ/Crossover/Delay ให้ลำโพงแต่ละโซน</td><td>แร็คข้างมิกเซอร์</td></tr>
-        <tr><td>4</td><td>Yamaha DXR12</td><td>4</td><td><span class="badge badge-active">Active</span> ลำโพง 12"</td><td>ลำโพงหลักในร้าน (ผนังซ้าย 2, ผนังขวา 2, daisy-chain คู่ละ 2 ตัว)</td><td>ผนังในร้าน</td></tr>
-        <tr><td>5</td><td>Audio Center MA118</td><td>2</td><td><span class="badge badge-active">Active</span> Subwoofer 18"</td><td>ซับวูฟเฟอร์ในร้าน (2 ตัว link กัน)</td><td>พื้นในร้าน</td></tr>
-        <tr><td>6</td><td>Wharfedale Pro Titan 12</td><td>2</td><td><span class="badge badge-passive">Passive</span> ลำโพง 12"</td><td>ลำโพงนอกร้าน ซ้าย-ขวา (ต้องใช้ Power Amp)</td><td>ผนังนอกร้าน</td></tr>
-        <tr><td>7</td><td>VL-AUDIO MT-65B</td><td>3</td><td><span class="badge badge-passive">Passive</span> ลำโพง 6.5"</td><td>ลำโพงเสริมนอกร้าน (3 ตัว ต่อพ่วงกัน ใช้แอมป์ 1 ช่อง)</td><td>ผนังนอกร้าน</td></tr>
-        <tr><td>8</td><td>Power Amp (2ch + 4ch)</td><td>2</td><td>Power Amplifier</td><td>ขับลำโพงพาสซีฟ — ใช้ 3 ช่องจากทั้งหมด</td><td>แร็คข้างมิกเซอร์</td></tr>
-        <tr><td>9</td><td>Behringer BC1200</td><td>1 ชุด</td><td>Drum Mic Kit</td><td>ชุดไมค์กลอง 7 ตัว (Kick, Snare, Tom×3, OH×2)</td><td>เวทีกลอง</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 3. ผังเส้นทางสัญญาณ -->
-  <!-- =========================================== -->
-  <div class="section" id="flow">
-    <h2>3. ผังเส้นทางสัญญาณ (Signal Flow)</h2>
-    <p>อ่านจากบนลงล่าง — เสียงเริ่มจากไมค์/เครื่องดนตรี → ผ่านกล่องสัญญาณ → เข้ามิกเซอร์ → ผ่านโปรเซสเซอร์ → ออกลำโพง</p>
-
-    <!-- ชั้นที่ 1: แหล่งกำเนิดเสียง -->
-    <h3>ชั้นที่ 1 — แหล่งกำเนิดเสียง (บนเวที)</h3>
-    <div class="flow">
-      <div class="flow-row">
-        <div class="flow-box stagebox">
-          <div class="name">กล่อง A: คีย์บอร์ด</div>
-          <div class="detail">4 Send / 1 Return</div>
-        </div>
-        <div style="width:12px"></div>
-        <div class="flow-box stagebox">
-          <div class="name">กล่อง B: ฝั่งซ้าย</div>
-          <div class="detail">5 Send / 2 Return</div>
-        </div>
-        <div style="width:12px"></div>
-        <div class="flow-box stagebox">
-          <div class="name">กล่อง C: ฝั่งขวา</div>
-          <div class="detail">3 Send / 2 Return</div>
-        </div>
-        <div style="width:12px"></div>
-        <div class="flow-box" style="border-color:var(--red); background:var(--red-light)">
-          <div class="name">ไมค์กลอง (7 ตัว)</div>
-          <div class="detail">มัลติคอร์แยก</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flow">
-      <div class="flow-arrow-down">
-        <div class="arrow-label"><span class="badge badge-snake">สเนค 3 เส้น</span></div>
-        <div class="arrow-line">▼</div>
-      </div>
-    </div>
-
-    <!-- ชั้นที่ 2: มิกเซอร์ -->
-    <h3>ชั้นที่ 2 — มิกเซอร์</h3>
-    <div class="flow">
-      <div class="flow-row">
-        <div class="flow-box" style="border-color:var(--red); background:var(--red-light)">
-          <div class="name">SoundCraft ui12</div>
-          <div class="detail">ซับมิกเซอร์กลอง</div>
-        </div>
-        <div class="flow-arrow">
-          <div class="arrow-label">4× <span class="badge badge-xlr">XLR</span> + <span class="badge badge-trs">TRS</span></div>
-          <div class="arrow-line">→</div>
-        </div>
-        <div class="flow-box mixer">
-          <div class="name">Behringer X Air 18</div>
-          <div class="detail">มิกเซอร์หลัก (Ch 1-18)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flow">
-      <div class="flow-arrow-down">
-        <div class="arrow-label">Main L/R <span class="badge badge-xlr">XLR</span></div>
-        <div class="arrow-line">▼</div>
-      </div>
-    </div>
-
-    <!-- ชั้นที่ 3: โปรเซสเซอร์ -->
-    <h3>ชั้นที่ 3 — โปรเซสเซอร์</h3>
-    <div class="flow">
-      <div class="flow-row">
-        <div class="flow-box processor">
-          <div class="name">Marani DPA260p+</div>
-          <div class="detail">2 In → 6 Out Speaker Processor</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flow">
-      <div class="flow-arrow-down">
-        <div class="arrow-label">6 เอาต์พุต <span class="badge badge-xlr">XLR</span></div>
-        <div class="arrow-line">▼</div>
-      </div>
-    </div>
-
-    <!-- ชั้นที่ 4: ลำโพง -->
-    <h3>ชั้นที่ 4 — ลำโพง</h3>
-    <div class="flow">
-      <div class="flow-spread">
-        <div style="text-align:center">
-          <div class="flow-box speaker-active">
-            <div class="name">Yamaha DXR12 ×4</div>
-            <div class="detail">ในร้าน — แอคทีฟ</div>
-            <div class="detail">Out 1-2 → Link 2+2 ตัว</div>
-          </div>
-        </div>
-        <div style="text-align:center">
-          <div class="flow-box speaker-active">
-            <div class="name">MA118 Sub ×2</div>
-            <div class="detail">ในร้าน — แอคทีฟ</div>
-            <div class="detail">Out 5 → Link 2 ตัว</div>
-          </div>
-        </div>
-        <div style="text-align:center">
-          <div class="flow-box amp">
-            <div class="name">Power Amp</div>
-            <div class="detail">Out 3, 4, 6</div>
-          </div>
-          <div style="margin-top:8px; display:flex; gap:8px; justify-content:center;">
-            <div class="flow-box speaker-passive" style="min-width:100px">
-              <div class="name">Titan 12 ×2</div>
-              <div class="detail">นอกร้าน</div>
-            </div>
-            <div class="flow-box speaker-passive" style="min-width:100px">
-              <div class="name">MT-65B ×3</div>
-              <div class="detail">นอกร้าน (พ่วง)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 4. ตารางสายเคเบิล -->
-  <!-- =========================================== -->
-  <div class="section" id="cables">
-    <h2>4. ตารางสายเคเบิลทั้งหมด — ต่อจากไหนไปไหน ด้วยสายอะไร</h2>
-    <p>ทุกเส้นที่ต้องเดินสาย เรียงตามกลุ่มงาน ใช้ตรวจสอบและเตรียมอุปกรณ์ก่อนติดตั้ง</p>
-
-    <h3>4.1 กลุ่ม A — ไมค์กลอง → ui12 (มัลติคอร์กลอง)</h3>
-    <table>
-      <thead><tr><th>เส้นที่</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr class="cable-snake"><td>A1</td><td>Kick Mic</td><td>ui12 Ch1</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M (ไมค์)</td><td>XLR-F (กล่อง) → ฝั่ง ui12 XLR-M</td><td rowspan="7">ใช้มัลติคอร์ 8 ช่อง 1 เส้น<br>วิ่งจากชุดกลองไป ui12<br>(เหลือ 1 ช่องสำรอง)</td></tr>
-        <tr class="cable-snake"><td>A2</td><td>Snare Mic</td><td>ui12 Ch2</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M</td><td>XLR-F → XLR-M</td></tr>
-        <tr class="cable-snake"><td>A3</td><td>Tom 1 Mic</td><td>ui12 Ch3</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M</td><td>XLR-F → XLR-M</td></tr>
-        <tr class="cable-snake"><td>A4</td><td>Tom 2 Mic</td><td>ui12 Ch4</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M</td><td>XLR-F → XLR-M</td></tr>
-        <tr class="cable-snake"><td>A5</td><td>Tom 3 Mic</td><td>ui12 Ch5</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M</td><td>XLR-F → XLR-M</td></tr>
-        <tr class="cable-snake"><td>A6</td><td>Overhead L</td><td>ui12 Ch6</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M</td><td>XLR-F → XLR-M</td></tr>
-        <tr class="cable-snake"><td>A7</td><td>Overhead R</td><td>ui12 Ch7</td><td><span class="badge badge-snake">มัลติคอร์</span></td><td>XLR-M</td><td>XLR-F → XLR-M</td></tr>
-      </tbody>
-    </table>
-
-    <h3>4.2 กลุ่ม B — ui12 → X Air 18 (4 เส้น)</h3>
-    <table>
-      <thead><tr><th>เส้นที่</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr class="cable-trs"><td>B1</td><td>ui12 Aux 1 (Kick)</td><td>X Air 18 Ch1</td><td><span class="badge badge-trs">TRS→XLR</span></td><td>TRS 1/4" (ตัวผู้)</td><td>XLR-M (เข้า Combo)</td><td>ui12 Aux Out เป็น 1/4"</td></tr>
-        <tr class="cable-trs"><td>B2</td><td>ui12 Aux 2 (Snare)</td><td>X Air 18 Ch2</td><td><span class="badge badge-trs">TRS→XLR</span></td><td>TRS 1/4" (ตัวผู้)</td><td>XLR-M (เข้า Combo)</td><td>ui12 Aux Out เป็น 1/4"</td></tr>
-        <tr class="cable-xlr"><td>B3</td><td>ui12 Main L (Tom+OH)</td><td>X Air 18 Ch3</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (เข้า Combo)</td><td>Main XLR Out</td></tr>
-        <tr class="cable-xlr"><td>B4</td><td>ui12 Main R (Tom+OH)</td><td>X Air 18 Ch4</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (เข้า Combo)</td><td>Main XLR Out</td></tr>
-      </tbody>
-    </table>
-
-    <h3>4.3 กลุ่ม C — กล่องสัญญาณบนเวที → X Air 18 (สเนค 3 เส้น)</h3>
-    <table>
-      <thead><tr><th>เส้นที่</th><th>จาก (กล่องเวที)</th><th>ไป (X Air 18)</th><th>ชนิดสาย</th><th>หัวฝั่งเวที</th><th>หัวฝั่งมิกเซอร์</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr class="cable-snake"><td colspan="7" style="background:var(--gray-light); font-weight:600;">กล่อง A: โซนคีย์บอร์ด — สเนค 8/2 (ใช้ 4 send + 1 return)</td></tr>
-        <tr class="cable-snake"><td>C1</td><td>Keyboard L</td><td>Ch7</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F (รับ 1/4"→XLR)</td><td>XLR-M → Ch7 Combo</td><td>คีย์บอร์ดอาจต่อผ่าน DI Box</td></tr>
-        <tr class="cable-snake"><td>C2</td><td>Keyboard R</td><td>Ch8</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch8</td><td></td></tr>
-        <tr class="cable-snake"><td>C3</td><td>Sound Data</td><td>Ch15</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch15</td><td>เสียงจากโน้ตบุ๊คหรือมือถือ</td></tr>
-        <tr class="cable-snake"><td>C4</td><td>Metronome</td><td>Ch16</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch16</td><td>สำหรับมอนิเตอร์เท่านั้น</td></tr>
-        <tr style="background:var(--orange-light)"><td>C5</td><td>X Air 18 Aux 1</td><td>Mon คีย์บอร์ด</td><td><span class="badge badge-snake">สเนค Return</span></td><td>XLR-F ← Aux 1 Out</td><td>XLR-M → ลำโพงมอนิเตอร์</td><td>ส่งกลับจากมิกเซอร์</td></tr>
-
-        <tr class="cable-snake"><td colspan="7" style="background:var(--gray-light); font-weight:600;">กล่อง B: ฝั่งซ้ายเวที — สเนค 8/2 (ใช้ 5 send + 2 return)</td></tr>
-        <tr class="cable-snake"><td>C6</td><td>Guitar Bass</td><td>Ch5</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F (จาก DI Box เบส)</td><td>XLR-M → Ch5</td><td>เบสผ่าน DI Box</td></tr>
-        <tr class="cable-snake"><td>C7</td><td>Ac Guitar</td><td>Ch9</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch9</td><td>กีตาร์โปร่ง</td></tr>
-        <tr class="cable-snake"><td>C8</td><td>Vocal 1 (นักร้องหลัก)</td><td>Ch12</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F (จากไมค์)</td><td>XLR-M → Ch12</td><td></td></tr>
-        <tr class="cable-snake"><td>C9</td><td>Vocal Bass</td><td>Ch13</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch13</td><td></td></tr>
-        <tr class="cable-snake"><td>C10</td><td>Vocal Keyboard</td><td>Ch10</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch10</td><td></td></tr>
-        <tr style="background:var(--orange-light)"><td>C11</td><td>X Air 18 Aux 2</td><td>Mon Bass</td><td><span class="badge badge-snake">สเนค Return</span></td><td>XLR-F ← Aux 2</td><td>XLR-M → มอนิเตอร์เบส</td><td></td></tr>
-        <tr style="background:var(--orange-light)"><td>C12</td><td>X Air 18 Aux 3</td><td>Mon Vocal 1</td><td><span class="badge badge-snake">สเนค Return</span></td><td>XLR-F ← Aux 3</td><td>XLR-M → มอนิเตอร์นักร้อง</td><td></td></tr>
-
-        <tr class="cable-snake"><td colspan="7" style="background:var(--gray-light); font-weight:600;">กล่อง C: ฝั่งขวาเวที — สเนค 4/2 หรือ 8/2 (ใช้ 3 send + 2 return)</td></tr>
-        <tr class="cable-snake"><td>C13</td><td>Guitar (ไฟฟ้า)</td><td>Ch6</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F (จาก DI/Amp)</td><td>XLR-M → Ch6</td><td></td></tr>
-        <tr class="cable-snake"><td>C14</td><td>Vocal Guitar</td><td>Ch11</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch11</td><td></td></tr>
-        <tr class="cable-snake"><td>C15</td><td>Vocal Drum</td><td>Ch14</td><td><span class="badge badge-snake">สเนค</span></td><td>XLR-F</td><td>XLR-M → Ch14</td><td></td></tr>
-        <tr style="background:var(--orange-light)"><td>C16</td><td>X Air 18 Aux 4</td><td>Mon Guitar</td><td><span class="badge badge-snake">สเนค Return</span></td><td>XLR-F ← Aux 4</td><td>XLR-M → มอนิเตอร์กีตาร์</td><td></td></tr>
-        <tr style="background:var(--orange-light)"><td>C17</td><td>X Air 18 Aux 5</td><td>Mon Drum</td><td><span class="badge badge-snake">สเนค Return</span></td><td>XLR-F ← Aux 5</td><td>XLR-M → มอนิเตอร์กลอง</td><td></td></tr>
-      </tbody>
-    </table>
-
-    <h3>4.4 กลุ่ม D — X Air 18 → Marani DPA260p+</h3>
-    <table>
-      <thead><tr><th>เส้นที่</th><th>จาก</th><th>ไป</th><th>ชนิดสาย</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr class="cable-xlr"><td>D1</td><td>X Air 18 Main L</td><td>Marani Input 1</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M (Main Out)</td><td>XLR-F (Input)</td><td>สัญญาณหลักฝั่งซ้าย</td></tr>
-        <tr class="cable-xlr"><td>D2</td><td>X Air 18 Main R</td><td>Marani Input 2</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M (Main Out)</td><td>XLR-F (Input)</td><td>สัญญาณหลักฝั่งขวา</td></tr>
-      </tbody>
-    </table>
-
-    <h3>4.5 กลุ่ม E — Marani → ลำโพงแอคทีฟ (ต่อตรง XLR)</h3>
-    <table>
-      <thead><tr><th>เส้นที่</th><th>จาก (Marani Output)</th><th>ไป (ลำโพง)</th><th>ชนิดสาย</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr class="cable-xlr"><td>E1</td><td>Out 1 (Indoor L)</td><td>DXR12 #1 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (Combo)</td><td>ผนังซ้ายตัวที่ 1</td></tr>
-        <tr class="cable-xlr"><td>E2</td><td>DXR12 #1 Link Out</td><td>DXR12 #2 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (Combo)</td><td>ผนังซ้ายตัวที่ 2 (Daisy-chain)</td></tr>
-        <tr class="cable-xlr"><td>E3</td><td>Out 2 (Indoor R)</td><td>DXR12 #3 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (Combo)</td><td>ผนังขวาตัวที่ 1</td></tr>
-        <tr class="cable-xlr"><td>E4</td><td>DXR12 #3 Link Out</td><td>DXR12 #4 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (Combo)</td><td>ผนังขวาตัวที่ 2 (Daisy-chain)</td></tr>
-        <tr class="cable-xlr"><td>E5</td><td>Out 5 (Sub Mono)</td><td>MA118 #1 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (Combo)</td><td>ซับวูฟตัวที่ 1</td></tr>
-        <tr class="cable-xlr"><td>E6</td><td>MA118 #1 Link Out</td><td>MA118 #2 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F (Combo)</td><td>ซับวูฟตัวที่ 2 (Link)</td></tr>
-      </tbody>
-    </table>
-
-    <h3>4.6 กลุ่ม F — Marani → Power Amp → ลำโพงพาสซีฟ</h3>
-    <table>
-      <thead><tr><th>เส้นที่</th><th>จาก</th><th>ไป</th><th>ชนิดสาย</th><th>หัวต้นทาง</th><th>หัวปลายทาง</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr class="cable-xlr"><td>F1</td><td>Marani Out 3 (Outdoor L)</td><td>Power Amp Ch1 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F</td><td>สัญญาณลำโพงนอก ฝั่งซ้าย</td></tr>
-        <tr class="cable-xlr"><td>F2</td><td>Marani Out 4 (Outdoor R)</td><td>Power Amp Ch2 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F</td><td>สัญญาณลำโพงนอก ฝั่งขวา</td></tr>
-        <tr class="cable-xlr"><td>F3</td><td>Marani Out 6 (VL-AUDIO)</td><td>Power Amp Ch3 Input</td><td><span class="badge badge-xlr">XLR</span></td><td>XLR-M</td><td>XLR-F</td><td>สัญญาณลำโพงเสริมนอกร้าน</td></tr>
-        <tr class="cable-speaker"><td>F4</td><td>Amp Ch1 Output</td><td>Wharfedale Titan 12 L</td><td><span class="badge badge-speakon">Speakon</span></td><td>Speakon NL4</td><td>Speakon NL4</td><td>สายลำโพง — นอกร้านฝั่งซ้าย</td></tr>
-        <tr class="cable-speaker"><td>F5</td><td>Amp Ch2 Output</td><td>Wharfedale Titan 12 R</td><td><span class="badge badge-speakon">Speakon</span></td><td>Speakon NL4</td><td>Speakon NL4</td><td>สายลำโพง — นอกร้านฝั่งขวา</td></tr>
-        <tr class="cable-wire"><td>F6</td><td>Amp Ch3 Output</td><td>VL-AUDIO MT-65B #1</td><td><span class="badge badge-wire">สายลำโพง</span></td><td>Speakon NL4 / ขั้วต่อ</td><td>ขั้วสกรู (Screw Terminal)</td><td rowspan="3">3 ตัวต่อพ่วง Parallel<br>ใช้แอมป์ช่องเดียว<br>แยกสาย +/- คู่ไปแต่ละตัว</td></tr>
-        <tr class="cable-wire"><td>F7</td><td>พ่วงจาก #1</td><td>VL-AUDIO MT-65B #2</td><td><span class="badge badge-wire">สายลำโพง</span></td><td>ขั้วสกรู</td><td>ขั้วสกรู</td></tr>
-        <tr class="cable-wire"><td>F8</td><td>พ่วงจาก #2</td><td>VL-AUDIO MT-65B #3</td><td><span class="badge badge-wire">สายลำโพง</span></td><td>ขั้วสกรู</td><td>ขั้วสกรู</td></tr>
-      </tbody>
-    </table>
-
-    <h3>สรุปจำนวนสายที่ต้องเตรียม</h3>
-    <table>
-      <thead><tr><th>ชนิดสาย</th><th>จำนวน</th><th>รายละเอียด</th></tr></thead>
-      <tbody>
-        <tr><td><span class="badge badge-snake">มัลติคอร์ 8ch</span></td><td>1 เส้น</td><td>กลอง → ui12 (ระยะเวที→ข้างเวที ~5-10m)</td></tr>
-        <tr><td><span class="badge badge-snake">สเนค 8/2</span></td><td>2 เส้น</td><td>กล่อง A คีย์บอร์ด, กล่อง B ฝั่งซ้าย (เวที→โต๊ะมิกซ์ ~15-25m)</td></tr>
-        <tr><td><span class="badge badge-snake">สเนค 4/2 หรือ 8/2</span></td><td>1 เส้น</td><td>กล่อง C ฝั่งขวา (เวที→โต๊ะมิกซ์ ~15-25m)</td></tr>
-        <tr><td><span class="badge badge-xlr">สาย XLR</span></td><td>~10 เส้น</td><td>ui12→XAir (2), XAir→Marani (2), Marani→ลำโพง (6)</td></tr>
-        <tr><td><span class="badge badge-trs">สาย TRS→XLR</span></td><td>2 เส้น</td><td>ui12 Aux 1-2 → X Air 18 Ch1-2</td></tr>
-        <tr><td><span class="badge badge-speakon">สาย Speakon</span></td><td>2 เส้น</td><td>Amp → Wharfedale Titan 12 ซ้าย/ขวา</td></tr>
-        <tr><td><span class="badge badge-wire">สายลำโพงเปล่า</span></td><td>~15-20m</td><td>Amp → VL-AUDIO MT-65B ×3 (พ่วง parallel)</td></tr>
-        <tr><td>สาย XLR สั้น (Link)</td><td>3 เส้น</td><td>DXR12 link (2), MA118 link (1) — ระยะ 1-3m</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 5. ผังกล่องสัญญาณบนเวที -->
-  <!-- =========================================== -->
-  <div class="section" id="stagebox">
-    <h2>5. ผังกล่องสัญญาณบนเวที (Stage Box)</h2>
-    <p>กล่องสัญญาณทำหน้าที่เป็นจุดรวมสาย เก็บสายให้เรียบร้อย ฝั่งเวทีนักดนตรีเสียบปลั๊กเข้า ฝั่งมิกเซอร์ fan-out เข้าช่องต่างๆ<br>
-    <strong>สำคัญ:</strong> ไมค์กลองทั้งหมดไม่ลงกล่อง 3 จุดนี้ — ใช้มัลติคอร์แยกวิ่งตรงไป ui12</p>
-
-    <div class="stagebox-grid">
-      <!-- กล่อง A -->
-      <div class="stagebox-card">
-        <h4>กล่อง A — โซนคีย์บอร์ด</h4>
-        <div class="desc">ตำแหน่ง: ข้างมือคีย์บอร์ด | สเนค: 8/2</div>
-        <div class="port-section">
-          <h5 class="input-title">INPUT (เข้ากล่อง → ส่งไปมิกเซอร์)</h5>
-          <table class="port-table">
-            <tr><td>1</td><td>Keyboard L</td><td>→ X Air Ch7</td><td>ผ่าน DI Box</td></tr>
-            <tr><td>2</td><td>Keyboard R</td><td>→ X Air Ch8</td><td>ผ่าน DI Box</td></tr>
-            <tr><td>3</td><td>Sound Data</td><td>→ X Air Ch15</td><td>โน้ตบุ๊ค/มือถือ</td></tr>
-            <tr><td>4</td><td>Metronome</td><td>→ X Air Ch16</td><td>สำหรับมอนิเตอร์</td></tr>
-          </table>
-        </div>
-        <div class="port-section">
-          <h5 class="output-title">RETURN (จากมิกเซอร์ → กลับมาเวที)</h5>
-          <table class="port-table">
-            <tr><td>R1</td><td>Mon Keyboard</td><td>← X Air Aux 1</td><td>ไปลำโพงมอนิเตอร์</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- กล่อง B -->
-      <div class="stagebox-card">
-        <h4>กล่อง B — ฝั่งซ้ายเวที</h4>
-        <div class="desc">ตำแหน่ง: ฝั่งเบส + นักร้อง | สเนค: 8/2</div>
-        <div class="port-section">
-          <h5 class="input-title">INPUT (เข้ากล่อง → ส่งไปมิกเซอร์)</h5>
-          <table class="port-table">
-            <tr><td>1</td><td>Guitar Bass</td><td>→ X Air Ch5</td><td>เบส ผ่าน DI Box</td></tr>
-            <tr><td>2</td><td>Ac Guitar</td><td>→ X Air Ch9</td><td>กีตาร์โปร่ง</td></tr>
-            <tr><td>3</td><td>Vocal 1 (หลัก)</td><td>→ X Air Ch12</td><td>ไมค์นักร้องหลัก</td></tr>
-            <tr><td>4</td><td>Vocal Bass</td><td>→ X Air Ch13</td><td>ไมค์ร้องมือเบส</td></tr>
-            <tr><td>5</td><td>Vocal Keyboard</td><td>→ X Air Ch10</td><td>ไมค์ร้องมือคีย์บอร์ด</td></tr>
-          </table>
-        </div>
-        <div class="port-section">
-          <h5 class="output-title">RETURN (จากมิกเซอร์ → กลับมาเวที)</h5>
-          <table class="port-table">
-            <tr><td>R1</td><td>Mon Bass</td><td>← X Air Aux 2</td><td>มอนิเตอร์เบส</td></tr>
-            <tr><td>R2</td><td>Mon Vocal 1</td><td>← X Air Aux 3</td><td>มอนิเตอร์นักร้อง</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- กล่อง C -->
-      <div class="stagebox-card">
-        <h4>กล่อง C — ฝั่งขวาเวที</h4>
-        <div class="desc">ตำแหน่ง: ฝั่งกีตาร์ + กลอง | สเนค: 4/2 หรือ 8/2</div>
-        <div class="port-section">
-          <h5 class="input-title">INPUT (เข้ากล่อง → ส่งไปมิกเซอร์)</h5>
-          <table class="port-table">
-            <tr><td>1</td><td>Guitar (ไฟฟ้า)</td><td>→ X Air Ch6</td><td>จาก DI Box หรือ Amp Mic</td></tr>
-            <tr><td>2</td><td>Vocal Guitar</td><td>→ X Air Ch11</td><td>ไมค์ร้องมือกีตาร์</td></tr>
-            <tr><td>3</td><td>Vocal Drum</td><td>→ X Air Ch14</td><td>ไมค์ร้องมือกลอง</td></tr>
-          </table>
-        </div>
-        <div class="port-section">
-          <h5 class="output-title">RETURN (จากมิกเซอร์ → กลับมาเวที)</h5>
-          <table class="port-table">
-            <tr><td>R1</td><td>Mon Guitar</td><td>← X Air Aux 4</td><td>มอนิเตอร์กีตาร์</td></tr>
-            <tr><td>R2</td><td>Mon Drum</td><td>← X Air Aux 5</td><td>มอนิเตอร์กลอง</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="stagebox-grid" style="grid-template-columns: 1fr; max-width: 500px;">
-      <!-- มัลติคอร์กลอง -->
-      <div class="stagebox-card" style="border-color: var(--red-border);">
-        <h4 style="color:var(--red);">มัลติคอร์กลอง (แยกจากกล่อง 3 จุด)</h4>
-        <div class="desc">ตำแหน่ง: ชุดกลอง → ui12 โดยตรง | มัลติคอร์ 8ch</div>
-        <div class="port-section">
-          <h5 class="input-title">ไมค์กลอง → ui12</h5>
-          <table class="port-table">
-            <tr><td>1</td><td>Kick</td><td>→ ui12 Ch1</td><td>ไมค์กระเดื่อง</td></tr>
-            <tr><td>2</td><td>Snare</td><td>→ ui12 Ch2</td><td>ไมค์สแนร์</td></tr>
-            <tr><td>3</td><td>Tom 1</td><td>→ ui12 Ch3</td><td>ไมค์ทอม 1</td></tr>
-            <tr><td>4</td><td>Tom 2</td><td>→ ui12 Ch4</td><td>ไมค์ทอม 2</td></tr>
-            <tr><td>5</td><td>Tom 3</td><td>→ ui12 Ch5</td><td>ไมค์ทอม 3</td></tr>
-            <tr><td>6</td><td>Overhead L</td><td>→ ui12 Ch6</td><td>ไมค์โอเวอร์เฮดซ้าย</td></tr>
-            <tr><td>7</td><td>Overhead R</td><td>→ ui12 Ch7</td><td>ไมค์โอเวอร์เฮดขวา</td></tr>
-            <tr><td>8</td><td>สำรอง</td><td>—</td><td>ช่องว่างไว้เผื่อ</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 6. ช่องมิกเซอร์ X Air 18 -->
-  <!-- =========================================== -->
-  <div class="section" id="mixerchannel">
-    <h2>6. ช่องมิกเซอร์ X Air 18 — แต่ละช่องรับอะไร</h2>
-
-    <h3>INPUT (18 ช่อง)</h3>
-    <table>
-      <thead><tr><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>มาจากที่ไหน</th><th>หัวแจ๊ค</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr><td>Ch1</td><td>Kick (Sub)</td><td>ui12 Aux 1</td><td>Combo (ใช้หัว TRS)</td><td>Kick submix จาก ui12</td></tr>
-        <tr><td>Ch2</td><td>Snare (Sub)</td><td>ui12 Aux 2</td><td>Combo (ใช้หัว TRS)</td><td>Snare submix จาก ui12</td></tr>
-        <tr><td>Ch3</td><td>Tom + OH L</td><td>ui12 Main L</td><td>Combo (ใช้หัว XLR)</td><td>กลุ่ม Tom+Overhead ฝั่งซ้าย</td></tr>
-        <tr><td>Ch4</td><td>Tom + OH R</td><td>ui12 Main R</td><td>Combo (ใช้หัว XLR)</td><td>กลุ่ม Tom+Overhead ฝั่งขวา</td></tr>
-        <tr style="background:var(--green-light)"><td>Ch5</td><td>Guitar Bass</td><td>กล่อง B (ซ้าย)</td><td>Combo (XLR)</td><td>เบส ผ่าน DI Box</td></tr>
-        <tr style="background:var(--blue-light)"><td>Ch6</td><td>Guitar (ไฟฟ้า)</td><td>กล่อง C (ขวา)</td><td>Combo (XLR)</td><td>กีตาร์ไฟฟ้า</td></tr>
-        <tr style="background:var(--gray-light)"><td>Ch7</td><td>Keyboard L</td><td>กล่อง A (คีย์บอร์ด)</td><td>Combo (XLR)</td><td>สเตอริโอคู่กับ Ch8</td></tr>
-        <tr style="background:var(--gray-light)"><td>Ch8</td><td>Keyboard R</td><td>กล่อง A (คีย์บอร์ด)</td><td>Combo (XLR)</td><td>สเตอริโอคู่กับ Ch7</td></tr>
-        <tr style="background:var(--green-light)"><td>Ch9</td><td>Ac Guitar</td><td>กล่อง B (ซ้าย)</td><td>Combo (XLR)</td><td>กีตาร์โปร่ง</td></tr>
-        <tr style="background:var(--green-light)"><td>Ch10</td><td>Vocal Keyboard</td><td>กล่อง B (ซ้าย)</td><td>Combo (XLR)</td><td>ไมค์ร้องมือคีย์บอร์ด</td></tr>
-        <tr style="background:var(--blue-light)"><td>Ch11</td><td>Vocal Guitar</td><td>กล่อง C (ขวา)</td><td>Combo (XLR)</td><td>ไมค์ร้องมือกีตาร์</td></tr>
-        <tr style="background:var(--green-light)"><td>Ch12</td><td>Vocal 1 (หลัก)</td><td>กล่อง B (ซ้าย)</td><td>Combo (XLR)</td><td>นักร้องหลัก</td></tr>
-        <tr style="background:var(--green-light)"><td>Ch13</td><td>Vocal Bass</td><td>กล่อง B (ซ้าย)</td><td>Combo (XLR)</td><td>ไมค์ร้องมือเบส</td></tr>
-        <tr style="background:var(--blue-light)"><td>Ch14</td><td>Vocal Drum</td><td>กล่อง C (ขวา)</td><td>Combo (XLR)</td><td>ไมค์ร้องมือกลอง</td></tr>
-        <tr style="background:var(--gray-light)"><td>Ch15</td><td>Sound Data</td><td>กล่อง A (คีย์บอร์ด)</td><td>1/4" TRS</td><td>เสียงจากโน้ตบุ๊ค/มือถือ</td></tr>
-        <tr style="background:var(--gray-light)"><td>Ch16</td><td>Metronome</td><td>กล่อง A (คีย์บอร์ด)</td><td>1/4" TRS</td><td>ส่งมอนิเตอร์เท่านั้น</td></tr>
-        <tr><td>Ch17</td><td>สำรอง</td><td>—</td><td>1/4" TRS / RCA</td><td></td></tr>
-        <tr><td>Ch18</td><td>สำรอง</td><td>—</td><td>1/4" TRS / RCA</td><td></td></tr>
-      </tbody>
-    </table>
-
-    <h3>AUX OUTPUT (6 ช่อง — ส่งมอนิเตอร์กลับเวที)</h3>
-    <table>
-      <thead><tr><th>Aux</th><th>ส่งไปที่</th><th>ผ่านกล่อง</th><th>หัวแจ๊ค</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr><td>Aux 1</td><td>มอนิเตอร์ คีย์บอร์ด</td><td>กล่อง A Return 1</td><td>1/4" TRS Out → สเนค</td><td></td></tr>
-        <tr><td>Aux 2</td><td>มอนิเตอร์ เบส</td><td>กล่อง B Return 1</td><td>1/4" TRS Out → สเนค</td><td></td></tr>
-        <tr><td>Aux 3</td><td>มอนิเตอร์ นักร้องหลัก</td><td>กล่อง B Return 2</td><td>1/4" TRS Out → สเนค</td><td></td></tr>
-        <tr><td>Aux 4</td><td>มอนิเตอร์ กีตาร์</td><td>กล่อง C Return 1</td><td>1/4" TRS Out → สเนค</td><td></td></tr>
-        <tr><td>Aux 5</td><td>มอนิเตอร์ กลอง</td><td>กล่อง C Return 2</td><td>1/4" TRS Out → สเนค</td><td></td></tr>
-        <tr><td>Aux 6</td><td>สำรอง</td><td>—</td><td>1/4" TRS Out</td><td>เก็บไว้เผื่อเพิ่มมอนิเตอร์</td></tr>
-      </tbody>
-    </table>
-
-    <h3>MAIN OUTPUT</h3>
-    <table>
-      <thead><tr><th>Output</th><th>ส่งไปที่</th><th>หัวแจ๊ค</th><th>หมายเหตุ</th></tr></thead>
-      <tbody>
-        <tr><td>Main L</td><td>Marani DPA260p+ Input 1</td><td>XLR-M</td><td>สัญญาณหลักฝั่งซ้าย</td></tr>
-        <tr><td>Main R</td><td>Marani DPA260p+ Input 2</td><td>XLR-M</td><td>สัญญาณหลักฝั่งขวา</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 7. Marani DPA260p+ -->
-  <!-- =========================================== -->
-  <div class="section" id="marani">
-    <h2>7. Marani DPA260p+ — 6 เอาต์พุตไปลำโพงไหน</h2>
-    <table>
-      <thead><tr><th>Output</th><th>โซน</th><th>ลำโพง</th><th>ประเภทสาย</th><th>การตั้งค่าแนะนำ</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Out 1</strong></td><td>ในร้าน ฝั่งซ้าย</td><td>DXR12 #1 → Link #2</td><td><span class="badge badge-xlr">XLR</span> → Active</td><td>Full Range / HPF 80Hz</td></tr>
-        <tr><td><strong>Out 2</strong></td><td>ในร้าน ฝั่งขวา</td><td>DXR12 #3 → Link #4</td><td><span class="badge badge-xlr">XLR</span> → Active</td><td>Full Range / HPF 80Hz</td></tr>
-        <tr><td><strong>Out 3</strong></td><td>นอกร้าน ฝั่งซ้าย</td><td>Amp Ch1 → Titan 12 L</td><td><span class="badge badge-xlr">XLR</span> → Amp → <span class="badge badge-speakon">Speakon</span></td><td>Full Range / HPF 100Hz</td></tr>
-        <tr><td><strong>Out 4</strong></td><td>นอกร้าน ฝั่งขวา</td><td>Amp Ch2 → Titan 12 R</td><td><span class="badge badge-xlr">XLR</span> → Amp → <span class="badge badge-speakon">Speakon</span></td><td>Full Range / HPF 100Hz</td></tr>
-        <tr><td><strong>Out 5</strong></td><td>ในร้าน ซับวูฟ</td><td>MA118 #1 → Link #2</td><td><span class="badge badge-xlr">XLR</span> → Active Sub</td><td>LPF 120Hz / Sub Only</td></tr>
-        <tr><td><strong>Out 6</strong></td><td>นอกร้าน เสริม</td><td>Amp Ch3 → MT-65B ×3</td><td><span class="badge badge-xlr">XLR</span> → Amp → <span class="badge badge-wire">สายลำโพง</span></td><td>Full Range / HPF 150Hz</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 8. แผนงานติดตั้ง -->
-  <!-- =========================================== -->
-  <div class="section" id="tasks">
-    <h2>8. แผนงานติดตั้ง — แบ่งทีมจัดการ</h2>
-    <p>แบ่งเป็น 6 กลุ่มงาน ทำได้พร้อมกันหลายทีม</p>
-
-    <div class="task-card zone-stage">
-      <h4>งาน 1 — ติดตั้งกล่องสัญญาณบนเวที + เดินสเนค</h4>
-      <div class="team">ทีม: ช่างเวที 2 คน | อุปกรณ์: สเนค 3 เส้น, มัลติคอร์ 1 เส้น, เทปกาว, รางเก็บสาย</div>
-      <ul>
-        <li>ติดกล่อง A (คีย์บอร์ด) ข้างตำแหน่งคีย์บอร์ด</li>
-        <li>ติดกล่อง B (ฝั่งซ้าย) ข้างตำแหน่งเบส/นักร้อง</li>
-        <li>ติดกล่อง C (ฝั่งขวา) ข้างตำแหน่งกีตาร์</li>
-        <li>เดินสเนค 3 เส้นจากกล่อง A, B, C ไปยังโต๊ะมิกเซอร์ — เก็บสายให้เรียบร้อย</li>
-        <li>เดินมัลติคอร์กลอง จากชุดกลอง → ui12 (ข้างเวที)</li>
-        <li>ติดป้ายหมายเลขช่องที่หัวสเนคทั้งฝั่งเวทีและฝั่งมิกเซอร์</li>
-      </ul>
-    </div>
-
-    <div class="task-card zone-drum">
-      <h4>งาน 2 — ติดตั้งไมค์กลอง + ui12</h4>
-      <div class="team">ทีม: ช่างเสียง 1 คน | อุปกรณ์: BC1200 mic kit, ขาจับไมค์, ui12</div>
-      <ul>
-        <li>ติดไมค์ Kick, Snare, Tom 1-3, Overhead L/R ตามผัง</li>
-        <li>ต่อสาย XLR จากไมค์แต่ละตัว เสียบเข้ามัลติคอร์กลอง</li>
-        <li>วาง ui12 ข้างชุดกลอง ต่อไฟเลี้ยง</li>
-        <li>ต่อสาย 4 เส้นจาก ui12 ไปยัง X Air 18 (TRS×2 + XLR×2)</li>
-        <li>ตั้งค่า ui12: Kick→Aux1, Snare→Aux2, Tom+OH→Main LR</li>
-      </ul>
-    </div>
-
-    <div class="task-card zone-mixer">
-      <h4>งาน 3 — ตั้งโต๊ะมิกเซอร์ + โปรเซสเซอร์ + แร็ค</h4>
-      <div class="team">ทีม: ช่างเสียง 1 คน | อุปกรณ์: X Air 18, Marani, Power Amp, แร็ค, ปลั๊กไฟ</div>
-      <ul>
-        <li>วาง X Air 18 บนโต๊ะ ต่อไฟเลี้ยง + สาย Ethernet/WiFi สำหรับรีโมท</li>
-        <li>ติด Marani DPA260p+ ในแร็ค ต่อไฟเลี้ยง</li>
-        <li>ติด Power Amp ในแร็ค ต่อไฟเลี้ยง</li>
-        <li>ต่อ fan-out สเนคทั้ง 3 เส้นเข้าช่อง X Air 18 ตามตาราง (Ch5-16)</li>
-        <li>ต่อ Return สเนค: Aux 1-5 → สเนค Return ของแต่ละกล่อง</li>
-        <li>ต่อ XLR: X Air Main L/R → Marani Input 1-2</li>
-        <li>ต่อ XLR: Marani Out 3, 4, 6 → Power Amp Ch1, 2, 3</li>
-      </ul>
-    </div>
-
-    <div class="task-card zone-speaker">
-      <h4>งาน 4 — แขวนลำโพงในร้าน (DXR12 + MA118)</h4>
-      <div class="team">ทีม: ช่างติดตั้ง 2 คน | อุปกรณ์: ขาแขวน, สาย XLR, บันได</div>
-      <ul>
-        <li>แขวน DXR12 #1 + #2 ผนังซ้าย — เดินสาย XLR จากแร็ค (Marani Out1) ไป #1 แล้ว Link ไป #2</li>
-        <li>แขวน DXR12 #3 + #4 ผนังขวา — เดินสาย XLR จากแร็ค (Marani Out2) ไป #3 แล้ว Link ไป #4</li>
-        <li>วาง MA118 #1 + #2 ตำแหน่งในร้าน — เดินสาย XLR จาก Marani Out5 ไป #1 แล้ว Link ไป #2</li>
-        <li>ต่อสายไฟเลี้ยงทุกตัว (ลำโพงแอคทีฟต้องมีปลั๊กไฟทุกจุด)</li>
-      </ul>
-    </div>
-
-    <div class="task-card zone-speaker">
-      <h4>งาน 5 — ติดลำโพงนอกร้าน (Titan 12 + MT-65B)</h4>
-      <div class="team">ทีม: ช่างติดตั้ง 2 คน | อุปกรณ์: ขาแขวน, สาย Speakon, สายลำโพง, บันได</div>
-      <ul>
-        <li>แขวน Wharfedale Titan 12 ฝั่งซ้าย — เดินสาย Speakon จาก Amp Ch1 Output</li>
-        <li>แขวน Wharfedale Titan 12 ฝั่งขวา — เดินสาย Speakon จาก Amp Ch2 Output</li>
-        <li>ติด VL-AUDIO MT-65B #1, #2, #3 ตามจุดที่กำหนด — เดินสายลำโพงจาก Amp Ch3 ไป #1 แล้วพ่วง parallel ไป #2 → #3</li>
-        <li><strong>สำคัญ:</strong> MT-65B 3 ตัว ต่อ parallel (+ กับ +, - กับ -) ห้ามต่อ series</li>
-      </ul>
-    </div>
-
-    <div class="task-card zone-power">
-      <h4>งาน 6 — เดินไฟเลี้ยง + ทดสอบระบบ</h4>
-      <div class="team">ทีม: ช่างไฟ 1 คน + ช่างเสียง 1 คน | อุปกรณ์: ปลั๊กราง, สายไฟ, มัลติมิเตอร์</div>
-      <ul>
-        <li>เดินไฟให้อุปกรณ์ทุกจุด — แยกวงจรลำโพงแอคทีฟ (ในร้าน) กับแร็ค</li>
-        <li>ตรวจสอบสายทุกเส้นก่อนเปิดเครื่อง — ใช้ Cable Tester หรือมัลติมิเตอร์</li>
-        <li>เปิดเครื่องตามลำดับ: มิกเซอร์ → โปรเซสเซอร์ → แอมป์ → ลำโพง</li>
-        <li>ทดสอบส่งสัญญาณทีละช่อง ตรวจว่าเสียงออกถูกลำโพง</li>
-        <li>ตรวจ Phase ลำโพง — ถ้าเสียงเบาผิดปกติแสดงว่ากลับเฟส</li>
-        <li>ตั้งค่า Marani: Crossover, EQ, Delay ตามห้อง</li>
-        <li><strong>ปิดเครื่อง:</strong> ลำโพง → แอมป์ → โปรเซสเซอร์ → มิกเซอร์ (กลับลำดับ)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- =========================================== -->
-  <!-- 9. หมายเหตุ -->
-  <!-- =========================================== -->
-  <div class="section" id="notes">
-    <h2>9. หมายเหตุสำคัญ</h2>
-    <div class="note-box">
-      <ul>
-        <li><strong>ลำโพงแอคทีฟ</strong> (DXR12, MA118) = มีแอมป์ในตัว ต่อ XLR ตรงจาก Marani ได้เลย แต่ <strong>ต้องมีปลั๊กไฟทุกจุด</strong></li>
-        <li><strong>ลำโพงพาสซีฟ</strong> (Titan 12, MT-65B) = ต้องผ่าน Power Amp ก่อน <strong>ไม่ต้องมีปลั๊กไฟที่ตัวลำโพง</strong></li>
-        <li><strong>VL-AUDIO MT-65B ×3 ต่อ Parallel</strong> — อิมพีแดนซ์รวมลดลง ตรวจสอบว่าแอมป์รองรับโหลดต่ำได้</li>
-        <li><strong>DI Box</strong> — ควรใช้กับคีย์บอร์ดและเบส เพื่อแปลง Unbalanced → Balanced ก่อนเข้ากล่องสเนค</li>
-        <li><strong>ลำดับเปิด-ปิดเครื่อง:</strong> เปิด Source→Mixer→Processor→Amp→Speaker / ปิดกลับลำดับ</li>
-        <li>X Air 18 ควบคุมผ่าน WiFi ได้ — แนะนำติดตั้ง Router เฉพาะสำหรับมิกเซอร์</li>
-        <li>ติดป้ายชื่อที่หัวสายทุกเส้น ทั้งฝั่งเวทีและฝั่งมิกเซอร์ — ช่วยแก้ปัญหาได้เร็ว</li>
-        <li>Aux 6 ของ X Air 18 เหลือไว้สำรอง สามารถเพิ่มมอนิเตอร์ได้อีก 1 จุด</li>
-      </ul>
-    </div>
-  </div>
-
 </div>
-</div>
-
 <script>
-// Sidebar toggle (mobile)
 const sidebar = document.getElementById('sidebar');
-const toggle = document.getElementById('sidebarToggle');
+const toggle  = document.getElementById('sidebarToggle');
 const overlay = document.getElementById('sidebarOverlay');
-toggle.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-  overlay.classList.toggle('show');
-});
-overlay.addEventListener('click', () => {
-  sidebar.classList.remove('open');
-  overlay.classList.remove('show');
-});
-
-// Active link highlight on scroll
-const sections = document.querySelectorAll('.section[id]');
-const navLinks = document.querySelectorAll('.sidebar-links a');
-function updateActive() {
-  let current = '';
-  const scrollY = window.scrollY + 80;
-  sections.forEach(sec => {
-    if (sec.offsetTop <= scrollY) current = sec.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-}
-window.addEventListener('scroll', updateActive, { passive: true });
-updateActive();
-
-// Smooth scroll + close mobile sidebar
-navLinks.forEach(a => {
-  a.addEventListener('click', (e) => {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-  });
-});
+toggle.addEventListener('click',()=>{ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+overlay.addEventListener('click',()=>{ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
 </script>
 </body>
 </html>

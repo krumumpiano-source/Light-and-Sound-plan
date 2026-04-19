@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>การติดตั้ง — คู่มือเสียงร้านนิยมสุข</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>ระบบเสียง</h2>
+      <div class="shop-name">ร้านนิยมสุข</div>
+    </div>
+    <div class="sidebar-home"><a href="index.html">🏠 หน้าหลัก</a></div>
+    <ul class="sidebar-cat">
+      <li>
+        <div class="cat-title"><span class="cat-icon c-overview">📋</span> ภาพรวม</div>
+        <ul class="sidebar-links">
+          <li><a href="overview.html">1. ภาพรวมระบบ</a></li>
+          <li><a href="overview.html#equipment">2. รายการอุปกรณ์</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="cat-title"><span class="cat-icon c-signal">🔊</span> เส้นทางสัญญาณ</div>
+        <ul class="sidebar-links">
+          <li><a href="signal.html">3. ผัง Signal Flow</a></li>
+          <li><a href="signal.html#cables">4. ตารางสายเคเบิล</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
+        <ul class="sidebar-links">
+          <li><a href="devices.html">5. กล่องสัญญาณ (Stage Box)</a></li>
+          <li><a href="devices.html#mixerchannel">6. ช่อง X Air 18</a></li>
+          <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
+        </ul>
+      </li>
+      <li class="current">
+        <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
+        <ul class="sidebar-links">
+          <li><a href="#tasks">8. แผนงาน / แบ่งทีม</a></li>
+          <li><a href="#notes">9. หมายเหตุสำคัญ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+
+  <div class="page">
+
+    <div class="section" id="tasks">
+      <h2>🔧 8. แผนงานติดตั้ง / แบ่งทีม</h2>
+      <p>แบ่งทีมช่างออกเป็น 6 กลุ่มทำงานพร้อมกันเพื่อประหยัดเวลา ควรใช้วิทยุสื่อสาร</p>
+
+      <div class="task-card zone-stage">
+        <div class="task-title">🎤 ทีม A — วางกล่องสัญญาณบนเวที (Stage Box)</div>
+        <ul>
+          <li>ติดตั้ง Stage Box 3 จุด (คีย์บอร์ด / ซ้าย / ขวา) บนเวที</li>
+          <li>เดินสาย Snake จากเวทีมาถึงจุดวางมิกเซอร์</li>
+          <li>ติดฉลากทุก Input ของ Stage Box ก่อนต่อสาย</li>
+          <li>ทดสอบ Continuity ทุกเส้นก่อนปิดท่อสาย</li>
+        </ul>
+      </div>
+
+      <div class="task-card zone-drum">
+        <div class="task-title">🥁 ทีม B — ติดตั้งมัลติคอร์กลองและ SoundCraft ui12</div>
+        <ul>
+          <li>ติดตั้ง Drum Multicore จากชุดกลองไปวาง ui12</li>
+          <li>ติดตั้งไมค์กลอง 6 ตัวตามตำแหน่งที่กำหนด</li>
+          <li>ต่อสายจาก ui12 Main Out ไปช่อง X Air 18</li>
+          <li>ตั้งค่า Gain ใน ui12 เบื้องต้น ก่อน Soundcheck</li>
+        </ul>
+      </div>
+
+      <div class="task-card zone-mixer">
+        <div class="task-title">🎛 ทีม C — ติดตั้งมิกเซอร์หลัก X Air 18 และ Marani</div>
+        <ul>
+          <li>ต่อสายจาก Stage Snake เข้า X Air 18 ช่อง 1–18</li>
+          <li>ต่อ X Air 18 Main + Aux Out ไป Marani DPA260p+</li>
+          <li>ตั้งค่า IP ของ X Air 18 และทดสอบ App บน Tablet/Phone</li>
+          <li>ตรวจสอบ Marani Output 1–6 ให้ถูกโซน</li>
+        </ul>
+      </div>
+
+      <div class="task-card zone-speaker">
+        <div class="task-title">🔊 ทีม D — ติดตั้งลำโพงหลักและสายลำโพง</div>
+        <ul>
+          <li>ติดตั้งลำโพงหลักเวที L+R (ขาตั้ง หรือ Fly)</li>
+          <li>ติดตั้งลำโพงกลางห้อง L+R</li>
+          <li>ต่อสาย Speakon จาก Marani Out 1–4 ไปลำโพง</li>
+          <li>ตรวจขั้วลำโพงก่อนเปิดเครื่อง (+/−)</li>
+        </ul>
+      </div>
+
+      <div class="task-card zone-monitor">
+        <div class="task-title">👂 ทีม E — ติดตั้งมอนิเตอร์เวที</div>
+        <ul>
+          <li>วางมอนิเตอร์เวที 2 ตัวหันหาศิลปิน</li>
+          <li>ต่อสาย Speakon จาก Marani Out 5–6</li>
+          <li>ทดสอบเสียงมอนิเตอร์แยกจาก FOH ได้</li>
+        </ul>
+      </div>
+
+      <div class="task-card zone-power">
+        <div class="task-title">⚡ ทีม F — ระบบไฟฟ้าและ Power Management</div>
+        <ul>
+          <li>จัดตู้ไฟ และ Power Strip ให้เพียงพอสำหรับอุปกรณ์ทั้งหมด</li>
+          <li>ต่อ UPS สำหรับมิกเซอร์และ Marani</li>
+          <li>ลำดับการเปิดเครื่อง: Mixer → DSP → Amp → ลำโพง</li>
+          <li>ลำดับการปิดเครื่อง: ลำโพง → Amp → DSP → Mixer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="notes">
+      <h2>⚠️ 9. หมายเหตุสำคัญ</h2>
+      <div class="note-box">
+        <strong>ลำดับเปิด-ปิดระบบ (สำคัญมาก)</strong>
+        <ul>
+          <li>เปิด: มิกเซอร์ → Processor/DSP → Power Amp → ลำโพง</li>
+          <li>ปิด: ลดวอลุ่มก่อน → ปิดลำโพง → ปิด Amp → ปิด DSP → ปิดมิกเซอร์</li>
+          <li>ห้ามเปิด/ปิดอุปกรณ์เรียงผิดลำดับ — จะทำให้ลำโพงพังได้</li>
+        </ul>
+      </div>
+      <div class="note-box" style="margin-top:12px;">
+        <strong>ก่อน Soundcheck</strong>
+        <ul>
+          <li>ลดวอลุ่มทุกช่องใน X Air 18 ลงหมดก่อนเปิดระบบ</li>
+          <li>ตรวจ Phantom Power (+48V) เฉพาะช่องที่ใช้ Condenser Mic เท่านั้น</li>
+          <li>ทดสอบสัญญาณทีละช่อง ไม่เปิดพร้อมกันทุกช่อง</li>
+          <li>ตรวจ Marani Limiter ห้ามปิด Limiter ขณะใช้งาน</li>
+        </ul>
+      </div>
+      <div class="note-box" style="margin-top:12px;">
+        <strong>การดูแลรักษา</strong>
+        <ul>
+          <li>ม้วนสายให้เป็นระเบียบหลังใช้งาน ใช้ที่รัดสาย</li>
+          <li>ทำความสะอาดหัวปลั๊กและ Connector ด้วย Contact Cleaner</li>
+          <li>บันทึก Scene ใน X Air 18 ทุกครั้งหลัง Soundcheck สำเร็จ</li>
+          <li>สำรอง Config ของ Marani ไว้ใน USB</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+const toggle  = document.getElementById('sidebarToggle');
+const overlay = document.getElementById('sidebarOverlay');
+toggle.addEventListener('click',()=>{ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+overlay.addEventListener('click',()=>{ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+
+const sections = document.querySelectorAll('.section');
+const catItems = document.querySelectorAll('.sidebar-cat > li.current .sidebar-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  catItems.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+</script>
+</body>
+</html>
