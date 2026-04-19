@@ -56,133 +56,130 @@
     <!-- ═══════════════════════════════════════════ Stage Box ══ -->
     <div class="section" id="stagebox">
       <h2>📦 กล่องรับสัญญาณบนเวที — ง่ายๆ</h2>
-      <p>บนเวทีมี <strong>4 กล่อง</strong> สาย Snake จากแต่ละกล่องวิ่งไปมิกเซอร์เส้นเดียว — พาทั้งเสียง<strong>ขาไป</strong> (ไมค์→มิก) และเสียง<strong>ขากลับ</strong> (มิก→มอนิเตอร์) ในท่อเดียวกัน</p>
+      <p>บนเวทีมี <strong>3 กล่อง + Drum Multicore 1 จุด</strong> สาย Snake จากแต่ละกล่องวิ่งไปมิกเซอร์เส้นเดียว — พาทั้ง <strong>IN</strong> (เสียงจากเวที→มิก) และ <strong>OUT</strong> (เสียงจากมิก→In-Ear) ในท่อเดียวกัน</p>
+      <p>📍 <strong>ผังเวที:</strong> ฝั่งซ้าย = คีย์บอร์ด, เบส, นักร้อง &nbsp;|&nbsp; ฝั่งขวา = กีตาร์, กลอง &nbsp;|&nbsp; มิกเซอร์ตั้งที่ขอบเวทีด้านซ้ายใกล้คีย์บอร์ด</p>
 
       <!-- ═══ กล่อง 1: KB ═══ -->
-      <h3 style="color:#1565c0;">📦 กล่อง 1 — ฝั่งคีย์บอร์ด+เบส</h3>
+      <h3 style="color:#1565c0;">📦 กล่อง 1 — คีย์บอร์ดล้วนๆ (ขอบเวทีซ้าย ใกล้มิก)</h3>
       <div class="note-box" style="background:#e3f2fd; border-left-color:#1565c0;">
-        <p style="margin:0 0 8px;"><strong>ขาไป (รับจากเวที → ส่งเข้ามิก)</strong></p>
         <table style="margin:0;">
-          <thead><tr><th style="width:40%;">เสียบอะไรเข้ากล่อง</th><th>เข้ามิก Ch</th></tr></thead>
+          <thead><tr><th style="width:12%;">ช่อง</th><th style="width:48%;">อะไร</th><th>ไปที่</th></tr></thead>
           <tbody>
-            <tr><td>🎸 เบส (ผ่าน DI Box)</td><td><strong>Ch 5</strong></td></tr>
-            <tr><td>🎹 คีย์บอร์ด L (ผ่าน DI Box)</td><td><strong>Ch 7</strong></td></tr>
-            <tr><td>🎹 คีย์บอร์ด R (ผ่าน DI Box)</td><td><strong>Ch 8</strong></td></tr>
-            <tr><td>🎤 ไมค์ร้อง มือคีย์บอร์ด</td><td><strong>Ch 13</strong></td></tr>
-          </tbody>
-        </table>
-        <p style="margin:12px 0 0;"><strong>ขากลับ (รับจากมิก Aux → ให้ใครฟัง)</strong></p>
-        <table style="margin:0;">
-          <thead><tr><th style="width:30%;">รับจากมิก</th><th>ส่งไปลำโพงมอนิเตอร์ของ</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Aux 1</strong></td><td>🎹 มือคีย์บอร์ด</td></tr>
-            <tr><td><strong>Aux 2</strong></td><td>🎸 มือเบส</td></tr>
+            <tr style="background:#bbdefb;"><td colspan="3" style="font-weight:700;">🔵 IN — เสียงเข้ากล่อง → ส่งไปมิก</td></tr>
+            <tr><td>IN 1</td><td>🎹 คีย์บอร์ด L (ผ่าน DI Box)</td><td>→ มิก <strong>Ch 7</strong></td></tr>
+            <tr><td>IN 2</td><td>🎹 คีย์บอร์ด R (ผ่าน DI Box)</td><td>→ มิก <strong>Ch 8</strong></td></tr>
+            <tr><td>IN 3</td><td>🎤 ไมค์ร้อง มือคีย์บอร์ด</td><td>→ มิก <strong>Ch 13</strong></td></tr>
+            <tr style="background:#ffcdd2;"><td colspan="3" style="font-weight:700;">🔴 OUT — เสียงจากมิก Aux → กลับ In-Ear</td></tr>
+            <tr><td>OUT 1</td><td>🎹 In-Ear มือคีย์บอร์ด</td><td>← มิก <strong>Aux 1</strong></td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- ═══ กล่อง 2: L ═══ -->
-      <h3 style="color:#2e7d32; margin-top:24px;">📦 กล่อง 2 — ฝั่งซ้าย (กีตาร์+นักร้อง)</h3>
+      <!-- ═══ กล่อง 2: เบส+นักร้อง ═══ -->
+      <h3 style="color:#2e7d32; margin-top:24px;">📦 กล่อง 2 — เบส + นักร้อง (ฝั่งซ้าย)</h3>
       <div class="note-box" style="background:#e8f5e9; border-left-color:#2e7d32;">
-        <p style="margin:0 0 8px;"><strong>ขาไป (รับจากเวที → ส่งเข้ามิก)</strong></p>
         <table style="margin:0;">
-          <thead><tr><th style="width:40%;">เสียบอะไรเข้ากล่อง</th><th>เข้ามิก Ch</th></tr></thead>
+          <thead><tr><th style="width:12%;">ช่อง</th><th style="width:48%;">อะไร</th><th>ไปที่</th></tr></thead>
           <tbody>
-            <tr><td>🎸 กีตาร์ไฟฟ้า (DI/ไมค์แอมป์)</td><td><strong>Ch 6</strong></td></tr>
-            <tr><td>🎤 นักร้องหลัก (Vocal 1)</td><td><strong>Ch 9</strong></td></tr>
-            <tr><td>🎤 นักร้องสอง (Vocal 2)</td><td><strong>Ch 10</strong></td></tr>
-            <tr><td>🎤 ไมค์ร้อง มือกีตาร์</td><td><strong>Ch 11</strong></td></tr>
-            <tr><td>🎵 Sound Data (เสียงประกอบ)</td><td><strong>Ch 15</strong></td></tr>
-          </tbody>
-        </table>
-        <p style="margin:12px 0 0;"><strong>ขากลับ (รับจากมิก Aux → ให้ใครฟัง)</strong></p>
-        <table style="margin:0;">
-          <thead><tr><th style="width:30%;">รับจากมิก</th><th>ส่งไปลำโพงมอนิเตอร์ของ</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Aux 3</strong></td><td>🎤 นักร้อง</td></tr>
-            <tr><td><strong>Aux 4</strong></td><td>🎸 มือกีตาร์</td></tr>
+            <tr style="background:#c8e6c9;"><td colspan="3" style="font-weight:700;">🔵 IN — เสียงเข้ากล่อง → ส่งไปมิก</td></tr>
+            <tr><td>IN 1</td><td>🎸 เบส (ผ่าน DI Box)</td><td>→ มิก <strong>Ch 5</strong></td></tr>
+            <tr><td>IN 2</td><td>🎤 นักร้องหลัก (Vocal 1)</td><td>→ มิก <strong>Ch 9</strong></td></tr>
+            <tr><td>IN 3</td><td>🎤 นักร้องสอง (Vocal 2)</td><td>→ มิก <strong>Ch 10</strong></td></tr>
+            <tr><td>IN 4</td><td>🎤 ไมค์ร้อง มือเบส</td><td>→ มิก <strong>Ch 12</strong></td></tr>
+            <tr style="background:#ffcdd2;"><td colspan="3" style="font-weight:700;">🔴 OUT — เสียงจากมิก Aux → กลับ In-Ear</td></tr>
+            <tr><td>OUT 1</td><td>🎸 In-Ear มือเบส</td><td>← มิก <strong>Aux 2</strong></td></tr>
+            <tr><td>OUT 2</td><td>🎤 In-Ear นักร้อง</td><td>← มิก <strong>Aux 3</strong></td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- ═══ กล่อง 3: R ═══ -->
-      <h3 style="color:#e65100; margin-top:24px;">📦 กล่อง 3 — ฝั่งขวา (DJ+กลอง)</h3>
+      <!-- ═══ กล่อง 3: กีตาร์+กลอง ═══ -->
+      <h3 style="color:#e65100; margin-top:24px;">📦 กล่อง 3 — กีตาร์ + กลอง (ฝั่งขวา)</h3>
       <div class="note-box" style="background:#fff3e0; border-left-color:#e65100;">
-        <p style="margin:0 0 8px;"><strong>ขาไป (รับจากเวที → ส่งเข้ามิก)</strong></p>
+        <p style="margin:0 0 8px;">⚠️ <strong>สายไมค์กลองชุด 7 ตัว แยกต่างหากผ่าน Drum Multicore (กล่อง 4)</strong> — ไม่เข้ากล่อง 3</p>
         <table style="margin:0;">
-          <thead><tr><th style="width:40%;">เสียบอะไรเข้ากล่อง</th><th>เข้ามิก Ch</th></tr></thead>
+          <thead><tr><th style="width:12%;">ช่อง</th><th style="width:48%;">อะไร</th><th>ไปที่</th></tr></thead>
           <tbody>
-            <tr><td>🎧 DJ Song L</td><td><strong>Ch 17</strong></td></tr>
-            <tr><td>🎧 DJ Song R</td><td><strong>Ch 18</strong></td></tr>
-            <tr><td>🎤 ไมค์ร้อง มือเบส</td><td><strong>Ch 12</strong></td></tr>
-            <tr><td>🎤 ไมค์ร้อง มือกลอง</td><td><strong>Ch 14</strong></td></tr>
-            <tr><td>🔔 Metronome (Click Track)</td><td><strong>Ch 16</strong> ‼️ ห้ามส่งออกลำโพง FOH</td></tr>
-          </tbody>
-        </table>
-        <p style="margin:12px 0 0;"><strong>ขากลับ (รับจากมิก Aux → ให้ใครฟัง)</strong></p>
-        <table style="margin:0;">
-          <thead><tr><th style="width:30%;">รับจากมิก</th><th>ส่งไปลำโพงมอนิเตอร์ของ</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Aux 5</strong></td><td>🥁 มือกลอง (+ ส่ง Click Track ให้กลองนับจังหวะ)</td></tr>
+            <tr style="background:#ffe0b2;"><td colspan="3" style="font-weight:700;">🔵 IN — เสียงเข้ากล่อง → ส่งไปมิก</td></tr>
+            <tr><td>IN 1</td><td>🎸 กีตาร์ไฟฟ้า (DI / ไมค์แอมป์)</td><td>→ มิก <strong>Ch 6</strong></td></tr>
+            <tr><td>IN 2</td><td>🎤 ไมค์ร้อง มือกีตาร์</td><td>→ มิก <strong>Ch 11</strong></td></tr>
+            <tr><td>IN 3</td><td>🎤 ไมค์ร้อง มือกลอง</td><td>→ มิก <strong>Ch 14</strong></td></tr>
+            <tr><td>IN 4</td><td>🔔 Metronome / Click Track</td><td>→ มิก <strong>Ch 16</strong> ‼️ ห้ามส่งออก FOH</td></tr>
+            <tr style="background:#ffcdd2;"><td colspan="3" style="font-weight:700;">🔴 OUT — เสียงจากมิก Aux → กลับ In-Ear</td></tr>
+            <tr><td>OUT 1</td><td>🎸 In-Ear มือกีตาร์</td><td>← มิก <strong>Aux 4</strong></td></tr>
+            <tr><td>OUT 2</td><td>🥁 In-Ear มือกลอง (+ Click Track)</td><td>← มิก <strong>Aux 5</strong></td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- ═══ กล่อง 4: กลอง ═══ -->
-      <h3 style="color:#6a1b9a; margin-top:24px;">🥁 กล่อง 4 — Drum Multicore (ข้างกลองชุด)</h3>
+      <!-- ═══ กล่อง 4: Drum Multicore ═══ -->
+      <h3 style="color:#6a1b9a; margin-top:24px;">🥁 กล่อง 4 — Drum Multicore (ข้างกลองชุด ฝั่งขวา)</h3>
       <div class="note-box" style="background:#f3e5f5; border-left-color:#6a1b9a;">
-        <p style="margin:0 0 4px;"><strong>⚠️ กล่องนี้ต่างจาก 3 กล่องข้างบน:</strong> ส่งไป <strong>ui12</strong> ก่อน (ไม่ใช่ X Air โดยตรง) แล้ว ui12 รวมเสียงกลองเป็น 4 เส้นส่งต่อไปมิกหลัก — และ<strong>ไม่มีขากลับ</strong> (มอนิเตอร์กลองใช้ Aux 5 ผ่านกล่อง 3 แทน)</p>
-        <p style="margin:12px 0 8px;"><strong>ขาไป (ไมค์กลอง → ui12 → X Air 18)</strong></p>
-        <table style="margin:0;">
-          <thead><tr><th style="width:35%;">ไมค์อะไร</th><th>เข้า ui12 Ch</th><th>ui12 ส่งต่อไปมิก X Air Ch</th></tr></thead>
+        <p style="margin:0 0 4px;"><strong>⚠️ กล่องนี้ต่างจาก 3 กล่องข้างบน:</strong> ส่งไป <strong>ui12</strong> ก่อน (ไม่ใช่ X Air โดยตรง) แล้ว ui12 รวมเสียงกลองเป็น 4 เส้นส่งต่อไปมิกหลัก — และ<strong>ไม่มี OUT</strong> (In-Ear กลองใช้ Aux 5 ผ่านกล่อง 3 แทน)</p>
+        <table style="margin:0 0 8px;">
+          <thead><tr><th style="width:12%;">ช่อง</th><th style="width:38%;">ไมค์อะไร</th><th>เข้า ui12 Ch</th><th>ui12 ส่งต่อไป X Air</th></tr></thead>
           <tbody>
-            <tr><td>Kick (กลองเบส)</td><td>Ch 1</td><td>Aux 1 → <strong>X Air Ch 1</strong></td></tr>
-            <tr><td>Snare (สแนร์)</td><td>Ch 2</td><td>Aux 2 → <strong>X Air Ch 2</strong></td></tr>
-            <tr><td>Tom 1</td><td>Ch 3</td><td rowspan="5">Main L+R รวมกัน → <strong>X Air Ch 3–4</strong> (Stereo)</td></tr>
-            <tr><td>Tom 2</td><td>Ch 4</td></tr>
-            <tr><td>Tom 3 (Floor)</td><td>Ch 5</td></tr>
-            <tr><td>Overhead L (ฉาบซ้าย)</td><td>Ch 6 ✅+48V</td></tr>
-            <tr><td>Overhead R (ฉาบขวา)</td><td>Ch 7 ✅+48V</td></tr>
+            <tr style="background:#e1bee7;"><td colspan="4" style="font-weight:700;">🔵 IN เท่านั้น — ไม่มี OUT</td></tr>
+            <tr><td>IN 1</td><td>Kick (กลองเบส)</td><td>Ch 1</td><td>Aux 1 → <strong>X Air Ch 1</strong></td></tr>
+            <tr><td>IN 2</td><td>Snare (สแนร์)</td><td>Ch 2</td><td>Aux 2 → <strong>X Air Ch 2</strong></td></tr>
+            <tr><td>IN 3</td><td>Tom 1</td><td>Ch 3</td><td rowspan="5">Main L+R รวมกัน → <strong>X Air Ch 3–4</strong></td></tr>
+            <tr><td>IN 4</td><td>Tom 2</td><td>Ch 4</td></tr>
+            <tr><td>IN 5</td><td>Tom 3 (Floor)</td><td>Ch 5</td></tr>
+            <tr><td>IN 6</td><td>Overhead L (ฉาบซ้าย)</td><td>Ch 6 ✅+48V</td></tr>
+            <tr><td>IN 7</td><td>Overhead R (ฉาบขวา)</td><td>Ch 7 ✅+48V</td></tr>
           </tbody>
         </table>
-        <p style="margin:12px 0 0;"><strong>ขากลับ:</strong> ❌ ไม่มี — มอนิเตอร์กลองรับจาก <strong>Aux 5</strong> ผ่านกล่อง 3 (ฝั่งขวา)</p>
+      </div>
+
+      <!-- ═══ ต่อตรงเข้ามิก ═══ -->
+      <h3 style="color:#455a64; margin-top:24px;">📱 ต่อตรงเข้ามิก (ไม่ผ่านกล่อง)</h3>
+      <div class="note-box" style="background:#eceff1; border-left-color:#455a64;">
+        <p style="margin:0 0 8px;">เสียงจากโทรศัพท์มือถือ/Laptop วางไว้บนมิก เสียบตรงเข้ามิกเซอร์เลย ไม่ต้องผ่าน Snake</p>
+        <table style="margin:0;">
+          <thead><tr><th style="width:48%;">อะไร</th><th>ไปที่</th></tr></thead>
+          <tbody>
+            <tr><td>🎵 Sound Data / เสียงประกอบ (Laptop/Player)</td><td>→ มิก <strong>Ch 15</strong></td></tr>
+            <tr><td>📱 เพลง DJ จากมือถือ L (3.5mm→DI/TRS)</td><td>→ มิก <strong>Ch 17</strong></td></tr>
+            <tr><td>📱 เพลง DJ จากมือถือ R (3.5mm→DI/TRS)</td><td>→ มิก <strong>Ch 18</strong></td></tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- ═══ สรุป 1 ตาราง ═══ -->
       <h3 style="margin-top:28px;">📊 สรุปรวม: อะไรเข้ามิก Ch ไหน + Aux ไหนกลับให้ใคร</h3>
       <table>
-        <thead><tr><th>มิก Ch</th><th>เสียงอะไร</th><th>มาจากกล่องไหน</th></tr></thead>
+        <thead><tr><th>มิก Ch</th><th>เสียงอะไร</th><th>มาจากไหน</th></tr></thead>
         <tbody>
           <tr style="background:#fce4ec;"><td colspan="3" style="font-weight:700;">🥁 กลอง (ผ่านกล่อง 4 → ui12)</td></tr>
           <tr><td><strong>1</strong></td><td>Kick</td><td>กล่อง 4 → ui12 Aux 1</td></tr>
           <tr><td><strong>2</strong></td><td>Snare</td><td>กล่อง 4 → ui12 Aux 2</td></tr>
           <tr><td><strong>3–4</strong></td><td>Tom + ฉาบ (Stereo)</td><td>กล่อง 4 → ui12 Main L+R</td></tr>
           <tr style="background:#e8f5e9;"><td colspan="3" style="font-weight:700;">🎸 เครื่องดนตรี</td></tr>
-          <tr><td><strong>5</strong></td><td>เบส</td><td>กล่อง 1 (KB)</td></tr>
-          <tr><td><strong>6</strong></td><td>กีตาร์</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>7–8</strong></td><td>คีย์บอร์ด L+R</td><td>กล่อง 1 (KB)</td></tr>
+          <tr><td><strong>5</strong></td><td>เบส</td><td>กล่อง 2 (ฝั่งซ้าย)</td></tr>
+          <tr><td><strong>6</strong></td><td>กีตาร์</td><td>กล่อง 3 (ฝั่งขวา)</td></tr>
+          <tr><td><strong>7–8</strong></td><td>คีย์บอร์ด L+R</td><td>กล่อง 1 (ขอบซ้าย)</td></tr>
           <tr style="background:#e3f2fd;"><td colspan="3" style="font-weight:700;">🎤 ไมค์ร้อง</td></tr>
-          <tr><td><strong>9</strong></td><td>นักร้องหลัก</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>10</strong></td><td>นักร้องสอง</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>11</strong></td><td>ร้อง มือกีตาร์</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>12</strong></td><td>ร้อง มือเบส</td><td>กล่อง 3 (ขวา)</td></tr>
-          <tr><td><strong>13</strong></td><td>ร้อง มือคีย์บอร์ด</td><td>กล่อง 1 (KB)</td></tr>
-          <tr><td><strong>14</strong></td><td>ร้อง มือกลอง</td><td>กล่อง 3 (ขวา)</td></tr>
-          <tr style="background:#f3e5f5;"><td colspan="3" style="font-weight:700;">🎧 Playback / DJ</td></tr>
-          <tr><td><strong>15</strong></td><td>Sound Data</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>16</strong></td><td>Metronome ‼️ Monitor only</td><td>กล่อง 3 (ขวา)</td></tr>
-          <tr><td><strong>17–18</strong></td><td>DJ Song L+R</td><td>กล่อง 3 (ขวา)</td></tr>
+          <tr><td><strong>9</strong></td><td>นักร้องหลัก</td><td>กล่อง 2 (ฝั่งซ้าย)</td></tr>
+          <tr><td><strong>10</strong></td><td>นักร้องสอง</td><td>กล่อง 2 (ฝั่งซ้าย)</td></tr>
+          <tr><td><strong>11</strong></td><td>ร้อง มือกีตาร์</td><td>กล่อง 3 (ฝั่งขวา)</td></tr>
+          <tr><td><strong>12</strong></td><td>ร้อง มือเบส</td><td>กล่อง 2 (ฝั่งซ้าย)</td></tr>
+          <tr><td><strong>13</strong></td><td>ร้อง มือคีย์บอร์ด</td><td>กล่อง 1 (ขอบซ้าย)</td></tr>
+          <tr><td><strong>14</strong></td><td>ร้อง มือกลอง</td><td>กล่อง 3 (ฝั่งขวา)</td></tr>
+          <tr style="background:#f3e5f5;"><td colspan="3" style="font-weight:700;">🎧 Playback</td></tr>
+          <tr><td><strong>15</strong></td><td>Sound Data (เสียงประกอบ)</td><td>📱 ต่อตรงเข้ามิก</td></tr>
+          <tr><td><strong>16</strong></td><td>Metronome ‼️ In-Ear only</td><td>กล่อง 3 (ฝั่งขวา)</td></tr>
+          <tr><td><strong>17–18</strong></td><td>เพลง DJ จากมือถือ L+R</td><td>📱 ต่อตรงเข้ามิก</td></tr>
         </tbody>
       </table>
 
       <table style="margin-top:16px;">
-        <thead><tr><th>มิก Aux</th><th>ส่งเสียงกลับให้ใคร</th><th>กลับผ่านกล่องไหน</th></tr></thead>
+        <thead><tr><th>มิก Aux</th><th>ส่ง In-Ear ให้ใคร</th><th>กลับผ่านกล่องไหน</th></tr></thead>
         <tbody>
-          <tr><td><strong>Aux 1</strong></td><td>🎹 มอนิเตอร์ คีย์บอร์ด</td><td>กล่อง 1 (KB)</td></tr>
-          <tr><td><strong>Aux 2</strong></td><td>🎸 มอนิเตอร์ เบส</td><td>กล่อง 1 (KB)</td></tr>
-          <tr><td><strong>Aux 3</strong></td><td>🎤 มอนิเตอร์ นักร้อง</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>Aux 4</strong></td><td>🎸 มอนิเตอร์ กีตาร์</td><td>กล่อง 2 (ซ้าย)</td></tr>
-          <tr><td><strong>Aux 5</strong></td><td>🥁 มอนิเตอร์ กลอง</td><td>กล่อง 3 (ขวา)</td></tr>
+          <tr><td><strong>Aux 1</strong></td><td>🎹 In-Ear คีย์บอร์ด</td><td>กล่อง 1 (ขอบซ้าย)</td></tr>
+          <tr><td><strong>Aux 2</strong></td><td>🎸 In-Ear เบส</td><td>กล่อง 2 (ฝั่งซ้าย)</td></tr>
+          <tr><td><strong>Aux 3</strong></td><td>🎤 In-Ear นักร้อง</td><td>กล่อง 2 (ฝั่งซ้าย)</td></tr>
+          <tr><td><strong>Aux 4</strong></td><td>🎸 In-Ear กีตาร์</td><td>กล่อง 3 (ฝั่งขวา)</td></tr>
+          <tr><td><strong>Aux 5</strong></td><td>🥁 In-Ear กลอง</td><td>กล่อง 3 (ฝั่งขวา)</td></tr>
           <tr style="background:#fff3e0;"><td><strong>Aux 6</strong></td><td>📡 ลำโพงนอกอาคาร</td><td>❌ ไม่ผ่านกล่อง — ต่อตรงจากมิกไป dbx 260</td></tr>
         </tbody>
       </table>
@@ -233,14 +230,14 @@
     <!-- ═══════════════════════════════════════════ X Air 18 ══ -->
     <div class="section" id="xair">
       <h2>🎛 6. Behringer X Air 18 — มิกเซอร์หลัก</h2>
-      <p>X Air 18 รับสัญญาณจาก ui12 (4 เส้น) + เครื่องดนตรีบนเวที (ผ่าน Stage Box) + Vocal รวม 18 ช่อง แล้วส่งออกเป็น Main L+R (ในอาคาร) และ Aux Monitor 6 เส้น + Aux 6 นอกอาคาร</p>
+      <p>X Air 18 รับสัญญาณจาก ui12 (4 เส้น) + เครื่องดนตรีบนเวที (ผ่าน Stage Box) + Vocal รวม 18 ช่อง แล้วส่งออกเป็น Main L+R (ในอาคาร) และ Aux In-Ear Monitor 5 เส้น + Aux 6 นอกอาคาร</p>
 
       <div class="note-box" style="margin-bottom:16px;">
         <strong>ข้อมูล X Air 18:</strong>
         <ul>
           <li>Input: 16 ช่อง Mic/Line (XLR/TRS Combo) + Ch 17–18 Stereo Return (RCA/TRS) — รวม 18 ช่อง</li>
           <li>Main Out: XLR Male (L+R) ส่ง FOH → Marani DPA260p+</li>
-          <li>Aux Out: 6 ช่อง TRS 6.35mm — Aux 1–5 = Monitor / Aux 6 = นอกอาคาร (dbx 260)</li>
+          <li>Aux Out: 6 ช่อง TRS 6.35mm — Aux 1–5 = In-Ear Monitor / Aux 6 = นอกอาคาร (dbx 260)</li>
           <li>ควบคุมโดย App บน iOS/Android ผ่าน Wi-Fi</li>
           <li>Phantom Power แยกต่อช่อง</li>
         </ul>
@@ -280,18 +277,18 @@
 
       <h3>Aux Output — Monitor + นอกอาคาร</h3>
       <div class="note-box" style="margin-bottom:12px;">
-        <strong>Monitor Mix:</strong> แต่ละ Aux ส่งเสียงกลับให้นักดนตรีแต่ละคนฟังแยกอิสระ — ตั้ง Send ต่อช่องใน X Air 18 App ว่าใครต้องการฟังอะไรขนาดไหน
+        <strong>In-Ear Monitor Mix:</strong> แต่ละ Aux ส่งเสียงกลับไป In-Ear ของนักดนตรีแต่ละคนแยกอิสระ — ตั้ง Send ต่อช่องใน X Air 18 App ว่าใครต้องการฟังอะไรขนาดไหน
       </div>
       <table>
         <thead>
           <tr><th>Aux</th><th>Monitor สำหรับ</th><th>ขั้ว Output (X Air 18)</th><th>ไปที่</th><th>เนื้อหาที่ควร Send มาก</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Aux 1</strong></td><td>🎹 Monitor คีย์บอร์ด</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้าคีย์บอร์ด</td><td>Vocal หลัก, กลอง, เบส, ตัวเอง</td></tr>
-          <tr><td><strong>Aux 2</strong></td><td>🎸 Monitor เบส</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้ามือเบส</td><td>Kick, Snare, ตัวเอง, Vocal หลัก</td></tr>
-          <tr><td><strong>Aux 3</strong></td><td>🎤 Monitor Vocal (นักร้อง)</td><td>TRS 6.35mm Male</td><td>ลำโพงมอนิเตอร์หน้าไมค์ร้อง</td><td>ตัวเอง, Vocal อื่น, กลอง, เบส</td></tr>
-          <tr><td><strong>Aux 4</strong></td><td>🎸 Monitor กีตาร์</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้ามือกีตาร์</td><td>ตัวเอง, Vocal หลัก, กลอง, เบส</td></tr>
-          <tr><td><strong>Aux 5</strong></td><td>🥁 Monitor กลอง</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้ากลอง หรือ In-Ear</td><td>Click Track (Ch16), Vocal, กลองตัวเอง</td></tr>
+          <tr><td><strong>Aux 1</strong></td><td>🎹 In-Ear คีย์บอร์ด</td><td>TRS 6.35mm Male</td><td>In-Ear มือคีย์บอร์ด (ผ่าน Stage Box KB)</td><td>Vocal หลัก, กลอง, เบส, ตัวเอง</td></tr>
+          <tr><td><strong>Aux 2</strong></td><td>🎸 In-Ear เบส</td><td>TRS 6.35mm Male</td><td>In-Ear มือเบส (ผ่าน Stage Box KB)</td><td>Kick, Snare, ตัวเอง, Vocal หลัก</td></tr>
+          <tr><td><strong>Aux 3</strong></td><td>🎤 In-Ear นักร้อง</td><td>TRS 6.35mm Male</td><td>In-Ear นักร้อง (ผ่าน Stage Box L)</td><td>ตัวเอง, Vocal อื่น, กลอง, เบส</td></tr>
+          <tr><td><strong>Aux 4</strong></td><td>🎸 In-Ear กีตาร์</td><td>TRS 6.35mm Male</td><td>In-Ear มือกีตาร์ (ผ่าน Stage Box L)</td><td>ตัวเอง, Vocal หลัก, กลอง, เบส</td></tr>
+          <tr><td><strong>Aux 5</strong></td><td>🥁 In-Ear กลอง</td><td>TRS 6.35mm Male</td><td>In-Ear มือกลอง (ผ่าน Stage Box R)</td><td>Click Track (Ch16), Vocal, กลองตัวเอง</td></tr>
           <tr><td><strong>Aux 6</strong></td><td>🏠 โซนนอกอาคาร (Follow Main)</td><td>TRS 6.35mm Male</td><td>→ dbx DriveRack 260 (Input Mono)</td><td>FOH Mix เดียวกับในอาคาร ลด level ลงก่อนเข้า dbx</td></tr>
         </tbody>
       </table>
