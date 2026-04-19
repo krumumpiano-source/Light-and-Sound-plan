@@ -32,16 +32,17 @@
       <li>
         <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
         <ul class="sidebar-links">
-          <li><a href="devices.html">5. กล่องสัญญาณ (Stage Box)</a></li>
-          <li><a href="devices.html#mixerchannel">6. ช่อง X Air 18</a></li>
+          <li><a href="devices.html#ui12">5. SoundCraft ui12 (กลอง)</a></li>
+          <li><a href="devices.html#xair">6. Behringer X Air 18</a></li>
           <li><a href="devices.html#marani">7. Marani DPA260p+</a></li>
+          <li><a href="devices.html#dbx">8. dbx DriveRack 260 (นอก)</a></li>
         </ul>
       </li>
       <li>
         <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
         <ul class="sidebar-links">
-          <li><a href="tasks.html">8. แผนงาน / แบ่งทีม</a></li>
-          <li><a href="tasks.html#notes">9. หมายเหตุสำคัญ</a></li>
+          <li><a href="tasks.html">9. แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#notes">10. หมายเหตุสำคัญ</a></li>
         </ul>
       </li>
     </ul>
@@ -53,42 +54,66 @@
 
     <div class="section" id="flow">
       <h2>🔊 3. ผัง Signal Flow</h2>
-      <p>เสียงวิ่งจากแหล่งกำเนิดไปลำโพงผ่าน 4 ชั้น — ไมค์/เครื่องดนตรี → Stage Box → มิกเซอร์ → แอมป์/ลำโพง</p>
+      <p>เสียงวิ่งผ่าน 4 ชั้น — ไมค์/เครื่องดนตรี → Stage Box/Multicore → มิกเซอร์ → Processor/ลำโพง</p>
 
       <h3>ชั้น 1 — แหล่งกำเนิดเสียง (Sources)</h3>
       <div class="flow-row">
-        <div class="flow-box flow-input">ไมโครโฟน<br><small>บนเวที</small></div>
+        <div class="flow-box flow-input">ไมค์กลอง 7 ตัว<br><small>Kick/Snare/Tom1-3/OH L/OH R</small></div>
         <div class="flow-arrow">→</div>
-        <div class="flow-box flow-input">เครื่องดนตรี DI<br><small>คีย์บอร์ด / เบส</small></div>
+        <div class="flow-box flow-input">เครื่องดนตรี DI<br><small>Bass / Guitar / Keyboard</small></div>
         <div class="flow-arrow">→</div>
-        <div class="flow-box flow-input">ไมค์กลอง<br><small>6 ตัว</small></div>
+        <div class="flow-box flow-input">ไมค์ Vocal 6 ตัว<br><small>Vocal 1-2 + มือดนตรี ×4</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-input">Playback/DJ<br><small>Sound Data/Metro/DJ Song</small></div>
       </div>
 
-      <h3 style="margin-top:18px;">ชั้น 2 — กล่องสัญญาณบนเวที (Stage Boxes)</h3>
+      <h3 style="margin-top:18px;">ชั้น 2 — กล่องสัญญาณ / Multicore</h3>
       <div class="flow-row">
-        <div class="flow-box flow-device">Stage Box คีย์บอร์ด<br><small>8in Ch1–8</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box flow-device">Stage Box ซ้าย<br><small>8in Ch9–16</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box flow-device">Stage Box ขวา<br><small>4in Ch17–20</small></div>
-        <div class="flow-arrow">→</div>
         <div class="flow-box flow-device">Drum Multicore<br><small>12ch → ui12</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Stage Box คีย์บอร์ด<br><small>8in</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Stage Box ซ้าย<br><small>8in</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">Stage Box ขวา<br><small>8in</small></div>
       </div>
 
-      <h3 style="margin-top:18px;">ชั้น 3 — มิกเซอร์ (Mixing)</h3>
+      <h3 style="margin-top:18px;">ชั้น 3 — ui12 Pre-mixer (กลอง)</h3>
       <div class="flow-row">
-        <div class="flow-box flow-device">SoundCraft ui12<br><small>รับกลอง → Stereo Bus</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box flow-device" style="background:#c8e6c9;">Behringer X Air 18<br><small>มิกเซอร์หลัก ควบคุมทุก Zone</small></div>
+        <div class="flow-box flow-device">SoundCraft ui12<br><small>Ch1–7 Input</small></div>
+        <div class="flow-arrow">→  Aux1 (Kick) →</div>
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18 Ch1</div>
+      </div>
+      <div class="flow-row" style="margin-top:6px;">
+        <div class="flow-box flow-device">SoundCraft ui12</div>
+        <div class="flow-arrow">→  Aux2 (Snare) →</div>
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18 Ch2</div>
+      </div>
+      <div class="flow-row" style="margin-top:6px;">
+        <div class="flow-box flow-device">SoundCraft ui12</div>
+        <div class="flow-arrow">→  Main L+R (Tom+OH) →</div>
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18 Ch3–4</div>
       </div>
 
-      <h3 style="margin-top:18px;">ชั้น 4 — เอาต์พุต (Output)</h3>
+      <h3 style="margin-top:18px;">ชั้น 4 — X Air 18 มิกเซอร์หลัก → Output</h3>
       <div class="flow-row">
-        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Main L+R / Aux 1–6</small></div>
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Main Out L+R</small></div>
         <div class="flow-arrow">→</div>
-        <div class="flow-box flow-device">Marani DPA260p+<br><small>DSP + Power Amp</small></div>
+        <div class="flow-box flow-device">Marani DPA260p+<br><small>ในอาคาร</small></div>
         <div class="flow-arrow">→</div>
-        <div class="flow-box flow-output">ลำโพง 6 โซน<br><small>Out 1–6</small></div>
+        <div class="flow-box flow-output">Yamaha DXR ×4<br>MA18 Sub ×2</div>
+      </div>
+      <div class="flow-row" style="margin-top:8px;">
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Aux 6 (นอกอาคาร)</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-device">dbx DriveRack 260<br><small>นอกอาคาร</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-output">Wharfedale Titan 12 ×2<br>ลำโพง VL ×3</div>
+      </div>
+      <div class="flow-row" style="margin-top:8px;">
+        <div class="flow-box flow-device" style="background:#c8e6c9;">X Air 18<br><small>Aux 1–5 (Monitor)</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box flow-output">Stage Monitor ×5<br><small>KB/Bass/Vocal/Guitar/Drum</small></div>
       </div>
     </div>
 
@@ -98,79 +123,119 @@
       <div class="note-box" style="margin-bottom:16px;">
         <strong>หลักการ XLR ผู้–เมีย:</strong>
         <ul>
-          <li><strong>Output ของอุปกรณ์</strong> (ส่งสัญญาณออก) = <strong>ขั้ว XLR Male (ตัวผู้)</strong> — มีพิน 3 ขาโผล่ออกมา</li>
-          <li><strong>Input ของอุปกรณ์</strong> (รับสัญญาณเข้า) = <strong>ขั้ว XLR Female (ตัวเมีย)</strong> — มีรูรับพิน 3 รู</li>
-          <li>สายเคเบิล XLR ปกติ: ด้านหนึ่งเป็น Male, อีกด้านเป็น Female — เสียบให้ตรงกับ Output/Input ของอุปกรณ์</li>
+          <li><strong>Output ของอุปกรณ์</strong> (ส่งสัญญาณออก) = <strong>XLR Male (ตัวผู้)</strong> — มีพิน 3 ขาโผล่ออกมา</li>
+          <li><strong>Input ของอุปกรณ์</strong> (รับสัญญาณเข้า) = <strong>XLR Female (ตัวเมีย)</strong> — มีรูรับพิน 3 รู</li>
+          <li>สายเคเบิล XLR ปกติ: หัวหนึ่งเป็น Male, อีกหัวเป็น Female</li>
         </ul>
       </div>
 
       <h3>กลุ่ม A — Stage Box คีย์บอร์ด → X Air 18</h3>
       <table>
-        <thead><tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง<br><small>เสียบที่อุปกรณ์ต้นทาง</small></th><th>หัวด้านปลายทาง<br><small>เสียบที่อุปกรณ์ปลายทาง</small></th><th>ความยาว</th></tr></thead>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
         <tbody>
-          <tr><td>A1</td><td>ไมค์/เครื่องดนตรี → Stage Box KB Input</td><td>Stage Box KB Output → Snake</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์/DI</small></td><td><strong>XLR Female</strong><br><small>Input ของ Stage Box</small></td><td>~3–10m ต่อเส้น</td></tr>
-          <tr><td>A2</td><td>Stage Box KB Output (Snake)</td><td>X Air 18 Ch1–8 Input</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Stage Box</small></td><td><strong>XLR Female</strong><br><small>Input Ch1–8 ของ X Air 18</small></td><td>~20m</td></tr>
+          <tr><td>A1</td><td>ไมค์/เครื่องดนตรี (Output)</td><td>Stage Box KB Input</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์/DI</small></td><td><strong>XLR Female</strong><br><small>Input ของ Stage Box</small></td><td>~3–10m ต่อเส้น</td></tr>
+          <tr><td>A2</td><td>Stage Box KB Output (Snake)</td><td>X Air 18 Input ช่องที่ระบุ</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Stage Box</small></td><td><strong>XLR Female</strong><br><small>Input ของ X Air 18</small></td><td>~20m</td></tr>
         </tbody>
       </table>
 
       <h3>กลุ่ม B — Stage Box ซ้าย → X Air 18</h3>
       <table>
-        <thead><tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr></thead>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
         <tbody>
-          <tr><td>B1</td><td>ไมค์/เครื่องดนตรี → Stage Box L Input</td><td>Stage Box L Output → Snake</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์/DI</small></td><td><strong>XLR Female</strong><br><small>Input ของ Stage Box</small></td><td>~3–10m ต่อเส้น</td></tr>
-          <tr><td>B2</td><td>Stage Box L Output (Snake)</td><td>X Air 18 Ch9–16 Input</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Stage Box</small></td><td><strong>XLR Female</strong><br><small>Input Ch9–16 ของ X Air 18</small></td><td>~20m</td></tr>
+          <tr><td>B1</td><td>ไมค์/เครื่องดนตรี (Output)</td><td>Stage Box L Input</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์/DI</small></td><td><strong>XLR Female</strong><br><small>Input ของ Stage Box</small></td><td>~3–10m ต่อเส้น</td></tr>
+          <tr><td>B2</td><td>Stage Box L Output (Snake)</td><td>X Air 18 Input ช่องที่ระบุ</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Stage Box</small></td><td><strong>XLR Female</strong><br><small>Input ของ X Air 18</small></td><td>~20m</td></tr>
         </tbody>
       </table>
 
       <h3>กลุ่ม C — Stage Box ขวา → X Air 18</h3>
       <table>
-        <thead><tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr></thead>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
         <tbody>
-          <tr><td>C1</td><td>ไมค์/เครื่องดนตรี → Stage Box R Input</td><td>Stage Box R Output → Snake</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์/DI</small></td><td><strong>XLR Female</strong><br><small>Input ของ Stage Box</small></td><td>~3–10m ต่อเส้น</td></tr>
-          <tr><td>C2</td><td>Stage Box R Output (Snake)</td><td>X Air 18 Ch17–18 Input</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Stage Box</small></td><td><strong>XLR Female</strong><br><small>Input Ch17–18 ของ X Air 18</small></td><td>~15m</td></tr>
+          <tr><td>C1</td><td>ไมค์/เครื่องดนตรี (Output)</td><td>Stage Box R Input</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์/DI</small></td><td><strong>XLR Female</strong><br><small>Input ของ Stage Box</small></td><td>~3–10m ต่อเส้น</td></tr>
+          <tr><td>C2</td><td>Stage Box R Output (Snake)</td><td>X Air 18 Ch17–18 Input</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Stage Box</small></td><td><strong>XLR Female</strong><br><small>Input ของ X Air 18</small></td><td>~15m</td></tr>
         </tbody>
       </table>
 
       <h3>กลุ่ม D — ไมค์กลอง → Drum Multicore → SoundCraft ui12</h3>
       <table>
-        <thead><tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr></thead>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
         <tbody>
-          <tr><td>D1</td><td>ไมค์กลอง 7 ตัว (Output)<br><small>Kick / Snare / HH / Tom×2 / OH L / OH R</small></td><td>Drum Multicore Input</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์กลอง</small></td><td><strong>XLR Female</strong><br><small>Input ของ Multicore Box</small></td><td>~3m×7 เส้น</td></tr>
-          <tr><td>D2</td><td>Drum Multicore Output (Snake)</td><td>SoundCraft ui12 Ch1–7 Input</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Multicore Box</small></td><td><strong>XLR Female</strong><br><small>Input Ch1–7 ของ ui12</small></td><td>~15m</td></tr>
+          <tr><td>D1</td><td>ไมค์กลอง 7 ตัว (Output)<br><small>Kick / Snare / Tom1 / Tom2 / Tom3 / OH L / OH R</small></td><td>Drum Multicore Input (7 ช่อง)</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของไมค์กลอง</small></td><td><strong>XLR Female</strong><br><small>Input ของ Multicore Box</small></td><td>~3m × 7 เส้น</td></tr>
+          <tr><td>D2</td><td>Drum Multicore Output (Snake)</td><td>SoundCraft ui12 Ch 1–7 Input</td><td><span class="cable-snake">Snake</span></td><td><strong>XLR Male</strong><br><small>Output ของ Multicore Box</small></td><td><strong>XLR Female</strong><br><small>Input Ch1–7 ของ ui12</small></td><td>~15m</td></tr>
         </tbody>
       </table>
 
-      <h3>กลุ่ม E — SoundCraft ui12 → X Air 18</h3>
-      <table>
-        <thead><tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr></thead>
-        <tbody>
-          <tr><td>E1</td><td>ui12 Main Out L (Output)</td><td>X Air 18 Line Input L</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Female</strong><br><small>เสียบ Output Jack ของ ui12<br>(ui12 Output = ขั้ว XLR Female)</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input Jack ของ X Air 18<br>(X Air 18 Input = ขั้ว XLR Female บนเครื่อง)</small></td><td>~3m</td></tr>
-          <tr><td>E2</td><td>ui12 Main Out R (Output)</td><td>X Air 18 Line Input R</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Female</strong><br><small>เสียบ Output Jack ของ ui12</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input Jack ของ X Air 18</small></td><td>~3m</td></tr>
-        </tbody>
-      </table>
-      <div class="note-box" style="margin-bottom:12px;">
-        <strong>หมายเหตุ E1–E2:</strong> SoundCraft ui12 Output ใช้ขั้ว XLR Female บนตัวเครื่อง (ผิดจากขนบปกติ) — ใช้สายที่มีหัวทั้งสองด้านเป็น Female-to-Female หรือใช้ adapter XLR M→M ตรวจสอบ spec ui12 ก่อนซื้อสาย
+      <h3>กลุ่ม E — SoundCraft ui12 → X Air 18 (4 เส้น แยก Bus)</h3>
+      <div class="note-box" style="margin-bottom:10px;">
+        <strong>⚠️ ui12 Output:</strong> Aux 1–2 ใช้ขั้ว <strong>TRS 6.35mm</strong> / Main L+R ใช้ขั้ว <strong>XLR Female</strong> (ผิดจากขนบปกติ) — ต้องใช้สาย XLR Male-to-Male สำหรับ E3–E4
       </div>
-
-      <h3>กลุ่ม F — X Air 18 → Marani → ลำโพง</h3>
       <table>
-        <thead><tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr></thead>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง<br><small>เสียบที่ ui12</small></th><th>หัวด้านปลายทาง<br><small>เสียบที่ X Air 18</small></th><th>ความยาว</th></tr>
+        </thead>
         <tbody>
-          <tr><td>F1</td><td>X Air 18 Main Out L (Output)</td><td>Marani Input Ch1 L</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของ X Air 18</small></td><td><strong>XLR Female</strong><br><small>Input ของ Marani</small></td><td>~3m</td></tr>
-          <tr><td>F2</td><td>X Air 18 Main Out R (Output)</td><td>Marani Input Ch2 R</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของ X Air 18</small></td><td><strong>XLR Female</strong><br><small>Input ของ Marani</small></td><td>~3m</td></tr>
-          <tr><td>F3</td><td>X Air 18 Aux Out 1 (Output)</td><td>Marani Input Ch3</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 1/4" Male</strong><br><small>เสียบ Aux Output ของ X Air 18<br>(X Air 18 Aux = ขั้ว TRS 1/4")</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input ของ Marani<br>(Marani Input = ขั้ว XLR Female)</small></td><td>~3m</td></tr>
-          <tr><td>F4</td><td>X Air 18 Aux Out 2 (Output)</td><td>Marani Input Ch4</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 1/4" Male</strong><br><small>เสียบ Aux Output ของ X Air 18</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input ของ Marani</small></td><td>~3m</td></tr>
-          <tr><td>F5</td><td>X Air 18 Aux Out 3 (Monitor Mix)</td><td>Marani Input Ch5</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 1/4" Male</strong><br><small>เสียบ Aux Output ของ X Air 18</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input ของ Marani</small></td><td>~5m</td></tr>
-          <tr><td>F6</td><td>Marani Out 1 (L) + Out 2 (R)</td><td>ลำโพงเวที L+R</td><td><span class="cable-speaker">Speaker</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของลำโพง</small></td><td>~10m×2</td></tr>
-          <tr><td>F7</td><td>Marani Out 3 (L) + Out 4 (R)</td><td>ลำโพงกลางห้อง L+R</td><td><span class="cable-speaker">Speaker</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของลำโพง</small></td><td>~15m×2</td></tr>
-          <tr><td>F8</td><td>Marani Out 5 + Out 6</td><td>มอนิเตอร์เวที</td><td><span class="cable-speaker">Speaker</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของมอนิเตอร์</small></td><td>~8m×2</td></tr>
+          <tr><td>E1</td><td>ui12 <strong>Aux 1</strong> Out (Kick mono)</td><td>X Air 18 <strong>Ch 1</strong> Input</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong><br><small>เสียบ Aux 1 Output ของ ui12</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input Ch1 ของ X Air 18 (XLR Female)</small></td><td>~3m</td></tr>
+          <tr><td>E2</td><td>ui12 <strong>Aux 2</strong> Out (Snare mono)</td><td>X Air 18 <strong>Ch 2</strong> Input</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong><br><small>เสียบ Aux 2 Output ของ ui12</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input Ch2 ของ X Air 18</small></td><td>~3m</td></tr>
+          <tr><td>E3</td><td>ui12 <strong>Main Out L</strong> (Tom+OH Stereo L)</td><td>X Air 18 <strong>Ch 3</strong> Input</td><td><span class="cable-xlr">XLR M-M</span></td><td><strong>XLR Female</strong><br><small>⚠️ Output ของ ui12 = ขั้ว XLR Female</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input Ch3 ของ X Air 18</small></td><td>~3m<br><small>ต้องใช้สาย XLR Male-to-Male หรือ adapter</small></td></tr>
+          <tr><td>E4</td><td>ui12 <strong>Main Out R</strong> (Tom+OH Stereo R)</td><td>X Air 18 <strong>Ch 4</strong> Input</td><td><span class="cable-xlr">XLR M-M</span></td><td><strong>XLR Female</strong><br><small>⚠️ Output ของ ui12 = ขั้ว XLR Female</small></td><td><strong>XLR Male</strong><br><small>เสียบ Input Ch4 ของ X Air 18</small></td><td>~3m<br><small>ต้องใช้สาย XLR Male-to-Male หรือ adapter</small></td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม F — X Air 18 Main Out → Marani → ลำโพงในอาคาร</h3>
+      <table>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>F1</td><td>X Air 18 <strong>Main Out L</strong></td><td>Marani Input Ch 1 (L)</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของ X Air 18</small></td><td><strong>XLR Female</strong><br><small>Input ของ Marani</small></td><td>~3m</td></tr>
+          <tr><td>F2</td><td>X Air 18 <strong>Main Out R</strong></td><td>Marani Input Ch 2 (R)</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output ของ X Air 18</small></td><td><strong>XLR Female</strong><br><small>Input ของ Marani</small></td><td>~3m</td></tr>
+          <tr><td>F3</td><td>Marani <strong>Out 1</strong> (L)</td><td>Yamaha DXR ฝั่งซ้าย (ใบแรก)</td><td><span class="cable-speaker">Speakon</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของ DXR ใบแรก</small></td><td>~10m</td></tr>
+          <tr><td>F3-Link</td><td>Yamaha DXR ซ้าย ใบแรก <strong>Link Out</strong></td><td>Yamaha DXR ซ้าย ใบที่สอง</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Link Out ของ DXR ใบแรก</small></td><td><strong>XLR Female</strong><br><small>Input ของ DXR ใบที่สอง</small></td><td>~1–2m</td></tr>
+          <tr><td>F4</td><td>Marani <strong>Out 2</strong> (R)</td><td>Yamaha DXR ฝั่งขวา (ใบแรก)</td><td><span class="cable-speaker">Speakon</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของ DXR ใบแรก</small></td><td>~10m</td></tr>
+          <tr><td>F4-Link</td><td>Yamaha DXR ขวา ใบแรก <strong>Link Out</strong></td><td>Yamaha DXR ขวา ใบที่สอง</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Link Out ของ DXR ใบแรก</small></td><td><strong>XLR Female</strong><br><small>Input ของ DXR ใบที่สอง</small></td><td>~1–2m</td></tr>
+          <tr><td>F5</td><td>Marani <strong>Out 3</strong></td><td>Sub MA18 ฝั่งซ้าย</td><td><span class="cable-speaker">Speakon</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของ MA18 Sub</small></td><td>~8m</td></tr>
+          <tr><td>F6</td><td>Marani <strong>Out 4</strong></td><td>Sub MA18 ฝั่งขวา</td><td><span class="cable-speaker">Speakon</span></td><td><strong>Speakon NL4 Male</strong><br><small>Output ของ Marani</small></td><td><strong>Speakon NL4 Female</strong><br><small>Input ของ MA18 Sub</small></td><td>~8m</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม G — X Air 18 Aux 6 → dbx 260 → ลำโพงนอกอาคาร</h3>
+      <table>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>G1</td><td>X Air 18 <strong>Aux 6</strong> Out (โซนนอกอาคาร — Mono)</td><td>dbx DriveRack 260 Input 1</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong><br><small>Aux 6 Output ของ X Air 18</small></td><td><strong>XLR Female</strong><br><small>Input 1 ของ dbx 260</small></td><td>~5m</td></tr>
+          <tr><td>G2</td><td>dbx 260 <strong>Out 1</strong></td><td>Wharfedale Pro Titan 12 × 2 ใบ</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output 1 ของ dbx 260</small></td><td><strong>XLR Female</strong><br><small>Input ของ Titan 12 (Active Speaker)</small></td><td>~10m — แยกเส้นไปแต่ละใบ หรือ Y-Split</td></tr>
+          <tr><td>G3</td><td>dbx 260 <strong>Out 2</strong></td><td>ลำโพง VL × 3 ใบ (รวมกัน)</td><td><span class="cable-xlr">XLR</span></td><td><strong>XLR Male</strong><br><small>Output 2 ของ dbx 260</small></td><td>แอมป์ VL (ถ้า Passive) หรือ XLR Female (ถ้า Active)</td><td>~15m</td></tr>
+        </tbody>
+      </table>
+
+      <h3>กลุ่ม H — X Air 18 Aux 1–5 → Stage Monitor</h3>
+      <table>
+        <thead>
+          <tr><th>รหัส</th><th>จาก (ต้นทาง)</th><th>ไป (ปลายทาง)</th><th>ชนิดสาย</th><th>หัวด้านต้นทาง</th><th>หัวด้านปลายทาง</th><th>ความยาว</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>H1</td><td>X Air 18 <strong>Aux 1</strong> (Monitor คีย์บอร์ด)</td><td>มอนิเตอร์หน้าคีย์บอร์ด</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong><br><small>Aux 1 Output</small></td><td>XLR Female (Input มอนิเตอร์) หรือ TRS</td><td>~10m</td></tr>
+          <tr><td>H2</td><td>X Air 18 <strong>Aux 2</strong> (Monitor เบส)</td><td>มอนิเตอร์หน้ามือเบส</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong></td><td>XLR Female หรือ TRS</td><td>~10m</td></tr>
+          <tr><td>H3</td><td>X Air 18 <strong>Aux 3</strong> (Monitor Vocal)</td><td>ลำโพงมอนิเตอร์หน้าไมค์ร้อง</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong></td><td>XLR Female หรือ TRS</td><td>~8m</td></tr>
+          <tr><td>H4</td><td>X Air 18 <strong>Aux 4</strong> (Monitor กีตาร์)</td><td>มอนิเตอร์หน้ามือกีตาร์</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong></td><td>XLR Female หรือ TRS</td><td>~10m</td></tr>
+          <tr><td>H5</td><td>X Air 18 <strong>Aux 5</strong> (Monitor กลอง)</td><td>มอนิเตอร์หน้ากลอง / In-Ear</td><td><span class="cable-trs">TRS→XLR</span></td><td><strong>TRS 6.35mm Male</strong></td><td>XLR Female หรือ TRS — หรือ 3.5mm สำหรับ In-Ear</td><td>~5m</td></tr>
         </tbody>
       </table>
 
       <div class="legend" style="margin-top:16px;">
         <div class="legend-item"><span class="cable-xlr">XLR</span> Balanced mic/line</div>
         <div class="legend-item"><span class="cable-snake">Snake</span> มัลติคอร์ Stage</div>
-        <div class="legend-item"><span class="cable-speaker">Speaker</span> สายลำโพง</div>
+        <div class="legend-item"><span class="cable-speaker">Speaker</span> สายลำโพง/Speakon</div>
         <div class="legend-item"><span class="cable-trs">TRS</span> Balanced 1/4"</div>
       </div>
     </div>

@@ -32,16 +32,17 @@
       <li class="current">
         <div class="cat-title"><span class="cat-icon c-devices">🎛</span> อุปกรณ์หลัก</div>
         <ul class="sidebar-links">
-          <li><a href="#stagebox">5. กล่องสัญญาณ (Stage Box)</a></li>
-          <li><a href="#mixerchannel">6. ช่อง X Air 18</a></li>
+          <li><a href="#ui12">5. SoundCraft ui12 (กลอง)</a></li>
+          <li><a href="#xair">6. Behringer X Air 18</a></li>
           <li><a href="#marani">7. Marani DPA260p+</a></li>
+          <li><a href="#dbx">8. dbx DriveRack 260 (นอกอาคาร)</a></li>
         </ul>
       </li>
       <li>
         <div class="cat-title"><span class="cat-icon c-install">🔧</span> การติดตั้ง</div>
         <ul class="sidebar-links">
-          <li><a href="tasks.html">8. แผนงาน / แบ่งทีม</a></li>
-          <li><a href="tasks.html#notes">9. หมายเหตุสำคัญ</a></li>
+          <li><a href="tasks.html">9. แผนงาน / แบ่งทีม</a></li>
+          <li><a href="tasks.html#notes">10. หมายเหตุสำคัญ</a></li>
         </ul>
       </li>
     </ul>
@@ -51,129 +52,199 @@
 
   <div class="page">
 
-    <div class="section" id="stagebox">
-      <h2>📦 5. กล่องสัญญาณบนเวที (Stage Box)</h2>
-      <p>วางกล่องสัญญาณ 3 จุดบนเวที รับสัญญาณแล้วส่งผ่าน Stage Snake มาที่มิกเซอร์</p>
+    <!-- ═══════════════════════════════════════════ ui12 ══ -->
+    <div class="section" id="ui12">
+      <h2>🥁 5. SoundCraft ui12 — Pre-mixer กลองชุด</h2>
+      <p>ui12 รับไมค์กลองทั้งหมด <strong>7 ตัว</strong> มิกซ์เป็นกลุ่ม แล้วส่งออก <strong>4 เส้น</strong> เข้า X Air 18 แยก Kick / Snare / Tom+OH Stereo</p>
 
-      <div class="stagebox-grid">
-        <div class="stagebox-card sb-kb">
-          <div class="sb-title">🎹 Stage Box คีย์บอร์ด</div>
-          <div class="sb-location">ตำแหน่ง: บริเวณคีย์บอร์ด กลางเวที</div>
-          <table>
-            <thead><tr><th>Input</th><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>หัวสาย</th></tr></thead>
-            <tbody>
-              <tr><td>1</td><td>X Air Ch1</td><td>คีย์บอร์ด L</td><td>XLR / TRS</td></tr>
-              <tr><td>2</td><td>X Air Ch2</td><td>คีย์บอร์ด R</td><td>XLR / TRS</td></tr>
-              <tr><td>3</td><td>X Air Ch3</td><td>ไมค์ร้อง (หน้า)</td><td>XLR</td></tr>
-              <tr><td>4</td><td>X Air Ch4</td><td>ไมค์ร้อง (กลาง)</td><td>XLR</td></tr>
-              <tr><td>5–8</td><td>X Air Ch5–8</td><td>สำรอง</td><td>XLR</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="note-box" style="margin-bottom:16px;">
+        <strong>ไมค์โอเวอร์เฮด:</strong> ใช้จ่อ<strong>ใต้ฉาบ</strong> (ไม่ใช่แบบจ่อด้านบนทั้งชุด) เพื่อรับเฉพาะ<strong>เครื่องทองเหลือง (Brass/Cymbal)</strong> ลดเสียงกลองหนังรั่วเข้า — ใช้ Cardioid หรือ Hypercardioid Condenser
+      </div>
 
-        <div class="stagebox-card sb-left">
-          <div class="sb-title">⬅ Stage Box ฝั่งซ้าย</div>
-          <div class="sb-location">ตำแหน่ง: ขอบซ้ายเวที</div>
-          <table>
-            <thead><tr><th>Input</th><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>หัวสาย</th></tr></thead>
-            <tbody>
-              <tr><td>1</td><td>X Air Ch9</td><td>กีตาร์ไฟฟ้า L (DI)</td><td>XLR / TRS</td></tr>
-              <tr><td>2</td><td>X Air Ch10</td><td>เบส (DI)</td><td>XLR / TRS</td></tr>
-              <tr><td>3</td><td>X Air Ch11</td><td>ไมค์ตู้แอมป์</td><td>XLR</td></tr>
-              <tr><td>4</td><td>X Air Ch12</td><td>สำรอง</td><td>XLR</td></tr>
-              <tr><td>5–8</td><td>X Air Ch13–16</td><td>สำรอง</td><td>XLR</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <h3>Input ของ ui12 — ช่องรับไมค์กลอง</h3>
+      <table>
+        <thead>
+          <tr><th>Ch</th><th>ไมค์</th><th>ตำแหน่งติดตั้ง</th><th>ชนิดไมค์</th><th>Phantom +48V</th><th>หัว XLR ที่เสียบ ui12</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Kick (กลองเบส)</td><td>ด้านในหน้าเปลือกกลองเบส</td><td>Dynamic</td><td>❌ ไม่ต้องการ</td><td>XLR Female (Input)</td></tr>
+          <tr><td><strong>2</strong></td><td>Snare (สแนร์)</td><td>ขอบบน Snare ห่าง ~2–3cm</td><td>Dynamic</td><td>❌ ไม่ต้องการ</td><td>XLR Female (Input)</td></tr>
+          <tr><td><strong>3</strong></td><td>Tom 1</td><td>ขอบ Tom ใบที่ 1</td><td>Dynamic</td><td>❌ ไม่ต้องการ</td><td>XLR Female (Input)</td></tr>
+          <tr><td><strong>4</strong></td><td>Tom 2</td><td>ขอบ Tom ใบที่ 2</td><td>Dynamic</td><td>❌ ไม่ต้องการ</td><td>XLR Female (Input)</td></tr>
+          <tr><td><strong>5</strong></td><td>Tom 3 (Floor Tom)</td><td>ขอบ Floor Tom</td><td>Dynamic</td><td>❌ ไม่ต้องการ</td><td>XLR Female (Input)</td></tr>
+          <tr><td><strong>6</strong></td><td>Overhead L (ฉาบซ้าย)</td><td>จ่อ<strong>ใต้ฉาบ</strong>ด้านซ้าย (Hi-Hat / Crash ซ้าย) ห่าง ~5cm</td><td>Condenser (Cardioid)</td><td>✅ +48V</td><td>XLR Female (Input)</td></tr>
+          <tr><td><strong>7</strong></td><td>Overhead R (ฉาบขวา)</td><td>จ่อ<strong>ใต้ฉาบ</strong>ด้านขวา (Ride / Crash ขวา) ห่าง ~5cm</td><td>Condenser (Cardioid)</td><td>✅ +48V</td><td>XLR Female (Input)</td></tr>
+        </tbody>
+      </table>
 
-        <div class="stagebox-card sb-right">
-          <div class="sb-title">➡ Stage Box ฝั่งขวา</div>
-          <div class="sb-location">ตำแหน่ง: ขอบขวาเวที</div>
-          <table>
-            <thead><tr><th>Input</th><th>ช่อง</th><th>แหล่งสัญญาณ</th><th>หัวสาย</th></tr></thead>
-            <tbody>
-              <tr><td>1</td><td>X Air Ch17</td><td>กีตาร์โปร่ง / อื่นๆ</td><td>XLR / TRS</td></tr>
-              <tr><td>2</td><td>X Air Ch18</td><td>ไมค์พิธีกร</td><td>XLR</td></tr>
-              <tr><td>3–4</td><td>สำรอง</td><td>—</td><td>XLR</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <h3>Output ของ ui12 — ส่ง 4 เส้นเข้า X Air 18</h3>
+      <div class="note-box" style="margin-bottom:12px;">
+        สรุปการ Route ภายใน ui12: <strong>Kick → Aux 1 เท่านั้น</strong> / <strong>Snare → Aux 2 เท่านั้น</strong> / Tom1+Tom2+Tom3+OH L+OH R → <strong>Main L+R</strong> — ต้องตั้ง Aux Send ของ Ch3–7 เป็น 0 บน Aux 1 และ Aux 2
+      </div>
+      <table>
+        <thead>
+          <tr><th>Output ui12</th><th>เนื้อหาสัญญาณ</th><th>ขั้วที่ออก</th><th>ไปที่ X Air 18</th><th>ชนิดสาย / หัว</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Aux 1</strong></td><td>🥁 Kick เท่านั้น (Mono)</td><td>TRS 6.35mm Male (ออก ui12)</td><td>Ch <strong>1</strong> (Kick)</td><td>สาย TRS→XLR: TRS Male → XLR Female ของ X Air 18</td></tr>
+          <tr><td><strong>Aux 2</strong></td><td>🥁 Snare เท่านั้น (Mono)</td><td>TRS 6.35mm Male (ออก ui12)</td><td>Ch <strong>2</strong> (Snare)</td><td>สาย TRS→XLR: TRS Male → XLR Female ของ X Air 18</td></tr>
+          <tr><td><strong>Main L</strong></td><td>🥁🎵 Tom1+Tom2+Tom3+Cymbal L+Cymbal R (Stereo L)</td><td>XLR Female (ออก ui12) ⚠️</td><td>Ch <strong>3</strong> (Overhead/Tom L)</td><td>ต้องใช้สาย XLR Male-to-Male (M→M) หรือต่อ adapter<br><small>เพราะ ui12 Output เป็น XLR Female ผิดจากขนบปกติ</small></td></tr>
+          <tr><td><strong>Main R</strong></td><td>🥁🎵 Tom1+Tom2+Tom3+Cymbal L+Cymbal R (Stereo R)</td><td>XLR Female (ออก ui12) ⚠️</td><td>Ch <strong>4</strong> (Overhead/Tom R)</td><td>ต้องใช้สาย XLR Male-to-Male (M→M) หรือต่อ adapter<br><small>เพราะ ui12 Output เป็น XLR Female ผิดจากขนบปกติ</small></td></tr>
+        </tbody>
+      </table>
+    </div>
 
-        <div class="stagebox-card sb-drum">
-          <div class="sb-title">🥁 มัลติคอร์กลอง (Drum Multicore)</div>
-          <div class="sb-location">ตำแหน่ง: ชุดกลองบนเวที → ไป SoundCraft ui12</div>
-          <table>
-            <thead><tr><th>ไมค์</th><th>ช่อง</th><th>ตำแหน่งติดตั้ง</th><th>หัวสาย</th></tr></thead>
-            <tbody>
-              <tr><td>Kick</td><td>ui12 Ch1</td><td>ด้านในกลองเบส</td><td>XLR</td></tr>
-              <tr><td>Snare Top</td><td>ui12 Ch2</td><td>ขอบบน Snare</td><td>XLR</td></tr>
-              <tr><td>Hi-Hat</td><td>ui12 Ch3</td><td>เหนือ HH ~5cm</td><td>XLR</td></tr>
-              <tr><td>Tom 1</td><td>ui12 Ch4</td><td>ขอบ Tom ตัวแรก</td><td>XLR</td></tr>
-              <tr><td>Tom 2</td><td>ui12 Ch5</td><td>ขอบ Tom ตัวสอง</td><td>XLR</td></tr>
-              <tr><td>Overhead L<br><small>รับเสียงฉาบฝั่งซ้าย</small></td><td>ui12 Ch6</td><td>แขวนเหนือกลองด้านซ้าย<br><small>ชี้ลงหาฉาบฝั่งซ้าย (Hi-Hat / Crash)</small></td><td>XLR Male → Female</td></tr>
-              <tr><td>Overhead R<br><small>รับเสียงฉาบฝั่งขวา</small></td><td>ui12 Ch7</td><td>แขวนเหนือกลองด้านขวา<br><small>ชี้ลงหาฉาบฝั่งขวา (Ride / Crash)</small></td><td>XLR Male → Female</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <!-- ═══════════════════════════════════════════ X Air 18 ══ -->
+    <div class="section" id="xair">
+      <h2>🎛 6. Behringer X Air 18 — มิกเซอร์หลัก</h2>
+      <p>X Air 18 รับสัญญาณจาก ui12 (4 เส้น) + เครื่องดนตรีบนเวที (ผ่าน Stage Box) + Vocal รวม 18 ช่อง แล้วส่งออกเป็น Main L+R (ในอาคาร) และ Aux Monitor 6 เส้น + Aux 6 นอกอาคาร</p>
+
+      <div class="note-box" style="margin-bottom:16px;">
+        <strong>ข้อมูล X Air 18:</strong>
+        <ul>
+          <li>Input: 16 ช่อง Mic/Line (XLR/TRS Combo) + Ch 17–18 Stereo Return (RCA/TRS) — รวม 18 ช่อง</li>
+          <li>Main Out: XLR Male (L+R) ส่ง FOH → Marani DPA260p+</li>
+          <li>Aux Out: 6 ช่อง TRS 6.35mm — Aux 1–5 = Monitor / Aux 6 = นอกอาคาร (dbx 260)</li>
+          <li>ควบคุมโดย App บน iOS/Android ผ่าน Wi-Fi</li>
+          <li>Phantom Power แยกต่อช่อง</li>
+        </ul>
+      </div>
+
+      <h3>Input Channels Ch 1–18</h3>
+      <table>
+        <thead>
+          <tr><th>Ch</th><th>แหล่งสัญญาณ</th><th>ที่มา</th><th>ประเภท</th><th>Pan</th><th>Phantom</th><th>หมายเหตุ</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fce4ec;"><td colspan="7" style="font-weight:700;color:#b71c1c;padding:6px 10px;">🥁 กลองชุด — จาก SoundCraft ui12 (4 เส้น)</td></tr>
+          <tr><td><strong>1</strong></td><td>Kick</td><td>ui12 Aux 1</td><td><span class="badge-line">Line</span></td><td>C</td><td>❌</td><td>Mono — ควบคุม Sub-bass แยกอิสระ</td></tr>
+          <tr><td><strong>2</strong></td><td>Snare</td><td>ui12 Aux 2</td><td><span class="badge-line">Line</span></td><td>C</td><td>❌</td><td>Mono — ควบคุม Attack แยกอิสระ</td></tr>
+          <tr><td><strong>3</strong></td><td>Overhead / Tom L<br><small>Tom1+Tom2+Tom3+Cymbal L+R (ฝั่ง L)</small></td><td>ui12 Main L</td><td><span class="badge-line">Line</span></td><td>L</td><td>❌</td><td>Stereo คู่กับ Ch4 — Pan ซ้าย</td></tr>
+          <tr><td><strong>4</strong></td><td>Overhead / Tom R<br><small>Tom1+Tom2+Tom3+Cymbal L+R (ฝั่ง R)</small></td><td>ui12 Main R</td><td><span class="badge-line">Line</span></td><td>R</td><td>❌</td><td>Stereo คู่กับ Ch3 — Pan ขวา</td></tr>
+          <tr style="background:#e8f5e9;"><td colspan="7" style="font-weight:700;color:#2e7d32;padding:6px 10px;">🎸 เครื่องดนตรี — จาก Stage Box บนเวที</td></tr>
+          <tr><td><strong>5</strong></td><td>Bass</td><td>Stage Box (DI)</td><td><span class="badge-di">DI</span></td><td>C</td><td>❌</td><td>Low-pass / ลด high-mid</td></tr>
+          <tr><td><strong>6</strong></td><td>Guitar (กีตาร์ไฟฟ้า)</td><td>Stage Box (DI+ไมค์แอมป์)</td><td><span class="badge-di">DI</span>/<span class="badge-mic">Mic</span></td><td>L หรือ R</td><td>❌</td><td>ปรับ Pan ตามตำแหน่งบนเวที</td></tr>
+          <tr><td><strong>7</strong></td><td>Keyboard L</td><td>Stage Box KB</td><td><span class="badge-line">Line</span></td><td>L</td><td>❌</td><td>Stereo คู่กับ Ch8</td></tr>
+          <tr><td><strong>8</strong></td><td>Keyboard R</td><td>Stage Box KB</td><td><span class="badge-line">Line</span></td><td>R</td><td>❌</td><td>Stereo คู่กับ Ch7</td></tr>
+          <tr style="background:#e3f2fd;"><td colspan="7" style="font-weight:700;color:#1565c0;padding:6px 10px;">🎤 Vocal — ไมค์นักร้องและนักดนตรี</td></tr>
+          <tr><td><strong>9</strong></td><td>Vocal 1 (นักร้องหลัก)</td><td>Stage Box / ขาตั้งไมค์</td><td><span class="badge-mic">Mic</span></td><td>C</td><td>✅ ถ้า Condenser</td><td>Comp + De-ess แนะนำ</td></tr>
+          <tr><td><strong>10</strong></td><td>Vocal 2 (นักร้องสอง)</td><td>Stage Box / ขาตั้งไมค์</td><td><span class="badge-mic">Mic</span></td><td>C</td><td>✅ ถ้า Condenser</td><td>—</td></tr>
+          <tr><td><strong>11</strong></td><td>Vocal มือกีตาร์</td><td>Stage Box</td><td><span class="badge-mic">Mic</span></td><td>L</td><td>✅ ถ้า Condenser</td><td>Pan ตามตำแหน่งบนเวที</td></tr>
+          <tr><td><strong>12</strong></td><td>Vocal มือเบส</td><td>Stage Box</td><td><span class="badge-mic">Mic</span></td><td>R</td><td>✅ ถ้า Condenser</td><td>Pan ตามตำแหน่ง</td></tr>
+          <tr><td><strong>13</strong></td><td>Vocal มือคีย์บอร์ด</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>C</td><td>✅ ถ้า Condenser</td><td>—</td></tr>
+          <tr><td><strong>14</strong></td><td>Vocal มือกลอง</td><td>Stage Box (ขาตั้งหน้ากลอง)</td><td><span class="badge-mic">Mic</span></td><td>C</td><td>✅ ถ้า Condenser</td><td>—</td></tr>
+          <tr style="background:#f3e5f5;"><td colspan="7" style="font-weight:700;color:#6a1b9a;padding:6px 10px;">🎧 Playback / Media</td></tr>
+          <tr><td><strong>15</strong></td><td>Sound Data (เสียงประกอบ)</td><td>Player / Laptop (Line Out)</td><td><span class="badge-line">Line</span></td><td>C</td><td>❌</td><td>ต่อผ่าน DI หรือ XLR straight</td></tr>
+          <tr><td><strong>16</strong></td><td>Metronome / Click Track</td><td>Player / Drum machine (Line Out)</td><td><span class="badge-line">Line</span></td><td>C</td><td>❌</td><td>‼️ ส่งออก Monitor เท่านั้น ห้ามดัง FOH</td></tr>
+          <tr style="background:#e0f2f1;"><td colspan="7" style="font-weight:700;color:#004d40;padding:6px 10px;">🎧 DJ / Stereo Playback</td></tr>
+          <tr><td><strong>17</strong></td><td>DJ Song / Backing Track L</td><td>DJ Controller / Player</td><td><span class="badge-line">Line</span></td><td>L</td><td>❌</td><td>Stereo คู่กับ Ch18 (ใช้ Stereo Link)</td></tr>
+          <tr><td><strong>18</strong></td><td>DJ Song / Backing Track R</td><td>DJ Controller / Player</td><td><span class="badge-line">Line</span></td><td>R</td><td>❌</td><td>Stereo คู่กับ Ch17</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Aux Output — Monitor + นอกอาคาร</h3>
+      <div class="note-box" style="margin-bottom:12px;">
+        <strong>Monitor Mix:</strong> แต่ละ Aux ส่งเสียงกลับให้นักดนตรีแต่ละคนฟังแยกอิสระ — ตั้ง Send ต่อช่องใน X Air 18 App ว่าใครต้องการฟังอะไรขนาดไหน
+      </div>
+      <table>
+        <thead>
+          <tr><th>Aux</th><th>Monitor สำหรับ</th><th>ขั้ว Output (X Air 18)</th><th>ไปที่</th><th>เนื้อหาที่ควร Send มาก</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Aux 1</strong></td><td>🎹 Monitor คีย์บอร์ด</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้าคีย์บอร์ด</td><td>Vocal หลัก, กลอง, เบส, ตัวเอง</td></tr>
+          <tr><td><strong>Aux 2</strong></td><td>🎸 Monitor เบส</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้ามือเบส</td><td>Kick, Snare, ตัวเอง, Vocal หลัก</td></tr>
+          <tr><td><strong>Aux 3</strong></td><td>🎤 Monitor Vocal (นักร้อง)</td><td>TRS 6.35mm Male</td><td>ลำโพงมอนิเตอร์หน้าไมค์ร้อง</td><td>ตัวเอง, Vocal อื่น, กลอง, เบส</td></tr>
+          <tr><td><strong>Aux 4</strong></td><td>🎸 Monitor กีตาร์</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้ามือกีตาร์</td><td>ตัวเอง, Vocal หลัก, กลอง, เบส</td></tr>
+          <tr><td><strong>Aux 5</strong></td><td>🥁 Monitor กลอง</td><td>TRS 6.35mm Male</td><td>แอมป์มอนิเตอร์หน้ากลอง หรือ In-Ear</td><td>Click Track (Ch16), Vocal, กลองตัวเอง</td></tr>
+          <tr><td><strong>Aux 6</strong></td><td>🏠 โซนนอกอาคาร (Follow Main)</td><td>TRS 6.35mm Male</td><td>→ dbx DriveRack 260 (Input Mono)</td><td>FOH Mix เดียวกับในอาคาร ลด level ลงก่อนเข้า dbx</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Main Output — เข้า Marani DPA260p+</h3>
+      <table>
+        <thead><tr><th>Output</th><th>ขั้ว X Air 18</th><th>ไปที่</th><th>สาย</th></tr></thead>
+        <tbody>
+          <tr><td>Main L</td><td><strong>XLR Male</strong></td><td>Marani DPA260p+ Input 1 (L)</td><td>XLR Male → XLR Female — ~3m</td></tr>
+          <tr><td>Main R</td><td><strong>XLR Male</strong></td><td>Marani DPA260p+ Input 2 (R)</td><td>XLR Male → XLR Female — ~3m</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ Marani ══ -->
+    <div class="section" id="marani">
+      <h2>🔋 7. Marani DPA260p+ — DSP + Power Amp (ในอาคาร)</h2>
+      <p>รับ Main L+R จาก X Air 18 แล้วแยกส่งออก <strong>4 ช่อง</strong>: ลำโพงหลัก Yamaha DXR ซ้าย-ขวา (side-by-side link 2 ใบต่อข้าง) และ Sub MA18 ซ้าย-ขวา</p>
+
+      <div class="note-box" style="margin-bottom:16px;">
+        <strong>การพ่วงลำโพง Yamaha DXR (Link):</strong> ลำโพง DXR แต่ละฝั่งมี 2 ใบ — ต่อสายจาก Marani Out เข้าใบแรก แล้วใช้ <strong>Link Out</strong> บน DXR ออกไปใบที่สอง (ขั้ว XLR Link Out → XLR Input ใบที่สอง)
+      </div>
+
+      <h3>Input ของ Marani — รับจาก X Air 18</h3>
+      <table>
+        <thead>
+          <tr><th>Input Marani</th><th>จาก X Air 18</th><th>ขั้ว / สาย</th><th>เนื้อหา</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Input 1 (L)</strong></td><td>Main Out L — XLR Male</td><td>XLR Male (X Air) → <strong>XLR Female</strong> (Marani Input)</td><td>FOH Mix ฝั่งซ้าย</td></tr>
+          <tr><td><strong>Input 2 (R)</strong></td><td>Main Out R — XLR Male</td><td>XLR Male (X Air) → <strong>XLR Female</strong> (Marani Input)</td><td>FOH Mix ฝั่งขวา</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Output ของ Marani — ส่งกำลังไปลำโพงในอาคาร</h3>
+      <table>
+        <thead>
+          <tr><th>Out</th><th>ลำโพง</th><th>จำนวน</th><th>ขั้ว Speakon</th><th>การ Link</th><th>DSP ที่ตั้ง</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Out 1</strong></td><td>Yamaha DXR ฝั่งซ้าย</td><td>2 ใบ (พ่วง Link)</td><td>Speakon NL4 Male → Female (ใบแรก)</td><td>ใบแรก Link Out XLR Male → ใบที่สอง XLR Female Input</td><td>EQ ปรับตามห้อง / Limiter เปิด / Delay 0ms</td></tr>
+          <tr><td><strong>Out 2</strong></td><td>Yamaha DXR ฝั่งขวา</td><td>2 ใบ (พ่วง Link)</td><td>Speakon NL4 Male → Female (ใบแรก)</td><td>ใบแรก Link Out XLR Male → ใบที่สอง XLR Female Input</td><td>EQ ปรับตามห้อง / Limiter เปิด / Delay 0ms</td></tr>
+          <tr><td><strong>Out 3</strong></td><td>Sub MA18 ฝั่งซ้าย</td><td>1 ใบ</td><td>Speakon NL4 Male → Female (Sub)</td><td>—</td><td>Low-pass ~80Hz / Polarity ตรวจก่อน</td></tr>
+          <tr><td><strong>Out 4</strong></td><td>Sub MA18 ฝั่งขวา</td><td>1 ใบ</td><td>Speakon NL4 Male → Female (Sub)</td><td>—</td><td>Low-pass ~80Hz / Polarity ตรวจก่อน</td></tr>
+          <tr><td>Out 5–6</td><td>สำรอง</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box" style="margin-top:14px;">
+        <strong>⚠️ ตั้งค่า Crossover บน Marani:</strong> Out 1–2 = High-pass ~80Hz (ลด Sub ออก เพราะมี Sub แยก) / Out 3–4 = Low-pass ~80Hz สำหรับ Sub เท่านั้น — Marani จะแยก frequency ให้ไปถูกลำโพง
       </div>
     </div>
 
-    <div class="section" id="mixerchannel">
-      <h2>🎛 6. การจัดช่อง Behringer X Air 18</h2>
+    <!-- ═══════════════════════════════════════════ dbx 260 ══ -->
+    <div class="section" id="dbx">
+      <h2>📡 8. dbx DriveRack 260 — ระบบเสียงนอกอาคาร</h2>
+      <p>รับสัญญาณ Mono จาก X Air 18 Aux 6 แล้วแยกออก 2 โซน: <strong>Wharfedale Pro Titan 12</strong> (2 ใบ) และ <strong>ลำโพง VL</strong> (3 ใบ รวมกัน)</p>
 
-      <h3>Input Channels (Ch 1–18)</h3>
+      <div class="note-box" style="margin-bottom:16px;">
+        <strong>สัญญาณเข้า dbx:</strong> ต่อจาก X Air 18 Aux 6 (TRS Male) เข้า dbx Input แบบ <strong>Mono</strong> — ตั้ง Aux 6 บน X Air 18 ให้ Follow Main Mix (Post-fader) เพื่อได้ยินเสียงเต็มเหมือนในอาคาร แต่ควบคุม Level แยกได้อิสระ
+      </div>
+
+      <h3>Input dbx DriveRack 260</h3>
+      <table>
+        <thead><tr><th>Input</th><th>จาก</th><th>ขั้ว / สาย</th><th>โหมด</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Input 1 (Mono)</strong></td><td>X Air 18 Aux 6</td><td>TRS Male (X Air) → <strong>XLR Female</strong> (dbx Input) หรือ TRS→TRS</td><td>Mono — Bridge L+R ภายใน dbx</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Output ของ dbx — แยก 2 โซนนอกอาคาร</h3>
       <table>
         <thead>
-          <tr><th>Ch</th><th>แหล่งสัญญาณ</th><th>ที่มา</th><th>ประเภท</th><th>แกน</th></tr>
+          <tr><th>Out dbx</th><th>ไปที่</th><th>ลำโพง</th><th>จำนวน</th><th>ขั้ว</th><th>หมายเหตุ</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>คีย์บอร์ด L</td><td>Stage Box KB</td><td><span class="badge-line">Line</span></td><td>L</td></tr>
-          <tr><td>2</td><td>คีย์บอร์ด R</td><td>Stage Box KB</td><td><span class="badge-line">Line</span></td><td>R</td></tr>
-          <tr><td>3</td><td>ไมค์ร้อง (หน้า)</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>C</td></tr>
-          <tr><td>4</td><td>ไมค์ร้อง (กลาง)</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>C</td></tr>
-          <tr><td>5–8</td><td>สำรอง (KB Box)</td><td>Stage Box KB</td><td><span class="badge-mic">Mic</span></td><td>—</td></tr>
-          <tr><td>9</td><td>กีตาร์ไฟฟ้า L</td><td>Stage Box L</td><td><span class="badge-di">DI</span></td><td>L</td></tr>
-          <tr><td>10</td><td>เบส</td><td>Stage Box L</td><td><span class="badge-di">DI</span></td><td>C</td></tr>
-          <tr><td>11</td><td>ไมค์แอมป์กีตาร์</td><td>Stage Box L</td><td><span class="badge-mic">Mic</span></td><td>L/R</td></tr>
-          <tr><td>12–16</td><td>สำรอง (L Box)</td><td>Stage Box L</td><td><span class="badge-mic">Mic</span></td><td>—</td></tr>
-          <tr><td>17</td><td>กีตาร์โปร่ง / เครื่องดนตรีอื่น</td><td>Stage Box R</td><td><span class="badge-mic">Mic</span></td><td>R</td></tr>
-          <tr><td>18</td><td>ไมค์พิธีกร</td><td>Stage Box R</td><td><span class="badge-mic">Mic</span></td><td>C</td></tr>
-          <tr><td>17–18*</td><td>กลองสเตอริโอ (จาก ui12)</td><td>SoundCraft ui12 Main</td><td><span class="badge-line">Line</span></td><td>L+R</td></tr>
+          <tr><td><strong>Out 1</strong></td><td>โซน Wharfedale Pro</td><td>Wharfedale Pro Titan 12</td><td>2 ใบ</td><td>XLR Male (dbx) → XLR Female (Input ลำโพง Titan 12 — Active Speaker)</td><td>Titan 12 เป็น Active Speaker มีแอมป์ในตัว — ต่อสาย XLR ตรง</td></tr>
+          <tr><td><strong>Out 2</strong></td><td>โซน VL</td><td>ลำโพง VL (3 ใบรวมกัน)</td><td>3 ใบ</td><td>XLR Male (dbx) → แอมป์ VL → Speakon ไปลำโพง</td><td>ถ้า VL Passive: ต้องมีแอมป์กลาง — ถ้า Active: ต่อ XLR ตรง</td></tr>
         </tbody>
       </table>
 
-      <h3>Aux / Bus Outputs</h3>
-      <table>
-        <thead><tr><th>Bus</th><th>ไปที่</th><th>เนื้อหาสัญญาณ</th></tr></thead>
-        <tbody>
-          <tr><td>Main L+R</td><td>Marani In 1–2</td><td>FOH Mix เต็มระบบ</td></tr>
-          <tr><td>Aux 1</td><td>Marani In 3</td><td>Zone กลางห้อง</td></tr>
-          <tr><td>Aux 2</td><td>Marani In 4</td><td>Zone หน้าร้าน</td></tr>
-          <tr><td>Aux 3</td><td>Marani In 5</td><td>Stage Monitor Mix</td></tr>
-          <tr><td>Aux 4</td><td>สำรอง</td><td>—</td></tr>
-          <tr><td>Aux 5–6</td><td>สำรอง</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="section" id="marani">
-      <h2>🔋 7. Marani DPA260p+ — Output Mapping</h2>
-      <p>Marani DPA260p+ เป็น DSP Processor + Power Amplifier ในตัวเดียว 6 ช่องเอาต์พุต</p>
-      <table>
-        <thead>
-          <tr><th>Output</th><th>โซนลำโพง</th><th>Input จาก X Air 18</th><th>หมายเหตุ</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Out 1</td><td>เวที L (Main Stage L)</td><td>Main L</td><td>ลำโพงหลักฝั่งซ้าย</td></tr>
-          <tr><td>Out 2</td><td>เวที R (Main Stage R)</td><td>Main R</td><td>ลำโพงหลักฝั่งขวา</td></tr>
-          <tr><td>Out 3</td><td>กลางห้อง L</td><td>Aux 1</td><td>ลำโพงกระจายเสียงกลาง</td></tr>
-          <tr><td>Out 4</td><td>กลางห้อง R</td><td>Aux 1 (สเตอริโอ)</td><td>ลำโพงกระจายเสียงกลาง</td></tr>
-          <tr><td>Out 5</td><td>มอนิเตอร์เวที L</td><td>Aux 3</td><td>ลำโพงหันกลับหาศิลปิน</td></tr>
-          <tr><td>Out 6</td><td>มอนิเตอร์เวที R</td><td>Aux 3 (สเตอริโอ)</td><td>ลำโพงหันกลับหาศิลปิน</td></tr>
-        </tbody>
-      </table>
-      <div class="note-box" style="margin-top:16px;">
-        <strong>หมายเหตุ Marani:</strong> ตั้งค่า DSP ก่อนใช้งาน — EQ, Limiter, Delay แต่ละโซนผ่าน PC Software หรือหน้าจอตัวเครื่อง ห้ามเปิดวอลุ่มเต็มก่อน Soundcheck
+      <div class="note-box" style="margin-top:14px;">
+        <strong>การตั้งค่า dbx DriveRack 260:</strong>
+        <ul>
+          <li>Out 1 (Titan 12): Full range — EQ ปรับตามสภาพแวดล้อมนอกอาคาร ตั้ง Limiter ป้องกันลำโพง</li>
+          <li>Out 2 (VL): Full range หรือ High-pass ถ้า VL มีขนาดเล็ก</li>
+          <li>ตั้ง Input Gain บน dbx ให้สอดคล้องกับ Level ที่ส่งมาจาก Aux 6 ของ X Air 18</li>
+          <li>ควร Delay Out 1–2 ให้ตรงกับเสียงที่ออกมาจากในอาคาร (เฉพาะถ้าลำโพงนอกมองเห็นเวทีได้)</li>
+        </ul>
       </div>
     </div>
 
