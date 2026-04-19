@@ -1,0 +1,222 @@
+/* ═══ Dark Theme — Lighting Control System ═══ */
+:root {
+  --neon-blue: #00e5ff;
+  --neon-purple: #b388ff;
+  --neon-pink: #ff4081;
+  --neon-green: #69f0ae;
+  --neon-orange: #ffab40;
+  --neon-red: #ff5252;
+  --dark-bg: #0a0e1a;
+  --dark-card: #111827;
+  --dark-card2: #1a2235;
+  --dark-border: #1e293b;
+  --dark-text: #e2e8f0;
+  --dark-muted: #94a3b8;
+  --dark-input: #0f172a;
+}
+
+/* ─── Base overrides ──────────────────────── */
+body.dark-theme {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+body.dark-theme .layout { background: var(--dark-bg); }
+
+/* ─── Sidebar dark ────────────────────────── */
+body.dark-theme .sidebar {
+  background: #0d1117;
+  border-right-color: var(--dark-border);
+  box-shadow: 2px 0 12px rgba(0,0,0,0.4);
+}
+body.dark-theme .sidebar-header {
+  background: linear-gradient(135deg, #1a1040 0%, #0d1117 100%);
+  border-bottom: 1px solid rgba(179,136,255,0.3);
+}
+body.dark-theme .sidebar-home a {
+  background: rgba(0,229,255,0.08);
+  color: var(--neon-blue);
+  border-bottom-color: var(--dark-border);
+}
+body.dark-theme .sidebar-home a:hover { background: rgba(0,229,255,0.15); }
+body.dark-theme .sidebar-cat > li { border-bottom-color: var(--dark-border); }
+body.dark-theme .cat-title { color: var(--dark-muted); }
+body.dark-theme .sidebar-links li a { color: #8892a8; }
+body.dark-theme .sidebar-links li a:hover {
+  background: rgba(0,229,255,0.06);
+  color: var(--neon-blue);
+  border-left-color: var(--neon-blue);
+}
+body.dark-theme .sidebar-cat > li.current { background: rgba(179,136,255,0.06); }
+body.dark-theme .sidebar-cat > li.current .cat-title { color: var(--neon-purple); }
+body.dark-theme .sidebar-cat > li.current .sidebar-links li a { color: var(--neon-purple); }
+body.dark-theme .sidebar-toggle {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  box-shadow: 0 3px 16px rgba(124,58,237,0.4);
+}
+
+/* ─── Cat icon for lighting ───────────────── */
+.cat-icon.c-lighting { background: linear-gradient(135deg, #7c3aed, #2563eb); }
+
+/* ─── Page dark ───────────────────────────── */
+body.dark-theme .page { background: var(--dark-bg); }
+
+/* ─── Hero dark ───────────────────────────── */
+body.dark-theme .hero-lighting {
+  background: linear-gradient(135deg, #1a0533 0%, #0c1929 50%, #0a1628 100%);
+  border: 1px solid rgba(179,136,255,0.2);
+  border-radius: 12px;
+  padding: 32px 28px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+body.dark-theme .hero-lighting::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(0,229,255,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(179,136,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+body.dark-theme .hero-lighting h1 { color: #fff; margin: 0 0 8px; font-size: 1.9em; position: relative; }
+body.dark-theme .hero-lighting p  { color: rgba(255,255,255,0.75); margin: 0; position: relative; }
+
+/* ─── Section dark ────────────────────────── */
+body.dark-theme .section {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+body.dark-theme .section h2 {
+  color: var(--neon-blue);
+  border-bottom-color: rgba(0,229,255,0.3);
+}
+body.dark-theme .section h3 { color: var(--neon-purple); }
+
+/* ─── Table dark ──────────────────────────── */
+body.dark-theme table { border-color: var(--dark-border); }
+body.dark-theme th {
+  background: rgba(0,229,255,0.1);
+  color: var(--neon-blue);
+  border-color: var(--dark-border);
+}
+body.dark-theme td {
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+body.dark-theme tr:nth-child(even) td { background: var(--dark-card2); }
+body.dark-theme table small { color: var(--dark-muted); }
+
+/* ─── Note-box dark ───────────────────────── */
+body.dark-theme .note-box {
+  background: rgba(179,136,255,0.06);
+  border-left-color: var(--neon-purple);
+  color: var(--dark-text);
+}
+body.dark-theme .note-box.neon-warn {
+  background: rgba(255,171,64,0.08);
+  border-left-color: var(--neon-orange);
+}
+body.dark-theme .note-box.neon-safe {
+  background: rgba(105,240,174,0.08);
+  border-left-color: var(--neon-green);
+}
+body.dark-theme .note-box.neon-red {
+  background: rgba(255,82,82,0.08);
+  border-left-color: var(--neon-red);
+}
+
+/* ─── DMX badges ──────────────────────────── */
+.badge-beam   { background: var(--neon-blue); color: #0a0e1a; font-weight: 700; }
+.badge-laser  { background: var(--neon-pink); color: #fff; font-weight: 700; }
+.badge-par    { background: var(--neon-green); color: #0a0e1a; font-weight: 700; }
+.badge-dmx    { background: var(--neon-purple); color: #fff; font-weight: 700; }
+.badge-ctrl   { background: var(--neon-orange); color: #0a0e1a; font-weight: 700; }
+
+/* ─── Floor plan (SVG/CSS) ────────────────── */
+.floor-plan {
+  background: var(--dark-input);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  margin: 16px 0;
+  overflow: hidden;
+}
+.floor-plan svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Wiring diagram (connector-diagram reuse) ─── */
+body.dark-theme .connector-diagram {
+  background: #0f172a;
+  border: 1px solid rgba(0,229,255,0.15);
+  color: #94a3b8;
+}
+body.dark-theme .connector-diagram .hl  { color: var(--neon-blue); }
+body.dark-theme .connector-diagram .sig { color: var(--neon-green); }
+body.dark-theme .connector-diagram .dev { color: var(--neon-orange); }
+
+/* ─── Task cards dark ─────────────────────── */
+body.dark-theme .task-card {
+  background: var(--dark-card2);
+  border-left-color: var(--neon-purple);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+  color: var(--dark-text);
+}
+body.dark-theme .task-card h3 { color: var(--neon-blue); }
+
+/* ─── Glow accent lines ──────────────────── */
+.glow-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-purple), transparent);
+  margin: 24px 0;
+  border: none;
+  opacity: 0.5;
+}
+
+/* ─── Equipment grid for lighting ─────────── */
+.light-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+.light-card {
+  background: var(--dark-card2);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.light-card:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 16px rgba(0,229,255,0.15);
+}
+.light-card .light-icon { font-size: 2.2em; margin-bottom: 8px; }
+.light-card .light-name { font-weight: 700; font-size: 1em; color: var(--neon-blue); }
+.light-card .light-count { font-size: 0.9em; color: var(--neon-purple); margin-top: 4px; }
+.light-card .light-desc { font-size: 0.82em; color: var(--dark-muted); margin-top: 6px; }
+
+/* ─── DMX address table highlights ────────── */
+body.dark-theme tr.dmx-beam td  { border-left: 3px solid var(--neon-blue); }
+body.dark-theme tr.dmx-laser td { border-left: 3px solid var(--neon-pink); }
+body.dark-theme tr.dmx-par td   { border-left: 3px solid var(--neon-green); }
+
+/* ─── Cat card for lighting ───────────────── */
+.cat-card.c-lighting { border-top-color: #7c3aed; }
+.cat-card.c-lighting h3 { color: #7c3aed; }
+.cat-card.c-lighting .goto { background: #ede9fe; color: #7c3aed; }
+
+/* ─── Responsive dark ─────────────────────── */
+@media (max-width: 960px) {
+  body.dark-theme .sidebar { box-shadow: 4px 0 24px rgba(0,0,0,0.6); }
+  .light-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .light-grid { grid-template-columns: 1fr; }
+}
