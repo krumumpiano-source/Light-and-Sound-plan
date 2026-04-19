@@ -32,6 +32,7 @@
       <li class="current">
         <div class="cat-title"><span class="cat-icon c-devices">🎛</span> ตั้งค่าอุปกรณ์</div>
         <ul class="sidebar-links">
+          <li><a href="#stagebox">📦 Stage Box (3 จุด+กลอง)</a></li>
           <li><a href="#ui12">ui12 (กลอง)</a></li>
           <li><a href="#xair">X Air 18 (มิกเซอร์หลัก)</a></li>
           <li><a href="#marani">Marani (ในอาคาร)</a></li>
@@ -51,6 +52,187 @@
   <button class="sidebar-toggle" id="sidebarToggle">☰</button>
 
   <div class="page">
+
+    <!-- ═══════════════════════════════════════════ Stage Box ══ -->
+    <div class="section" id="stagebox">
+      <h2>📦 กล่องรับสัญญาณบนเวที (Stage Box) — รายละเอียดครบ</h2>
+      <p>บนเวทีมี <strong>Stage Box 3 จุด + Drum Multicore 1 จุด</strong> ทำหน้าที่เป็น "ด่านหน้า" รับสัญญาณจากไมค์/เครื่องดนตรี แล้วส่งผ่าน Snake Cable ไปมิกเซอร์ — และในทางกลับกัน รับเสียง Monitor กลับมาบนเวทีผ่าน Return</p>
+
+      <div class="note-box" style="background:#e3f2fd; border-left-color:#1565c0; margin-bottom:20px;">
+        <strong>🔑 หลักการ Stage Box 8in/4out:</strong>
+        <ul style="margin:0;">
+          <li><strong>8 Send</strong> — รับสัญญาณจากไมค์/เครื่องดนตรีบนเวที → ส่งไปมิกเซอร์ X Air 18 ผ่าน Snake</li>
+          <li><strong>4 Return</strong> — รับเสียง Monitor (Aux) กลับจาก X Air 18 → ส่งต่อไปลำโพงมอนิเตอร์บนเวที</li>
+          <li>Snake Cable 1 เส้นรวมทั้ง Send + Return ในท่อเดียว (~15–20m)</li>
+        </ul>
+      </div>
+
+      <!-- ═══ Stage Box KB ═══ -->
+      <h3 style="color:#1565c0;">📦 Stage Box คีย์บอร์ด (KB) — ฝั่งคีย์บอร์ด+เบส</h3>
+      <p>ตำแหน่ง: วางใกล้คีย์บอร์ดและเบส | Snake ยาว ~20m (รหัส A2)</p>
+
+      <h4>🔼 Send (ส่งจากเวที → X Air 18)</h4>
+      <table>
+        <thead><tr><th>ช่อง Stage Box</th><th>รับจาก (บนเวที)</th><th>ผ่าน</th><th>ไปที่ X Air 18</th><th>ประเภท</th><th>หมายเหตุ</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Send 1</strong></td><td>เบส (Bass Guitar)</td><td>DI Box</td><td>Ch <strong>5</strong></td><td><span class="badge-di">DI</span></td><td>สาย Instrument → DI Box → XLR เข้า Stage Box</td></tr>
+          <tr><td><strong>Send 2</strong></td><td>คีย์บอร์ด Output L</td><td>DI Box ตัวที่ 1</td><td>Ch <strong>7</strong></td><td><span class="badge-di">DI</span></td><td>TRS/TS จาก KB → DI Box → XLR balanced</td></tr>
+          <tr><td><strong>Send 3</strong></td><td>คีย์บอร์ด Output R</td><td>DI Box ตัวที่ 2</td><td>Ch <strong>8</strong></td><td><span class="badge-di">DI</span></td><td>Stereo คู่กับ Ch7 — Pan L+R</td></tr>
+          <tr><td><strong>Send 4</strong></td><td>ไมค์ร้อง มือคีย์บอร์ด</td><td>—</td><td>Ch <strong>13</strong></td><td><span class="badge-mic">Mic</span></td><td>XLR จากขาตั้งไมค์ตรงเข้า Stage Box</td></tr>
+          <tr style="opacity:0.5;"><td>Send 5–8</td><td colspan="5"><em>สำรอง — ใช้เพิ่มเครื่องดนตรีได้อีก 4 ช่อง</em></td></tr>
+        </tbody>
+      </table>
+
+      <h4>🔽 Return (รับจาก X Air 18 Aux → มอนิเตอร์บนเวที)</h4>
+      <table>
+        <thead><tr><th>ช่อง Stage Box</th><th>รับจาก X Air 18</th><th>ส่งไป (บนเวที)</th><th>เนื้อหา Mix</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Return 1</strong></td><td>Aux <strong>1</strong> (Monitor KB)</td><td>ลำโพงมอนิเตอร์หน้าคีย์บอร์ด</td><td>เสียงตัวเอง + Vocal + กลอง + เบส</td></tr>
+          <tr><td><strong>Return 2</strong></td><td>Aux <strong>2</strong> (Monitor เบส)</td><td>ลำโพงมอนิเตอร์หน้ามือเบส</td><td>เสียงตัวเอง + Kick + Snare + Vocal</td></tr>
+          <tr style="opacity:0.5;"><td>Return 3–4</td><td colspan="3"><em>สำรอง — ใช้เพิ่ม Monitor Mix ได้อีก 2 จุด</em></td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box" style="margin-top:10px;">
+        <strong>💡 สรุป KB Zone:</strong> มีคน 2 ตำแหน่ง (คีย์บอร์ด + เบส) → ใช้ Send 4 ช่อง + Return 2 ช่อง จากทั้งหมด 8in/4out
+      </div>
+
+      <!-- ═══ Stage Box L ═══ -->
+      <h3 style="color:#2e7d32; margin-top:28px;">📦 Stage Box ซ้าย (L) — ฝั่งกีตาร์+นักร้องหลัก</h3>
+      <p>ตำแหน่ง: วางฝั่งซ้ายของเวที (ใกล้กีตาร์+นักร้อง) | Snake ยาว ~20m (รหัส B2)</p>
+
+      <h4>🔼 Send (ส่งจากเวที → X Air 18)</h4>
+      <table>
+        <thead><tr><th>ช่อง Stage Box</th><th>รับจาก (บนเวที)</th><th>ผ่าน</th><th>ไปที่ X Air 18</th><th>ประเภท</th><th>หมายเหตุ</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Send 1</strong></td><td>กีตาร์ไฟฟ้า</td><td>DI / ไมค์แอมป์</td><td>Ch <strong>6</strong></td><td><span class="badge-di">DI</span>/<span class="badge-mic">Mic</span></td><td>ใช้ DI ตรง หรือ ไมค์ที่แอมป์กีตาร์</td></tr>
+          <tr><td><strong>Send 2</strong></td><td>ไมค์ร้อง Vocal 1 (นักร้องหลัก)</td><td>—</td><td>Ch <strong>9</strong></td><td><span class="badge-mic">Mic</span></td><td>Pan Center — Comp + De-ess แนะนำ</td></tr>
+          <tr><td><strong>Send 3</strong></td><td>ไมค์ร้อง Vocal 2 (นักร้องสอง)</td><td>—</td><td>Ch <strong>10</strong></td><td><span class="badge-mic">Mic</span></td><td>Pan Center</td></tr>
+          <tr><td><strong>Send 4</strong></td><td>ไมค์ร้อง มือกีตาร์</td><td>—</td><td>Ch <strong>11</strong></td><td><span class="badge-mic">Mic</span></td><td>Pan ตามตำแหน่งบนเวที</td></tr>
+          <tr><td><strong>Send 5</strong></td><td>Sound Data (เสียงประกอบ)</td><td>Player/Laptop</td><td>Ch <strong>15</strong></td><td><span class="badge-line">Line</span></td><td>Line Out จาก Player ต่อ DI/XLR เข้า Stage Box</td></tr>
+          <tr style="opacity:0.5;"><td>Send 6–8</td><td colspan="5"><em>สำรอง — ใช้เพิ่มเครื่องดนตรีได้อีก 3 ช่อง</em></td></tr>
+        </tbody>
+      </table>
+
+      <h4>🔽 Return (รับจาก X Air 18 Aux → มอนิเตอร์บนเวที)</h4>
+      <table>
+        <thead><tr><th>ช่อง Stage Box</th><th>รับจาก X Air 18</th><th>ส่งไป (บนเวที)</th><th>เนื้อหา Mix</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Return 1</strong></td><td>Aux <strong>3</strong> (Monitor Vocal)</td><td>ลำโพงมอนิเตอร์หน้านักร้อง</td><td>เสียงตัวเอง + Vocal อื่น + กลอง + เบส</td></tr>
+          <tr><td><strong>Return 2</strong></td><td>Aux <strong>4</strong> (Monitor กีตาร์)</td><td>ลำโพงมอนิเตอร์หน้ามือกีตาร์</td><td>เสียงตัวเอง + Vocal + กลอง + เบส</td></tr>
+          <tr style="opacity:0.5;"><td>Return 3–4</td><td colspan="3"><em>สำรอง</em></td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box" style="margin-top:10px;">
+        <strong>💡 สรุป L Zone:</strong> มีคน 3 ตำแหน่ง (กีตาร์ + นักร้อง 1-2) → ใช้ Send 5 ช่อง + Return 2 ช่อง — นักร้อง 2 คนฟังมอนิเตอร์ตัวเดียวกัน (Aux 3) ได้
+      </div>
+
+      <!-- ═══ Stage Box R ═══ -->
+      <h3 style="color:#e65100; margin-top:28px;">📦 Stage Box ขวา (R) — ฝั่ง DJ+กลอง</h3>
+      <p>ตำแหน่ง: วางฝั่งขวาของเวที (ใกล้ DJ / กลอง) | Snake ยาว ~15m (รหัส C2)</p>
+
+      <h4>🔼 Send (ส่งจากเวที → X Air 18)</h4>
+      <table>
+        <thead><tr><th>ช่อง Stage Box</th><th>รับจาก (บนเวที)</th><th>ผ่าน</th><th>ไปที่ X Air 18</th><th>ประเภท</th><th>หมายเหตุ</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Send 1</strong></td><td>DJ Song / Backing Track L</td><td>DJ Controller</td><td>Ch <strong>17</strong></td><td><span class="badge-line">Line</span></td><td>Stereo L — ใช้ Stereo Link กับ Ch18</td></tr>
+          <tr><td><strong>Send 2</strong></td><td>DJ Song / Backing Track R</td><td>DJ Controller</td><td>Ch <strong>18</strong></td><td><span class="badge-line">Line</span></td><td>Stereo R — คู่กับ Ch17</td></tr>
+          <tr><td><strong>Send 3</strong></td><td>ไมค์ร้อง มือเบส</td><td>—</td><td>Ch <strong>12</strong></td><td><span class="badge-mic">Mic</span></td><td>มือเบสยืนฝั่งขวา — ส่งไมค์ร้องผ่าน Stage Box R</td></tr>
+          <tr><td><strong>Send 4</strong></td><td>ไมค์ร้อง มือกลอง</td><td>—</td><td>Ch <strong>14</strong></td><td><span class="badge-mic">Mic</span></td><td>ขาตั้งไมค์หน้ากลอง</td></tr>
+          <tr><td><strong>Send 5</strong></td><td>Metronome / Click Track</td><td>Player/Drum Machine</td><td>Ch <strong>16</strong></td><td><span class="badge-line">Line</span></td><td>‼️ ส่งออก <strong>Monitor เท่านั้น</strong> — ห้ามดัง FOH</td></tr>
+          <tr style="opacity:0.5;"><td>Send 6–8</td><td colspan="5"><em>สำรอง</em></td></tr>
+        </tbody>
+      </table>
+
+      <h4>🔽 Return (รับจาก X Air 18 Aux → มอนิเตอร์บนเวที)</h4>
+      <table>
+        <thead><tr><th>ช่อง Stage Box</th><th>รับจาก X Air 18</th><th>ส่งไป (บนเวที)</th><th>เนื้อหา Mix</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Return 1</strong></td><td>Aux <strong>5</strong> (Monitor กลอง)</td><td>ลำโพงมอนิเตอร์หน้ากลอง / In-Ear</td><td>Click (Ch16) + Vocal + เบส — กลองได้ยินตัวเองอยู่แล้ว</td></tr>
+          <tr style="opacity:0.5;"><td>Return 2–4</td><td colspan="3"><em>สำรอง — เช่น DJ Monitor หรือ In-Ear เพิ่มเติม</em></td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box" style="margin-top:10px;">
+        <strong>💡 สรุป R Zone:</strong> มีคน 2–3 ตำแหน่ง (DJ + มือเบส + มือกลอง) → ใช้ Send 5 ช่อง + Return 1 ช่อง — Metronome ส่ง Monitor เท่านั้น!
+      </div>
+
+      <!-- ═══ Drum Multicore ═══ -->
+      <h3 style="color:#6a1b9a; margin-top:28px;">🥁 Drum Multicore — ท่อรวมสายไมค์กลอง</h3>
+      <p>ตำแหน่ง: วางข้างกลองชุด | Snake ยาว ~15m (รหัส D2) → ส่งไป <strong>ui12</strong> (ไม่ใช่ X Air โดยตรง)</p>
+
+      <div class="note-box" style="background:#f3e5f5; border-left-color:#6a1b9a; margin-bottom:12px;">
+        <strong>⚠️ Drum Multicore ≠ Stage Box:</strong> Multicore เป็น <strong>Send อย่างเดียว</strong> (12ch → ใช้ 7 ช่อง) ไม่มี Return — เสียง Monitor กลองใช้ Aux 5 ผ่าน Stage Box R Return 1 แทน
+      </div>
+
+      <h4>🔼 Send (ส่งจากกลองชุด → ui12)</h4>
+      <table>
+        <thead><tr><th>ช่อง Multicore</th><th>ไมค์</th><th>ตำแหน่งจ่อ</th><th>ไปที่ ui12</th><th>ชนิดไมค์</th><th>+48V</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Kick (กลองเบส)</td><td>ด้านในหน้าเปลือกกลอง</td><td>Ch <strong>1</strong> → Aux 1 → X Air Ch1</td><td>Dynamic</td><td>❌</td></tr>
+          <tr><td><strong>2</strong></td><td>Snare (สแนร์)</td><td>ขอบบน ห่าง ~2-3cm</td><td>Ch <strong>2</strong> → Aux 2 → X Air Ch2</td><td>Dynamic</td><td>❌</td></tr>
+          <tr><td><strong>3</strong></td><td>Tom 1</td><td>ขอบ Tom ใบที่ 1</td><td>Ch <strong>3</strong> → Main L+R → X Air Ch3-4</td><td>Dynamic</td><td>❌</td></tr>
+          <tr><td><strong>4</strong></td><td>Tom 2</td><td>ขอบ Tom ใบที่ 2</td><td>Ch <strong>4</strong> → Main L+R → X Air Ch3-4</td><td>Dynamic</td><td>❌</td></tr>
+          <tr><td><strong>5</strong></td><td>Tom 3 (Floor Tom)</td><td>ขอบ Floor Tom</td><td>Ch <strong>5</strong> → Main L+R → X Air Ch3-4</td><td>Dynamic</td><td>❌</td></tr>
+          <tr><td><strong>6</strong></td><td>Overhead L (ฉาบซ้าย)</td><td>จ่อ <strong>ใต้ฉาบ</strong> ซ้าย ~5cm</td><td>Ch <strong>6</strong> → Main L+R → X Air Ch3-4</td><td>Condenser</td><td>✅</td></tr>
+          <tr><td><strong>7</strong></td><td>Overhead R (ฉาบขวา)</td><td>จ่อ <strong>ใต้ฉาบ</strong> ขวา ~5cm</td><td>Ch <strong>7</strong> → Main L+R → X Air Ch3-4</td><td>Condenser</td><td>✅</td></tr>
+          <tr style="opacity:0.5;"><td>8–12</td><td colspan="5"><em>สำรอง — ใช้เพิ่มไมค์ได้อีก 5 ช่อง (เช่น ไมค์ใต้ Snare, Hi-Hat ฯลฯ)</em></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ═══ สรุปภาพรวม ═══ -->
+      <h3 style="margin-top:28px;">📊 สรุปภาพรวม: จากเวทีไป X Air 18 ทุกช่อง</h3>
+      <table>
+        <thead><tr><th>X Air Ch</th><th>สัญญาณ</th><th>มาจาก Stage Box / Multicore</th><th>ผ่าน</th></tr></thead>
+        <tbody>
+          <tr style="background:#fce4ec;"><td colspan="4" style="font-weight:700;">🥁 กลอง (ผ่าน Drum Multicore → ui12)</td></tr>
+          <tr><td><strong>1</strong></td><td>Kick</td><td>Drum Multicore Ch1</td><td>ui12 Aux 1</td></tr>
+          <tr><td><strong>2</strong></td><td>Snare</td><td>Drum Multicore Ch2</td><td>ui12 Aux 2</td></tr>
+          <tr><td><strong>3</strong></td><td>Tom+OH Stereo L</td><td>Drum Multicore Ch3-7</td><td>ui12 Main L</td></tr>
+          <tr><td><strong>4</strong></td><td>Tom+OH Stereo R</td><td>Drum Multicore Ch3-7</td><td>ui12 Main R</td></tr>
+          <tr style="background:#e8f5e9;"><td colspan="4" style="font-weight:700;">🎸 เครื่องดนตรี (ผ่าน Stage Box)</td></tr>
+          <tr><td><strong>5</strong></td><td>Bass</td><td>Stage Box <strong>KB</strong> Send 1</td><td>DI Box → Snake A2</td></tr>
+          <tr><td><strong>6</strong></td><td>Guitar</td><td>Stage Box <strong>L</strong> Send 1</td><td>DI/Mic → Snake B2</td></tr>
+          <tr><td><strong>7</strong></td><td>Keyboard L</td><td>Stage Box <strong>KB</strong> Send 2</td><td>DI Box → Snake A2</td></tr>
+          <tr><td><strong>8</strong></td><td>Keyboard R</td><td>Stage Box <strong>KB</strong> Send 3</td><td>DI Box → Snake A2</td></tr>
+          <tr style="background:#e3f2fd;"><td colspan="4" style="font-weight:700;">🎤 Vocal (ผ่าน Stage Box)</td></tr>
+          <tr><td><strong>9</strong></td><td>Vocal 1 (นักร้องหลัก)</td><td>Stage Box <strong>L</strong> Send 2</td><td>Snake B2</td></tr>
+          <tr><td><strong>10</strong></td><td>Vocal 2 (นักร้องสอง)</td><td>Stage Box <strong>L</strong> Send 3</td><td>Snake B2</td></tr>
+          <tr><td><strong>11</strong></td><td>Vocal มือกีตาร์</td><td>Stage Box <strong>L</strong> Send 4</td><td>Snake B2</td></tr>
+          <tr><td><strong>12</strong></td><td>Vocal มือเบส</td><td>Stage Box <strong>R</strong> Send 3</td><td>Snake C2</td></tr>
+          <tr><td><strong>13</strong></td><td>Vocal มือคีย์บอร์ด</td><td>Stage Box <strong>KB</strong> Send 4</td><td>Snake A2</td></tr>
+          <tr><td><strong>14</strong></td><td>Vocal มือกลอง</td><td>Stage Box <strong>R</strong> Send 4</td><td>Snake C2</td></tr>
+          <tr style="background:#f3e5f5;"><td colspan="4" style="font-weight:700;">🎧 Playback / DJ</td></tr>
+          <tr><td><strong>15</strong></td><td>Sound Data</td><td>Stage Box <strong>L</strong> Send 5</td><td>Snake B2</td></tr>
+          <tr><td><strong>16</strong></td><td>Metronome</td><td>Stage Box <strong>R</strong> Send 5</td><td>Snake C2 ‼️ Monitor only</td></tr>
+          <tr><td><strong>17</strong></td><td>DJ Song L</td><td>Stage Box <strong>R</strong> Send 1</td><td>Snake C2</td></tr>
+          <tr><td><strong>18</strong></td><td>DJ Song R</td><td>Stage Box <strong>R</strong> Send 2</td><td>Snake C2</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:20px;">📊 สรุป Monitor Return: จาก X Air Aux กลับเวที</h3>
+      <table>
+        <thead><tr><th>X Air Aux</th><th>สำหรับ</th><th>กลับผ่าน</th><th>ส่งไป</th><th>สาย (ตารางเดินสาย)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Aux 1</strong></td><td>🎹 Monitor คีย์บอร์ด</td><td>Stage Box <strong>KB</strong> Return 1</td><td>มอนิเตอร์หน้า KB</td><td>H1 (TRS→XLR ~10m from X Air → Snake A2 Return)</td></tr>
+          <tr><td><strong>Aux 2</strong></td><td>🎸 Monitor เบส</td><td>Stage Box <strong>KB</strong> Return 2</td><td>มอนิเตอร์หน้ามือเบส</td><td>H2 (TRS→XLR ~10m)</td></tr>
+          <tr><td><strong>Aux 3</strong></td><td>🎤 Monitor Vocal</td><td>Stage Box <strong>L</strong> Return 1</td><td>มอนิเตอร์หน้านักร้อง</td><td>H3 (TRS→XLR ~8m)</td></tr>
+          <tr><td><strong>Aux 4</strong></td><td>🎸 Monitor กีตาร์</td><td>Stage Box <strong>L</strong> Return 2</td><td>มอนิเตอร์หน้ากีตาร์</td><td>H4 (TRS→XLR ~10m)</td></tr>
+          <tr><td><strong>Aux 5</strong></td><td>🥁 Monitor กลอง</td><td>Stage Box <strong>R</strong> Return 1</td><td>มอนิเตอร์หน้ากลอง/In-Ear</td><td>H5 (TRS→XLR ~5m)</td></tr>
+          <tr style="background:#fff3e0;"><td><strong>Aux 6</strong></td><td>📡 นอกอาคาร</td><td>—</td><td>dbx 260 (ไม่ผ่าน Stage Box)</td><td>G1 (TRS→XLR ~5m ตรงจาก X Air)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box" style="margin-top:16px; background:#fff3e0; border-left-color:#e65100;">
+        <strong>⚠️ การต่อ Monitor Return:</strong>
+        <ul style="margin:0;">
+          <li>สาย H1–H5 (TRS→XLR) ต่อจาก X Air Aux Output → <strong>เข้า Return ของ Snake</strong> ที่ฝั่งมิกเซอร์</li>
+          <li>ที่ฝั่งเวที สาย Return จะออกจาก Stage Box → ต่อสาย XLR สั้นๆ (~3m) ไปลำโพงมอนิเตอร์</li>
+          <li>Snake 1 เส้นพาทั้ง Send + Return ไม่ต้องเดินสายมอนิเตอร์แยก 20m!</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- ═══════════════════════════════════════════ ui12 ══ -->
     <div class="section" id="ui12">
